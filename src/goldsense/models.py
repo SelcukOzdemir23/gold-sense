@@ -24,6 +24,7 @@ class AnalysisResult:
     sentiment_score: int
     impact_reasoning: str
     reasoning: str | None = None  # DSPy ChainOfThought reasoning - how the model arrived at its conclusion
+    confidence_score: float = 0.5  # Model's confidence (0.0-1.0) in this analysis
 
 
 @dataclass(frozen=True)
@@ -32,3 +33,5 @@ class MarketSummary:
     trend: str
     total_articles: int
     relevant_articles: int
+    weighted_score: float = 0.0  # Weighted by category and confidence
+    confidence_average: float = 0.0  # Average confidence across all analyses

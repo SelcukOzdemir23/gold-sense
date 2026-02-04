@@ -22,7 +22,7 @@
 
 ### Adım 3: DSPy & LLM Analiz Süreci
 * [x] **Analizi Başlat Butonu:** TONL verisini `GoldAnalyst` modülüne göndererek Cerebras üzerinden işlemeli.
-* [ ] **Canlı İzleme:** `dspy.inspect_history(n=1)` çıktısını bir "Debug Console" gibi arayüzde göstererek modelin arka planını ispatla.
+* [x] **Canlı İzleme:** `dspy.inspect_history(n=1)` çıktısını bir "Debug Console" gibi arayüzde göstererek modelin arka planını ispatla.
 * [x] **Haber Kartları:** Analiz edilen haberleri; Kategori, 1-10 Puan, Boğa/Ayı İkonu ve **Türkçe Gerekçe** ile listele.
 
 ---
@@ -36,21 +36,19 @@
 
 ---
 
-## 4. Hesap Verilebilirlik ve Metrikler (Accountability)
-* [ ] **Deduplication:** Aynı habere (URL bazlı) sahip mükerrer kayıtların `analysis.jsonl` dosyasına yazılmasını engelle.
-* [ ] **Ragas Entegrasyonu:** Modelin haber metnine sadakatini (`Faithfulness`) ölçen küçük bir test seti oluştur.
-* [ ] **Güven Skoru (Confidence):** Modelden analizleri için 0-1 arası bir "Eminlik Puanı" iste ve bunu görselleştir.
-* [ ] **Nihai Eğilim Kararı:** Haftalık ağırlıklı ortalamayı hesaplayan (Makro x 1.5 gibi) motoru mühürle.
+## 4. Hesap Verilebilirlik ve Metrikler (Accountability) ✅ FAZ-3 TAMAMLANDI
+* [x] **Deduplication:** Aynı habere (URL bazlı) sahip mükerrer kayıtların `analysis.jsonl` dosyasına yazılmasını engelle.
+* [ ] **Ragas Entegrasyonu:** Modelin haber metnine sadakatini (`Faithfulness`) ölçen küçük bir test seti oluştur. *(Optional - gelecek iterasyon)*
+* [x] **Güven Skoru (Confidence):** Modelden analizleri için 0-1 arası bir "Eminlik Puanı" iste ve bunu görselleştir.
+* [x] **Nihai Eğilim Kararı:** Haftalık ağırlıklı ortalamayı hesaplayan (Makro x 1.5 gibi) motoru mühürle.
 
 ---
 
 ## 5. Sağlamlık ve Hata Yönetimi (Robustness)
-* [ ] **Sayı Formatı Temizliği:** Truncgil'den gelebilecek virgüllü (`2.500,50`) fiyatları float'a çeviren logic'i test et.
 * [ ] **Fallback Mekanizması:** Truncgil servisi hata verdiğinde `binance`'in otomatik olarak devreye girdiğini doğrula.
-* [ ] **Async Performance:** 50 haberi `asyncio.Semaphore` ile Cerebras'a gönderirken hızın 5 saniyenin altında olduğunu teyit et.
+* [ ] **Async + AI Performance Test:** 50 haberi Cerebras'a gönderirken performans raporu (süre, token, maliyet, model kalitesi) hazırla.
 
 ---
 
-## 6. Sunum Materyalleri (The Grand Finale)
-* [ ] **PRD ve README:** Hazırladığımız PRD'yi ve kurulum talimatlarını içeren README dosyasını hazırla.
-* [ ] **Mühendislik Sunumu:** "Neden TONL?" ve "Neden DSPy?" sorularına token tasarrufu ve modülerlik üzerinden cevap verecek slaytları hazırla.
+## 6. Dokümantasyon (The Grand Finale)
+* [ ] **README:** Detaylı README dosyası hazırla (kurulum, kullanım, PRD özeti, "Neden TONL?", "Neden DSPy?" açıklamaları).

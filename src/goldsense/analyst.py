@@ -33,6 +33,9 @@ class GoldSignalSignature(dspy.Signature):
     impact_reasoning: str = dspy.OutputField(
         desc="A detailed, insightful analysis in TURKISH explaining how this news affects gold markets. Include specific mechanisms (e.g., USD correlation, safe-haven demand, industrial usage, central bank policies). 2-3 sentences maximum, must be in Turkish language with clear financial reasoning."
     )
+    confidence_score: float = dspy.OutputField(
+        desc="Your confidence in this analysis on a scale of 0.0 (completely uncertain) to 1.0 (completely certain). For clear economic data: 0.9+. For ambiguous geopolitical news: 0.5-0.8. For contradictory signals: <0.5."
+    )
 
     class Config:
         instructions = (
@@ -42,7 +45,11 @@ class GoldSignalSignature(dspy.Signature):
             "Explain the specific causal mechanisms - don't just state the obvious. "
             "Consider: USD strength/weakness, inflation expectations, central bank actions, geopolitical risk premium, "
             "industrial demand shifts, investor sentiment, technical factors. "
-            "Make your reasoning educational and valuable for investors - avoid generic statements."
+            "Make your reasoning educational and valuable for investors - avoid generic statements. "
+            "For each analysis, also objectively rate your confidence (0.0-1.0) in the conclusion. "
+            "High confidence (0.9+): Clear, unambiguous economic data or policy decisions. "
+            "Medium confidence (0.6-0.8): Multiple supporting signals but some uncertainty. "
+            "Low confidence (<0.6): Contradictory signals, speculative interpretations, or weak data."
         )
 
 
@@ -93,6 +100,13 @@ class GoldAnalyst:
                 f"Sentiment score must be between 1 and 10, got {score_value}"
             )
             
+            # Confidence validation (0.0 - 1.0)
+            confidence_value = float(result.confidence_score) if hasattr(result, 'confidence_score') else 0.5
+            dspy.Assert(
+                0.0 <= confidence_value <= 1.0,
+                f"Confidence score must be between 0.0 and 1.0, got {confidence_value}"
+            )
+            
             # Check Turkish characters in reasoning (basic validation)
             reasoning_text = str(result.impact_reasoning).strip()
             turkish_chars = set('çğıöşüÇĞİÖŞÜ')
@@ -112,6 +126,7 @@ class GoldAnalyst:
         is_relevant = self._normalize_bool(result.is_relevant) and category != "Irrelevant"
 
         sentiment_score = self._clamp_score(result.sentiment_score)
+        confidence_score = self._clamp_confidence(confidence_value)
 
         return AnalysisResult(
             article=article,
@@ -120,6 +135,7 @@ class GoldAnalyst:
             sentiment_score=sentiment_score,
             impact_reasoning=reasoning_text,
             reasoning=model_reasoning,  # ChainOfThought's internal reasoning
+            confidence_score=confidence_score,  # Model's confidence in this analysis
         )
 
     @staticmethod
@@ -129,6 +145,14 @@ class GoldAnalyst:
         except (TypeError, ValueError):
             return 5
         return max(1, min(10, value))
+
+    @staticmethod
+    def _clamp_confidence(confidence: float) -> float:
+        try:
+            value = float(confidence)
+        except (TypeError, ValueError):
+            return 0.5
+        return max(0.0, min(1.0, value))
 
     @staticmethod
     def _normalize_category(raw_category: str) -> Category:

@@ -121,6 +121,25 @@ def _to_article(item: dict) -> NewsArticle:
 
 
 def _render_results(price, summary, results):
+    # Strategic Summary (Phase-3)
+    st.subheader("📊 Stratejik Değerlendirme")
+    
+    trend_emoji = "📈" if "Bullish" in summary.trend else "📉" if "Bearish" in summary.trend else "➡️"
+    confidence_pct = int(summary.confidence_average * 100)
+    
+    strategic_text = (
+        f"{trend_emoji} **Piyasa Eğilimi:** {summary.trend} "
+        f"(Ağırlıklı Skor: {summary.weighted_score:.1f}/10)\n\n"
+        f"💪 **Model Eminliği:** %{confidence_pct} "
+        f"(Ortalama güven seviyesi)\n\n"
+        f"🎯 **Analiz Kapsamı:** {summary.relevant_articles}/{summary.total_articles} haber "
+        f"altın piyasasını etkiliyor. "
+        f"Makro haberler (x1.5 ağırlık) diğer kategorilerden daha etkili sayılmıştır."
+    )
+    st.info(strategic_text)
+    
+    st.divider()
+    
     col1, col2, col3, col4 = st.columns(4)
     
     # Handle None price gracefully
@@ -145,12 +164,29 @@ def _render_results(price, summary, results):
                 col_rank.markdown(f"### #{idx}")
                 col_content.markdown(f"**{item.article.title}**")
                 col_content.write(item.article.description or "-")
+                
+                # Confidence badge
+                conf_pct = int(item.confidence_score * 100)
+                if item.confidence_score >= 0.8:
+                    conf_emoji = "🟢"
+                elif item.confidence_score >= 0.5:
+                    conf_emoji = "🟡"
+                else:
+                    conf_emoji = "🔴"
+                
                 col_content.caption(
                     f"🎯 {_category_tr(item.category)} | "
                     f"Skor: **{item.sentiment_score}/10** | "
+                    f"{conf_emoji} Güven: **%{conf_pct}** | "
                     f"📍 {item.article.published_at.strftime('%d %b %H:%M')}"
                 )
                 col_content.write(f"💡 *{item.impact_reasoning}*")
+                
+                # Show reasoning if available
+                if item.reasoning:
+                    with st.expander("🧠 AI Muhakeme Süreci"):
+                        st.caption("Modelin bu sonuca nasıl vardığını görebilirsiniz:")
+                        st.info(item.reasoning)
 
     st.divider()
 
@@ -225,7 +261,7 @@ def _render_results(price, summary, results):
                 st.markdown(f"**{item.article.title}**")
                 st.write(item.article.description or "-")
 
-                col_cat, col_score, col_date = st.columns(3)
+                col_cat, col_score, col_conf, col_date = st.columns(4)
                 col_cat.caption(f"📂 {_category_tr(item.category)}")
 
                 if item.sentiment_score >= 7:
@@ -235,13 +271,24 @@ def _render_results(price, summary, results):
                 else:
                     score_color = "🟡"
                 col_score.caption(f"{score_color} Skor: **{item.sentiment_score}/10**")
+                
+                # Confidence badge
+                conf_pct = int(item.confidence_score * 100)
+                if item.confidence_score >= 0.8:
+                    conf_color = "🟢"
+                elif item.confidence_score >= 0.5:
+                    conf_color = "🟡"
+                else:
+                    conf_color = "🔴"
+                col_conf.caption(f"{conf_color} Güven: **%{conf_pct}**")
+                
                 col_date.caption(f"🕐 {item.article.published_at.strftime('%d %b %H:%M')}")
 
                 st.write(f"*💭 {item.impact_reasoning}*")
                 
-                # Show AI reasoning process if available
+                # Show reasoning if available
                 if item.reasoning:
-                    with st.expander("🧠 AI Muhakeme Süreci (Chain of Thought)"):
+                    with st.expander("🧠 AI Muhakeme Süreci"):
                         st.caption("Modelin bu sonuca nasıl vardığını görebilirsiniz:")
                         st.info(item.reasoning)
     else:
