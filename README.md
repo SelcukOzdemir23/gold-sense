@@ -1,27 +1,188 @@
-# 🏆 Gold-Sense AI
+# Gold-Sense AI
 
-**DSPy Tabanlı Finansal Haber Analiz Sistemi - Altın Piyasası Tahmin Motoru**
+Finansal haberleri analiz ederek altın piyasası trendlerini tahmin eden sistem.
 
-> ⚠️ **Akademik Proje Uyarısı:** Bu proje, Yüksek Lisans "İleri Yapay Zeka" dersi kapsamında akademik bir çalışma olarak geliştirilmiştir. Herhangi bir yatırım tavsiyesi içermez ve sadece eğitim amaçlıdır.
+**Uyarı:** Yüksek Lisans "İleri Yapay Zeka" dersi kapsamında akademik bir çalışmadır. Herhangi bir yatırım tavsiyesi içermez.
 
-Gold-Sense AI, finansal haberleri işleyerek altın piyasası trendlerini tahmin eden akıllı bir haber analiz sistemidir. DSPy (Declarative Self-improving Language Programs) ile oluşturulmuş olup, token-verimli veri gösterimi (TONL), gelişmiş LLM muhakemesi (Chain of Thought) ve olasılıksal güven skorlamasını birleştirerek eyleme geçirilebilir piyasa içgörüleri sunar.
-
----
-
-## 📋 İçindekiler
-
-- [Neden Gold-Sense AI?](#-neden-gold-sense-ai)
-- [Temel Özellikler](#-temel-özellikler)
-- [Mimari ve Teknoloji Seçimleri](#-mimari-ve-teknoloji-seçimleri)
-- [Kurulum](#-kurulum)
-- [Kullanım](#-kullanım)
-- [Proje Yapısı ve Kod Açıklamaları](#-proje-yapısı-ve-kod-açıklamaları)
-- [Konfigürasyon](#-konfigürasyon)
-- [Geliştirme](#-geliştirme)
 
 ---
 
-## 🎯 Neden Gold-Sense AI?
+## Sistem Özeti
+
+Üç ana teknoloji birleşir:
+
+1. **DSPy (Declarative Self-improving Language Programs)**
+   - LLM tabanlı haber analizi için tip-güvenli framework
+   - Chain of Thought: Modelin muhakeme sürecini kaydeder
+   - Assertion: Çıktı validasyonu (skor 1-10, güven 0-1)
+
+2. **TONL (Text-Optimized Notation Language)**
+   - JSON'u kompakt formata dönüştürür (~%40 token tasarrufu)
+   - Tokens tutumlu veri temsili
+
+3. **Ağırlıklı Kategori Toplama**
+   - Makro: 1.5x, Jeopolitik: 1.2x, Endüstriyel: 1.0x
+   - Formül: ∑(Skor × Ağırlık × Güven) / ∑(Ağırlık × Güven)
+
+---
+
+## İş Akışı
+
+```
+Haber Getir (NewsAPI) → TONL Dönüşümü → DSPy Analizi → 
+Ağırlıklı Toplama → Sonuç Kayıt (JSONL)
+```
+
+---
+
+## Modüller
+
+**analyst.py**
+- DSPy ChainOfThought ile haber analizi
+- GoldSignalSignature: Giriş (title, desc), Çıkış (relevance, category, score, confidence, reasoning)
+- Assertions: Skor 1-10, güven 0-1 validasyonu
+
+**engine.py**
+- Ağırlıklı piyasa özeti hesapla
+- CATEGORY_WEIGHTS: Kategori ağırlıkları
+- Formül: ∑(Skor × Ağırlık × Güven) / ∑(Ağırlık × Güven)
+
+**fetcher.py**
+- NewsAPI'den 50 haber çek
+- Retry logic: 3 deneme, exponential backoff
+
+**logger.py**
+- Sonuçları JSONL dosyasına kaydet
+- URL deduplication: Mükerrer makaleleri önler
+
+**price.py**
+- Altın fiyatı al: Truncgil (birincil), Binance (yedek)
+- PAXGUSDT: Paxos Gold in USDT
+
+**tonl.py**
+- JSON → TONL dönüşümü
+- ~%40 token tasarrufu
+
+**models.py**
+- NewsArticle, AnalysisResult, MarketSummary veri modelleri
+
+---
+
+## Kurulum
+
+```bash
+python3.11 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+# .env dosyasını oluştur
+cp .env.example .env
+# NEWSAPI_KEY, CEREBRAS_API_KEY ekle
+```
+
+---
+
+## Kullanım
+
+**Streamlit Uygulaması**
+```bash
+streamlit run app.py
+```
+
+**Sekme 1 - Haber Hasadı:** NewsAPI'den 50 haber çeker, JSON gösterir
+
+**Sekme 2 - TONL:** JSON'u TONL'a çevirir, token tasarrufu gösterir
+
+**Sekme 3 - Analiz:** DSPy ile haberleri analiz eder, stratejik özet sunar
+
+**Sekme 4 - Debug:** dspy.inspect_history() ile LLM çağrılarını gösterir
+
+**Komut Satırı**
+```bash
+python main.py              # CLI çalıştır
+python scripts/quick_check.py  # Servisleri kontrol et
+python scripts/test_binance.py # Binance fallback test et
+```
+
+---
+
+## Hocanız İçin Önemli Noktalar
+
+**1. Neden DSPy?**
+- Prompt engineering yerine tip-güvenli contracts
+- Assertions ile otomatik output validation
+- Kullanım tracking ile token/maliyet izleme
+
+**2. Neden TONL?**
+- Standart JSON %40+ fazla token kullanır
+- Token tasarrufu finansal uygulamalar için kritik
+
+**3. Neden Chain of Thought?**
+- Model muhakemesini kaydeder (reasoning field)
+- Debug console'da kararların gerekçesini görür
+- Şeffaflık ve interpretability sağlar
+
+**4. Neden Güven Skorlaması?**
+- Model ne kadar emin olduğunu bilmek önemli
+- Düşük güvenli analizler ağırlıklı ortalamayı etkilemesin diye
+- Formüldeki (Weight × Confidence) terimi bunu sağlar
+
+**5. Neden Fallback Mekanizması?**
+- Truncgil API sık bağlantı koparır
+- Binance PAXGUSDT alternatif olarak kullanılır
+- Sistem robustluğu için iki kaynak
+
+---
+
+## Proje Yapısı
+
+```
+src/goldsense/
+├── analyst.py        # DSPy analiz motoru
+├── engine.py         # Ağırlıklı toplama
+├── fetcher.py        # NewsAPI client
+├── logger.py         # JSONL kayıt
+├── models.py         # Veri modelleri
+├── price.py          # Altın fiyatı
+├── tonl.py           # TONL dönüşümü
+├── config.py         # Ayarlar
+└── exceptions.py     # Hata tipleri
+
+app.py               # Streamlit UI
+
+logs/
+├── raw_news.json    # Çekilen haberler
+├── news.tonl        # TONL formatı
+└── analysis.jsonl   # Analiz sonuçları
+```
+
+---
+
+## Teknoloji Seçimleri
+
+| Teknoloji | Neden | Alternatif |
+|-----------|-------|-----------|
+| DSPy | Tip-güvenli LLM programlama | LangChain (daha ağır) |
+| Cerebras | %1800 tokens/sec, $0.30/1M tokens | OpenAI (10x pahalı) |
+| Streamlit | Basit web UI | Dash, FastAPI |
+| TONL | JSON'dan %40 daha compact | YAML, Protobuf |
+
+---
+
+## Kaynaklar
+
+- DSPy: https://dspy-docs.vercel.app/
+- Cerebras: https://inference-docs.cerebras.ai/
+- NewsAPI: https://newsapi.org/docs
+- Streamlit: https://docs.streamlit.io/
+
+---
+
+**Gold-Sense AI - Yapay zeka ile finansal analiz**
+
+---
+
+## Neden Gold-Sense AI?
 
 Altın piyasaları, karmaşık ve birbiriyle bağlantılı faktörlerden etkilenir: makroekonomik politika, jeopolitik olaylar, endüstriyel talep ve para birimi dalgalanmaları. Geleneksel haber analiz sistemleri şu sorunlarla karşılaşır:
 
@@ -32,7 +193,7 @@ Altın piyasaları, karmaşık ve birbiriyle bağlantılı faktörlerden etkilen
 
 Gold-Sense AI bu zorlukları şöyle ele alır:
 
-- **Otomatik İşleme:** Async Cerebras API ile 50 makaleyi <5 saniyede analiz et
+- **Otomatik İşleme:** Cerebras API ile 50 haberi kısa sürede analiz et
 - **DSPy Zekası:** Assertion-tabanlı doğrulamalı Chain of Thought muhakemesi
 - **TONL Formatı:** Özel metin-optimize notasyon ile %40+ token tasarrufu
 - **Güven Skorlaması:** Her analiz için 0-1 arası olasılıksal belirsizlik ölçümü
@@ -40,7 +201,7 @@ Gold-Sense AI bu zorlukları şöyle ele alır:
 
 ---
 
-## ✨ Temel Özellikler
+## Temel Özellikler
 
 ### 1. **The Journey UI** (3 Sekmeli Streamlit Arayüzü)
 
@@ -88,7 +249,7 @@ dspy.Assert(0.0 <= confidence <= 1.0, "Confidence must be 0.0-1.0")
 dspy.Suggest(has_turkish, "Reasoning should be in Turkish")
 ```
 
-**KullanıHesap Verebilirlik ve Metrikler**
+**Hesap Verebilirlik ve Metrikler**
 
 **URL-Tabanlı Tekil Hale Getirme:**
 - `_seen_urls` set'i mükerrer analizleri önler
