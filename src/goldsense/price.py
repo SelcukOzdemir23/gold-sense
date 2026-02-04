@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 import time
 
 import httpx
@@ -14,11 +14,26 @@ class GoldPriceService:
     settings: Settings
     max_retries: int = 2
     base_delay_seconds: float = 0.6
+    _price_cache: tuple[float | None, float] = field(default_factory=lambda: (None, 0), init=False)
+    _cache_ttl_seconds: int = 300  # 5 dakika cache
 
     def get_current_price(self) -> float | None:
-        """Get current gold price. Returns None if unavailable instead of raising exception."""
+        """Get current gold price. Returns None if unavailable instead of raising exception.
+        
+        Cache: Fiyat 5 dakikada bir yenilenir (performans için).
+        """
+        cached_price, cache_time = self._price_cache
+        current_time = time.time()
+        
+        # Cache valid mı kontrol et
+        if cached_price is not None and (current_time - cache_time) < self._cache_ttl_seconds:
+            return cached_price
+        
+        # Cache geçersiz, yeni fiyat çek
         try:
-            return self._fetch_price_from_truncgil()
+            price = self._fetch_price_from_truncgil()
+            self._price_cache = (price, current_time)
+            return price
         except Exception as truncgil_error:
             # Log the error but don't crash
             print(f"⚠️  Truncgil fiyat alınamadı: {truncgil_error}")
@@ -26,7 +41,9 @@ class GoldPriceService:
             # Try Binance as fallback
             if self.settings.use_yfinance_fallback:  # Config name kept for compatibility
                 try:
-                    return self._fetch_from_binance()
+                    price = self._fetch_from_binance()
+                    self._price_cache = (price, current_time)
+                    return price
                 except Exception as binance_error:
                     print(f"⚠️  Binance fallback da başarısız: {binance_error}")
                     return None

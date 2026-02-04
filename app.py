@@ -31,23 +31,23 @@ from goldsense.tonl import decode_news_articles, encode_news_articles
 
 st.set_page_config(page_title="Gold-Sense AI", layout="wide")
 
-st.title("🏆 Gold-Sense AI")
-st.caption("Haber odaklı altın eğilim analizi - Son 2 Günün Top Haberleri")
+st.title("Gold-Sense AI")
+st.caption("Finansal Haber Analizi - Altın Piyasası Tahmin Sistemi")
 
 load_dotenv()
 settings = Settings.from_env()
 
 with st.sidebar:
-    st.header("⚙️ Ayarlar")
-    lookback = st.number_input(
-        "Kaç gün geriye bakmak istiyorsun?",
-        min_value=1,
-        max_value=30,
-        value=2,
-        help="1=Bugün, 2=Bugün+Dün, vb."
+    st.header("Ayarlar")
+    confidence_threshold = st.slider(
+        "Minimum Güven Seviyesi",
+        min_value=0.0,
+        max_value=1.0,
+        value=0.0,
+        step=0.1,
+        help="Sadece bu seviye ve üzerindeki güven skorlu haberleri göster"
     )
-    if lookback != 2:
-        st.info(f"📅 Çekiliş aralığı: Son {int(lookback)} gün")
+    st.caption(f"Gösterilecek: %{int(confidence_threshold * 100)}+ güven")
 
 try:
     settings.validate()
@@ -55,7 +55,7 @@ except ConfigError as exc:
     st.error(f"Config error: {exc}")
     st.stop()
 
-effective_settings = replace(settings, lookback_days=int(lookback))
+effective_settings = replace(settings)
 fetcher = NewsFetcher(effective_settings)
 analyst = GoldAnalyst(effective_settings)
 engine = MarketEngine()
@@ -122,17 +122,16 @@ def _to_article(item: dict) -> NewsArticle:
 
 def _render_results(price, summary, results):
     # Strategic Summary (Phase-3)
-    st.subheader("📊 Stratejik Değerlendirme")
+    st.subheader("Stratejik Değerlendirme")
     
-    trend_emoji = "📈" if "Bullish" in summary.trend else "📉" if "Bearish" in summary.trend else "➡️"
     confidence_pct = int(summary.confidence_average * 100)
     
     strategic_text = (
-        f"{trend_emoji} **Piyasa Eğilimi:** {summary.trend} "
+        f"**Piyasa Eğilimi:** {summary.trend} "
         f"(Ağırlıklı Skor: {summary.weighted_score:.1f}/10)\n\n"
-        f"💪 **Model Eminliği:** %{confidence_pct} "
+        f"**Model Eminliği:** %{confidence_pct} "
         f"(Ortalama güven seviyesi)\n\n"
-        f"🎯 **Analiz Kapsamı:** {summary.relevant_articles}/{summary.total_articles} haber "
+            f"**Analiz Kapsamı:** {summary.relevant_articles}/{summary.total_articles} haber "
         f"altın piyasasını etkiliyor. "
         f"Makro haberler (x1.5 ağırlık) diğer kategorilerden daha etkili sayılmıştır."
     )
@@ -144,20 +143,20 @@ def _render_results(price, summary, results):
     
     # Handle None price gracefully
     if price is None:
-        col1.metric("💰 Altın Fiyatı", "Veri Yok ⚠️")
+        col1.metric("Altın Fiyatı", "Veri Yok")
     else:
-        col1.metric("💰 Altın Fiyatı", f"{price:.2f} USD")
+        col1.metric("Altın Fiyatı", f"{price:.2f} USD")
     
-    col2.metric("📊 Eğilim", _trend_tr(summary.trend))
-    col3.metric("⭐ Ort. Skor", f"{summary.average_score:.1f}/10")
-    col4.metric("📰 İlgili Haber", f"{summary.relevant_articles}/{summary.total_articles}")
+    col2.metric("Eğilim", _trend_tr(summary.trend))
+    col3.metric("Ort. Skor", f"{summary.average_score:.1f}/10")
+    col4.metric("İlgili Haber", f"{summary.relevant_articles}/{summary.total_articles}")
 
     st.divider()
 
     relevant_results = [r for r in results if r.is_relevant]
     if relevant_results:
         top_results = sorted(relevant_results, key=lambda x: x.sentiment_score, reverse=True)[:5]
-        st.subheader("🔥 Top 5 En Etkili Haber")
+        st.subheader("Top 5 En Etkili Haber")
         for idx, item in enumerate(top_results, 1):
             with st.container(border=True):
                 col_rank, col_content = st.columns([0.5, 9.5])
@@ -168,23 +167,23 @@ def _render_results(price, summary, results):
                 # Confidence badge
                 conf_pct = int(item.confidence_score * 100)
                 if item.confidence_score >= 0.8:
-                    conf_emoji = "🟢"
+                    conf_symbol = "[High]"
                 elif item.confidence_score >= 0.5:
-                    conf_emoji = "🟡"
+                    conf_symbol = "[Med]"
                 else:
-                    conf_emoji = "🔴"
+                    conf_symbol = "[Low]"
                 
                 col_content.caption(
-                    f"🎯 {_category_tr(item.category)} | "
+                    f"{_category_tr(item.category)} | "
                     f"Skor: **{item.sentiment_score}/10** | "
-                    f"{conf_emoji} Güven: **%{conf_pct}** | "
-                    f"📍 {item.article.published_at.strftime('%d %b %H:%M')}"
+                    f"{conf_symbol} Güven: **%{conf_pct}** | "
+                    f"{item.article.published_at.strftime('%d %b %H:%M')}"
                 )
-                col_content.write(f"💡 *{item.impact_reasoning}*")
+                col_content.write(f"*{item.impact_reasoning}*")
                 
                 # Show reasoning if available
                 if item.reasoning:
-                    with st.expander("🧠 AI Muhakeme Süreci"):
+                    with st.expander("AI Muhakeme Süreci"):
                         st.caption("Modelin bu sonuca nasıl vardığını görebilirsiniz:")
                         st.info(item.reasoning)
 
@@ -210,7 +209,7 @@ def _render_results(price, summary, results):
             y="score",
             color="category",
             hover_name="title",
-            title="📈 Haber Yoğunluğu vs Etki Puanı",
+            title="Haber Yoğunluğu vs Etki Puanı",
             labels={"score": "Etki Puanı (1-10)", "published_at": "Yayın Tarihi"},
         )
         fig.add_hline(
@@ -229,10 +228,10 @@ def _render_results(price, summary, results):
         )
         st.plotly_chart(fig, use_container_width=True)
     else:
-        st.info("📭 İlgili haber bulunamadı.")
+        st.info("İlgili haber bulunamadı.")
 
     st.divider()
-    st.subheader("📋 Tüm İlgili Haberler")
+    st.subheader("Tüm İlgili Haberler")
 
     if relevant_results:
         sorted_results = sorted(relevant_results, key=lambda x: x.sentiment_score, reverse=True)
@@ -255,6 +254,9 @@ def _render_results(price, summary, results):
             }
             selected_cat_en = rev_map.get(selected_category_display)
             filtered = [r for r in sorted_results if r.category == selected_cat_en]
+        
+        # Apply confidence filter
+        filtered = [r for r in filtered if r.confidence_score >= confidence_threshold]
 
         for item in filtered:
             with st.container(border=True):
@@ -262,48 +264,46 @@ def _render_results(price, summary, results):
                 st.write(item.article.description or "-")
 
                 col_cat, col_score, col_conf, col_date = st.columns(4)
-                col_cat.caption(f"📂 {_category_tr(item.category)}")
+                col_cat.caption(f"{_category_tr(item.category)}")
 
                 if item.sentiment_score >= 7:
-                    score_color = "🟢"
+                    score_color = "[High]"
                 elif item.sentiment_score <= 4:
-                    score_color = "🔴"
+                    score_color = "[Low]"
                 else:
-                    score_color = "🟡"
+                    score_color = "[Med]"
                 col_score.caption(f"{score_color} Skor: **{item.sentiment_score}/10**")
                 
                 # Confidence badge
                 conf_pct = int(item.confidence_score * 100)
                 if item.confidence_score >= 0.8:
-                    conf_color = "🟢"
+                    conf_color = "[High]"
                 elif item.confidence_score >= 0.5:
-                    conf_color = "🟡"
+                    conf_color = "[Med]"
                 else:
-                    conf_color = "🔴"
+                    conf_color = "[Low]"
                 col_conf.caption(f"{conf_color} Güven: **%{conf_pct}**")
                 
-                col_date.caption(f"🕐 {item.article.published_at.strftime('%d %b %H:%M')}")
+                col_date.caption(f"{item.article.published_at.strftime('%d %b %H:%M')}")
 
-                st.write(f"*💭 {item.impact_reasoning}*")
+                st.write(f"*{item.impact_reasoning}*")
                 
                 # Show reasoning if available
                 if item.reasoning:
-                    with st.expander("🧠 AI Muhakeme Süreci"):
+                    with st.expander("AI Muhakeme Süreci"):
                         st.caption("Modelin bu sonuca nasıl vardığını görebilirsiniz:")
                         st.info(item.reasoning)
     else:
-        st.info("📭 İlgili haber bulunamadı.")
+        st.info("İlgili haber bulunamadı.")
 
 
-st.subheader("🧭 Adım Adım Süreç")
 tab_fetch, tab_tonl, tab_analyze, tab_debug = st.tabs(
-    ["1) Haber Hasadı", "2) TONL Optimizasyonu", "3) Analiz ve Rapor", "4) Debug Console"]
+    ["Haber Hasadı", "TONL", "Analiz", "Debug"]
 )
 
 with tab_fetch:
-    st.markdown("**Adım 1:** NewsAPI üzerinden haberleri çek ve ham JSON'u göster.")
 
-    if st.button("📥 Haberleri Getir", type="primary", key="fetch_news"):
+    if st.button("Haberleri Getir", type="primary", key="fetch_news"):
         with st.spinner("Haberler çekiliyor..."):
             try:
                 articles, payload = _run_fetch_sync(fetcher)
@@ -316,7 +316,7 @@ with tab_fetch:
         (Path("logs") / "raw_news.json").write_text(
             json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
         )
-        st.success(f"✅ {len(articles)} haber çekildi ve raw_news.json kaydedildi.")
+        st.success(f"{len(articles)} haber çekildi ve raw_news.json kaydedildi.")
 
     if st.session_state.raw_payload:
         st.caption("Ham JSON verisi (NewsAPI payload)")
@@ -326,12 +326,10 @@ with tab_fetch:
         st.info("Haberleri çekmek için butona bas.")
 
 with tab_tonl:
-    st.markdown("**Adım 2:** JSON → TONL dönüşümü ve token tasarrufu analizi.")
-
     if not st.session_state.raw_payload:
         st.info("Önce 1. adımı tamamla (haberleri çek).")
     else:
-        if st.button("🔄 TONL'e Çevir", type="primary", key="convert_tonl"):
+        if st.button("TONL'e Çevir", type="primary", key="convert_tonl"):
             raw_articles = st.session_state.raw_payload.get("articles", [])
             tonl_text = encode_news_articles(raw_articles)
             st.session_state.tonl_text = tonl_text
@@ -356,31 +354,31 @@ with tab_tonl:
             col_json, col_tonl = st.columns(2)
             with col_json:
                 st.caption("JSON (Ham)")
-                st.code(json_text, language="json")
+                with st.expander("Tıkla: JSON Formatını Göster", expanded=False):
+                    st.code(json.dumps(raw_articles, ensure_ascii=False, indent=2), language="json")
             with col_tonl:
                 st.caption("TONL (Optimize)")
-                st.code(tonl_text, language="text")
+                with st.expander("Tıkla: TONL Formatını Göster", expanded=False):
+                    st.code(tonl_text, language="text")
         else:
             st.info("TONL dönüşümü için butona bas.")
 
 with tab_analyze:
-    st.markdown("**Adım 3:** TONL verisini analize gönder ve raporu üret.")
-
     if not st.session_state.tonl_text:
         st.info("Önce 2. adımı tamamla (TONL'e çevir).")
     else:
-        if st.button("🤖 Analizi Başlat", type="primary", key="run_analysis"):
+        if st.button("Analizi Başlat", type="primary", key="run_analysis"):
             # STEP 1: Fetch gold price first (non-blocking)
             progress_bar = st.progress(0)
             status_text = st.empty()
             
-            status_text.text("🔍 Altın fiyatı sorgulanıyor...")
+            status_text.text("Altın fiyatı sorgulanıyor...")
             progress_bar.progress(10)
             
             price = price_service.get_current_price()
             
             if price is None:
-                st.warning("⚠️ Altın fiyat bilgisi alınamadı (Truncgil/Binance yanıt vermedi). Analiz devam ediyor...")
+                st.warning("Altın fiyat bilgisi alınamadı (Truncgil/Binance yanıt vermedi). Analiz devam ediyor...")
             else:
                 st.success(f"✅ Güncel altın fiyatı: **${price:.2f}**")
             
@@ -393,7 +391,7 @@ with tab_analyze:
             progress_bar.progress(30)
             
             # STEP 3: Run analysis with progress updates
-            status_text.text(f"🤖 {len(articles)} haber DSPy ile analiz ediliyor...")
+            status_text.text(f"{len(articles)} haber DSPy ile analiz ediliyor...")
             try:
                 # Clear previous LM history to capture only this run
                 analyst._configure_lm()
@@ -409,7 +407,7 @@ with tab_analyze:
                 progress_bar.progress(90)
 
                 # Generate summary
-                status_text.text("📊 Özet rapor oluşturuluyor...")
+                status_text.text("Özet rapor oluşturuluyor...")
                 summary = engine.summarize(results)
                 
                 # Capture LM history and usage for debug console
@@ -442,7 +440,7 @@ with tab_analyze:
             # Token Usage Summary
             if st.session_state.token_usage:
                 st.divider()
-                st.subheader("💰 Token Kullanım İstatistikleri")
+                st.subheader("Token Kullanım İstatistikleri")
                 col1, col2 = st.columns(2)
                 col1.metric("Toplam LM Çağrısı", st.session_state.token_usage.get('total_calls', 0))
                 col2.metric("History Kayıt Sayısı", st.session_state.token_usage.get('history_count', 0))
@@ -462,20 +460,18 @@ with tab_analyze:
             st.info("Analizi başlatmak için butona bas.")
 
 with tab_debug:
-    st.markdown("**Debug Console:** DSPy LM çağrılarının arka planını incele.")
-    
     if not st.session_state.lm_history:
         st.info("Henüz analiz yapılmadı. Önce 3. adımı (Analiz ve Rapor) tamamla.")
     else:
-        st.success(f"📊 {len(st.session_state.lm_history)} LM çağrısı kaydedildi (son 3 adet gösteriliyor)")
+        st.success(f"{len(st.session_state.lm_history)} LM çağrısı kaydedildi (son 3 adet gösteriliyor)")
         
         for idx, call in enumerate(st.session_state.lm_history, 1):
             with st.expander(f"🔍 LM Çağrısı #{idx} - {call.get('model', 'unknown')}"):
-                st.caption(f"⏱️ Timestamp: {call.get('timestamp', 'N/A')}")
+                st.caption(f"Timestamp: {call.get('timestamp', 'N/A')}")
                 
                 # Show prompt/messages
                 if 'messages' in call and call['messages']:
-                    st.markdown("**📥 Messages (Input):**")
+                    st.markdown("**Messages (Input):**")
                     for msg in call['messages']:
                         role = msg.get('role', 'unknown')
                         content = msg.get('content', '')
@@ -484,13 +480,13 @@ with tab_debug:
                 
                 # Show response
                 if 'outputs' in call and call['outputs']:
-                    st.markdown("**📤 Response (Output):**")
+                    st.markdown("**Response (Output):**")
                     for output in call['outputs']:
                         st.code(str(output)[:500] + ('...' if len(str(output)) > 500 else ''), language='text')
                 
                 # Show usage stats
                 if 'usage' in call and call['usage']:
-                    st.markdown("**💰 Token Usage:**")
+                    st.markdown("**Token Usage:**")
                     usage = call['usage']
                     col1, col2, col3 = st.columns(3)
                     col1.metric("Prompt", usage.get('prompt_tokens', 'N/A'))
