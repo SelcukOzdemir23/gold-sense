@@ -120,8 +120,8 @@ def _to_article(item: dict) -> NewsArticle:
     )
 
 
-tab_fetch, tab_tonl, tab_analyze = st.tabs(
-    ["Haber Hasadı", "TONL", "Analiz"]
+tab_fetch, tab_tonl, tab_analyze, tab_perf = st.tabs(
+    ["Haber Hasadı", "TONL", "Analiz", "Performans Raporu"]
 )
 
 with tab_fetch:
@@ -305,6 +305,37 @@ with tab_analyze:
                 # Analyze articles (this is the heavy operation)
 
                 results = _run_analysis_sync(analyst, articles)
+                # DSPy Prompt ve History Yakalama (Performans Raporu için)
+                try:
+                    import io
+                    import sys
+                    
+                    # dspy.inspect_history() stdout'a yazdığı için yakalamalıyız
+                    old_stdout = sys.stdout
+                    sys.stdout = buffer = io.StringIO()
+                    dspy.inspect_history(n=3)  # Son 3 LLM çağrısı
+                    captured_history = buffer.getvalue()
+                    sys.stdout = old_stdout
+                    
+                    if captured_history.strip():
+                        st.session_state.dspy_prompt_report = captured_history
+                        print(f"✅ DEBUG: DSPy history captured ({len(captured_history)} chars)")
+                    else:
+                        st.session_state.dspy_prompt_report = None
+                        print(f"⚠️  DEBUG: DSPy inspect_history returned empty")
+                except Exception as e:
+                    st.session_state.dspy_prompt_report = f"History yakalanamadı: {e}"
+                    print(f"⚠️  DEBUG: inspect_history failed: {e}")
+                
+                # Token kullanım istatistikleri
+                st.session_state.token_usage = {
+                    'total_calls': len(results),
+                    'relevant_count': summary.relevant_articles,
+                    'model': effective_settings.cerebras_model,
+                    'temperature': effective_settings.analysis_temperature,
+                    'few_shot_count': len(TRAINING_SET) if 'TRAINING_SET' in dir() else 9,
+                }
+
                 progress_bar.progress(80)
                 
                 # Log results
@@ -404,5 +435,67 @@ with tab_analyze:
             
             st.info("👆 Hazır olduğunda yukarıdaki butona basarak analizi başlatabilirsin.")
 
-# Performans sekmesi kaldırıldı - istatistikler artık Analiz sekmesinde
+# --- PERFORMANS RAPORU SEKMESİ ---
+with tab_perf:
+    st.subheader("📊 DSPy Performans Raporu")
+    st.caption("Bu sekme, DSPy'ın LLM'e gönderdiği prompt yapısını ve Few-Shot örneklerini gösterir.")
+    
+    if "dspy_prompt_report" not in st.session_state or st.session_state.dspy_prompt_report is None:
+        st.info("⏳ Henüz analiz yapılmadı. Lütfen 'Analiz' sekmesinden bir analiz çalıştırın.")
+        st.markdown("""
+        ### Bu Raporda Neler Göreceksiniz?
+        
+        Analiz tamamlandıktan sonra bu sekmede:
+        
+        1. **🤖 DSPy Prompt Yapısı**: LLM'e gönderilen tam prompt metni
+        2. **📚 Few-Shot Örnekleri**: Modele öğretilen 9 adet uzman analizi
+        3. **⚙️ Model Ayarları**: Kullanılan model, temperature, vb.
+        4. **📈 Performans Metrikleri**: Analiz istatistikleri
+        
+        Bu bilgiler, sistemin **nasıl düşündüğünü** anlamanıza yardımcı olur.
+        """)
+    else:
+        # Token Usage Stats
+        if st.session_state.token_usage:
+            st.markdown("### 📈 Analiz Özeti")
+            col1, col2, col3, col4 = st.columns(4)
+            col1.metric("Toplam Analiz", st.session_state.token_usage.get('total_calls', 'N/A'))
+            col2.metric("İlgili Haber", st.session_state.token_usage.get('relevant_count', 'N/A'))
+            col3.metric("Few-Shot Örnek", st.session_state.token_usage.get('few_shot_count', 9))
+            col4.metric("Model", st.session_state.token_usage.get('model', 'N/A').split('/')[-1] if st.session_state.token_usage.get('model') else 'N/A')
+            
+            st.divider()
+        
+        # Few-Shot Examples Display
+        st.markdown("### 📚 DSPy Few-Shot Eğitim Seti")
+        st.caption("Bu örnekler, modele 'nasıl düşünmesi gerektiğini' öğretir.")
+        
+        with st.expander("Few-Shot Örneklerini Görüntüle", expanded=False):
+            from goldsense.examples import TRAINING_SET
+            for i, example in enumerate(TRAINING_SET, 1):
+                with st.container(border=True):
+                    st.markdown(f"**Örnek #{i}**")
+                    st.write(f"**Başlık:** {example.title}")
+                    st.write(f"**Açıklama:** {example.description[:100]}..." if len(example.description) > 100 else f"**Açıklama:** {example.description}")
+                    
+                    cols = st.columns(3)
+                    cols[0].caption(f"Kategori: {example.category}")
+                    cols[1].caption(f"Skor: {example.sentiment_score}/10")
+                    cols[2].caption(f"Güven: {example.confidence_score}")
+                    
+                    if hasattr(example, 'rationale') and example.rationale:
+                        st.info(f"💭 Rationale: {example.rationale[:150]}...")
+        
+        st.divider()
+        
+        # DSPy Prompt Output
+        st.markdown("### 🤖 DSPy LLM Prompt Çıktısı")
+        st.caption("Bu, modele gönderilen gerçek prompt yapısıdır (son 3 çağrı).")
+        
+        prompt_report = st.session_state.dspy_prompt_report
+        if prompt_report and not prompt_report.startswith("History yakalanamadı"):
+            st.code(prompt_report, language="text")
+        else:
+            st.warning(str(prompt_report) if prompt_report else "Prompt bilgisi alınamadı.")
+            st.caption("DSPy'ın inspect_history() fonksiyonu beklendiği gibi çalışmadı.")
 
