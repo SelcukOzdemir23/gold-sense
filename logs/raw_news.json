@@ -1,7 +1,124 @@
 {
   "status": "ok",
-  "totalResults": 683,
+  "totalResults": 692,
   "articles": [
+    {
+      "source": {
+        "id": null,
+        "name": "CoinDesk"
+      },
+      "author": "Will Canny, AI Boost",
+      "title": "This bullish analyst on Michael Saylor's Strategy just threw in the towel on lofty price target",
+      "description": "Canaccord's Joseph Vafi slashed his price target on the plunging bitcoin treasury company's stock by more than 60%.",
+      "url": "https://www.coindesk.com/markets/2026/02/04/this-bullish-analyst-on-michael-saylor-s-strategy-just-threw-in-the-towel",
+      "urlToImage": "https://cdn.sanity.io/images/s3y3vcno/production/28ee13d93bd9b44fa7fd6e10b0452bde47d4ddcd-1920x1080.jpg?auto=format&w=960&h=540&crop=focalpoint&fit=clip&q=75&fm=jpg",
+      "publishedAt": "2026-02-04T14:26:36Z",
+      "content": "With crypto winter clearly having set in, bulls are now left looking for signs that the bearishness has become so embedded that a bottom might form.\r\nOne case in point might be a note from Canaccord'… [+1839 chars]"
+    },
+    {
+      "source": {
+        "id": "fox-news",
+        "name": "Fox News"
+      },
+      "author": null,
+      "title": "Kevin Warsh must move fast to undo the worst Fed mistakes in decades",
+      "description": "President Trump was smart to select Kevin Warsh as next Fed chairman. He should reverse Jerome Powell’s policies and work quickly to restore stability at the Federal Reserve.",
+      "url": "https://www.foxnews.com/opinion/kevin-warsh-must-move-fast-undo-worst-fed-mistakes-decades",
+      "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2026/02/kevin-warsh-april-2025-trump-federal-reserve-getty.jpg",
+      "publishedAt": "2026-02-04T14:00:19Z",
+      "content": "President Trump hit the bullseye in selecting Kevin Warsh as the next Federal Reserve Board chairman.\r\nIn contrast to the failed tenure of Jerome Powell, Warsh is not political, and he is not an infl… [+4425 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Ndtvprofit.com"
+      },
+      "author": "Press Trust of India",
+      "title": "Silver Hits Near Rs 3 Lakh/Kg, Gold Climbs To Rs 1.65 Lakh/10g Amid Global Rally",
+      "description": "Firm global trends, a weak US dollar, which revived investor interest in precious metals after last week&#039;s steep sell-off, contributed to the surge, traders said.",
+      "url": "https://www.ndtvprofit.com/markets/silver-rockets-near-rs-3-lakh-kg-gold-climbs-to-rs-1-65-lakh-10g-amid-global-rally-10946423",
+      "urlToImage": "https://c.ndtvimg.com/2026-01/6cd0c63e_Gold-Market-Gold-Jewelry-bangles-shots-Zaveri-Bazaar.-Photo-Mariyam-NDTV-Profit.jpg.jpg?im=FeatureCrop,algorithm=dnn,width=1080,height=607",
+      "publishedAt": "2026-02-04T13:59:34Z",
+      "content": "Precious metals extended their sharp rally for the second straight day in the national capital on Wednesday, with silver prices surging to Rs 2.98 lakh per kg and gold climbing to Rs 1.65 lakh per 10… [+1891 chars]"
+    },
+    {
+      "source": {
+        "id": "financial-post",
+        "name": "Financial Post"
+      },
+      "author": "Bloomberg News",
+      "title": "Gold rebounds above US$5,000 as historic retreat tempts dip buyers",
+      "description": "Gold rose for a second day, rebounding above US$5,000 an ounce as dip buyers snapped up precious metals. Read more.",
+      "url": "https://financialpost.com/investing/gold-rebounds-historic-retreat-tempts-dip-buyers",
+      "urlToImage": "https://smartcdn.gprod.postmedia.digital/financialpost/wp-content/uploads/2026/02/0205-bc-gold.jpg",
+      "publishedAt": "2026-02-04T13:55:13Z",
+      "content": "Gold rose for a second day, rebounding above US$5,000 an ounce as dip buyers snapped up precious metals following a historic collapse from record highs.\r\nTHIS CONTENT IS RESERVED FOR SUBSCRIBERS ONLY… [+4874 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Fair Observer"
+      },
+      "author": "Alex Gloy",
+      "title": "Dollar Milkshake Theory Is Still Useful",
+      "description": "In 2018, investment manager Brent Johnson introduced the Dollar Milkshake Theory to answer a big puzzle in modern economics: Why does the dollar grow stronger during crises, even when the US is printing money? Johnson argues that a strong US dollar (the straw…",
+      "url": "https://www.fairobserver.com/economics/dollar-milkshake-theory-is-still-useful/",
+      "urlToImage": "https://www.fairobserver.com/wp-content/uploads/2026/02/graphs-.jpg",
+      "publishedAt": "2026-02-04T13:38:56Z",
+      "content": "In 2018, investment manager Brent Johnson introduced the Dollar Milkshake Theory to answer a big puzzle in modern economics: Why does the dollar grow stronger during crises, even when the US is print… [+15153 chars]"
+    },
+    {
+      "source": {
+        "id": "the-irish-times",
+        "name": "The Irish Times"
+      },
+      "author": "Emma Dunkley and Alan Livsey",
+      "title": "Amundi says it will cut exposure to US over coming year",
+      "description": "€2.4tn asset manager is latest to voice concern over US policymaking and its impact on dollar assets",
+      "url": "https://www.irishtimes.com/business/2026/02/04/amundi-says-it-will-cut-exposure-to-us-over-coming-year/",
+      "urlToImage": "https://www.irishtimes.com/resizer/v2/QWG6XCUEANO2GLWNEA3EGAV2UY.jpg?smart=true&auth=1c832e60062f20e2b6ef9fe93e14ff22ed8a57ab9d992dd11dc4f30f3fe0dd42&width=1200&height=630",
+      "publishedAt": "2026-02-04T13:24:35Z",
+      "content": "Europes largest asset manager Amundi is reducing its exposure to US dollar assets and turning to European and emerging markets, its chief executive has said.\r\nValerie Baudson, whose firm has 2.4 tril… [+3257 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "CoinDesk"
+      },
+      "author": "Will Canny, AI Boost",
+      "title": "Bitcoin nears pre-election floor as ETF flows stall, Citi says",
+      "description": "The cryptocurrency is trading below key ETF cost levels and nearing its pre-election price floor as inflows to these vehicles fade and headwinds build, the bank said.",
+      "url": "https://www.coindesk.com/markets/2026/02/04/bitcoin-nears-pre-election-floor-as-etf-flows-stall-citi-says",
+      "urlToImage": "https://cdn.sanity.io/images/s3y3vcno/production/ce6e5878a3bba05bcb92f58c5d32dad187180ea3-1920x1080.jpg?auto=format&w=960&h=540&crop=focalpoint&fit=clip&q=75&fm=jpg",
+      "publishedAt": "2026-02-04T12:57:30Z",
+      "content": "Crypto markets are approaching important inflection points after weeks of declines, according to Wall Street bank Citi (C).\r\nBitcoin BTC\r\n$76,073.52 fell to around $73,000 before stabilizing, extendi… [+1725 chars]"
+    },
+    {
+      "source": {
+        "id": "the-times-of-india",
+        "name": "The Times of India"
+      },
+      "author": "Piyush Shukla",
+      "title": "Gold and silver price today: Gold again crosses $5,000 and silver touches $90 — will gold and silver continue to gain in this cycle to touch $6,300 and $125?",
+      "description": "Gold and silver price today: Gold prices surged 2.7% to $5,071.79 on February 4, 2026. This move reclaimed the vital $5,000 psychological floor. Silver followed with an 8% jump to $89.92. Fresh U.S.-Iran tensions drove this safe-haven rally. J.P. Morgan now f…",
+      "url": "https://economictimes.indiatimes.com/news/international/us/gold-and-silver-price-today-gold-again-crosses-5000-and-silver-touches-90-will-gold-and-silver-continue-to-gain-in-this-cycle-to-touch-6300-and-125/articleshow/127910027.cms",
+      "urlToImage": "https://img.etimg.com/thumb/msid-127910472,width-1200,height-630,imgsize-43008,overlay-economictimes/articleshow.jpg",
+      "publishedAt": "2026-02-04T12:52:57Z",
+      "content": "Gold and silver price today: Gold futures (GC00) surged to $5,071.60 per ounce, up $136.60 or 2.77%, reclaiming the psychologically critical $5,000 level in Asian trading. Silver futures (SI00) follo… [+7489 chars]"
+    },
+    {
+      "source": {
+        "id": "financial-post",
+        "name": "Financial Post"
+      },
+      "author": "Bloomberg News",
+      "title": "Michael Burry warns of cascading effects from Bitcoin plunge",
+      "description": "Michael Burry warned that Bitcoin’s plunge could deepen into a self-reinforcing “death spiral,” inflicting lasting damage. Read more.",
+      "url": "https://financialpost.com/fp-finance/cryptocurrency/michael-burry-cascading-effects-bitcoin-plunge",
+      "urlToImage": "https://smartcdn.gprod.postmedia.digital/financialpost/wp-content/uploads/2026/02/0205-bc-burry.jpg",
+      "publishedAt": "2026-02-04T12:48:50Z",
+      "content": "Michael Burry, the money manager made famous in The Big Short, warned that Bitcoins plunge could deepen into a self-reinforcing death spiral, inflicting lasting damage on companies that have spent th… [+5084 chars]"
+    },
     {
       "source": {
         "id": null,
@@ -521,123 +638,6 @@
       "urlToImage": "https://c.ndtvimg.com/2026-02/mrrl8q28_trade-setup_625x300_02_February_26.jpg?im=FeatureCrop,algorithm=dnn,width=1080,height=607",
       "publishedAt": "2026-02-04T00:30:01Z",
       "content": "Good Morning!\r\nThe GIFT Nifty is trading with losses of around 0.3% at 25,779, indicating a negative open for the benchmark index. US and European index futures, meanwhile, are trading marginally low… [+19325 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Bitcoinist"
-      },
-      "author": "Christian Encila",
-      "title": "Bitcoin Holds $78K Amid Signs Of Economic Recovery: Analysts",
-      "description": "A surprise uptick in a key factory gauge has traders rethinking risk, while crypto watchers debate whether Bitcoin will ride a fresh wave higher or stay stuck in a drawdown. The ISM Manufacturing PMI rose into expansion territory in January, and that single d…",
-      "url": "https://bitcoinist.com/bitcoin-holds-78k-amid-signs-of-economic-recovery-analysts/",
-      "urlToImage": "https://bitcoinist.com/wp-content/uploads/2026/02/a_07ec1f.avif",
-      "publishedAt": "2026-02-03T23:00:08Z",
-      "content": "A surprise uptick in a key factory gauge has traders rethinking risk, while crypto watchers debate whether Bitcoin will ride a fresh wave higher or stay stuck in a drawdown.\r\nThe ISM Manufacturing PM… [+3642 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Crypto Briefing"
-      },
-      "author": "Editorial Team",
-      "title": "Steve Sosnick: Bitcoin’s volatility hinders its role as a safe haven, gold outperforms during downturns, and digital asset treasury companies may be overvalued | Unchained",
-      "description": "Bitcoin's rising volatility challenges its role as a safe haven compared to traditional assets like gold.\nThe post Steve Sosnick: Bitcoin’s volatility hinders its role as a safe haven, gold outperforms during downturns, and digital asset treasury companies ma…",
-      "url": "https://cryptobriefing.com/steve-sosnick-bitcoins-volatility-hinders-its-role-as-a-safe-haven-gold-outperforms-during-downturns-and-digital-asset-treasury-companies-may-be-overvalued-unchained/",
-      "urlToImage": "https://static.cryptobriefing.com/wp-content/uploads/2025/12/24141205/unchained-podcast-featured-800x420.png",
-      "publishedAt": "2026-02-03T22:10:37Z",
-      "content": "Bitcoin's rising volatility challenges its role as a safe haven compared to traditional assets like gold. Key takeaways\r\n<ul><li>Bitcoin’s status has shifted to a risk asset, performing well during m… [+9139 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Crypto Briefing"
-      },
-      "author": "Editorial Team",
-      "title": "Michael Nadeau: Crypto bear market is here, Bitcoin’s fair value is $65,000, and the Fed’s policies could hinder recovery | Bankless",
-      "description": "Current bear market trends suggest a slow recovery ahead for crypto investors seeking entry points.\nThe post Michael Nadeau: Crypto bear market is here, Bitcoin’s fair value is $65,000, and the Fed’s policies could hinder recovery | Bankless appeared first on…",
-      "url": "https://cryptobriefing.com/michael-nadeau-crypto-bear-market-is-here-bitcoins-fair-value-is-65000-and-the-feds-policies-could-hinder-recovery-bankless/",
-      "urlToImage": "https://static.cryptobriefing.com/wp-content/uploads/2025/12/24141156/bankless-podcast-featured-800x420.png",
-      "publishedAt": "2026-02-03T21:15:29Z",
-      "content": "Current bear market trends suggest a slow recovery ahead for crypto investors seeking entry points. Key takeaways\r\n<ul><li>The current crypto market is experiencing a typical bear market cycle, with … [+7999 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Crypto Briefing"
-      },
-      "author": "Editorial Team",
-      "title": "Steve Sosnick: Bitcoin’s transition to a risk asset, why gold is a better safe haven now, and the impact of central bank independence on market stability | Unchained",
-      "description": "Bitcoin's rise as a risk asset highlights its growing ties to traditional markets and investor sentiment.\nThe post Steve Sosnick: Bitcoin’s transition to a risk asset, why gold is a better safe haven now, and the impact of central bank independence on market …",
-      "url": "https://cryptobriefing.com/steve-sosnick-bitcoins-transition-to-a-risk-asset-why-gold-is-a-better-safe-haven-now-and-the-impact-of-central-bank-independence-on-market-stability-unchained/",
-      "urlToImage": "https://static.cryptobriefing.com/wp-content/uploads/2025/12/24141205/unchained-podcast-featured-800x420.png",
-      "publishedAt": "2026-02-03T20:53:53Z",
-      "content": "Bitcoin's rise as a risk asset highlights its growing ties to traditional markets and investor sentiment. Key Takeaways\r\n<ul><li>Bitcoin has transitioned into a risk asset, performing well during per… [+9856 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Barchart.com"
-      },
-      "author": "Andrew Hecht",
-      "title": "Was Risk in Gold and Silver too High and What are Mining Shares Signaling?",
-      "description": "Gravity is a strong force. Gold and silver have experienced parabolic rallies, and while it is impossible to pick tops or bottoms in any market, the risk of ...",
-      "url": "https://www.barchart.com/story/news/2377/was-risk-in-gold-and-silver-too-high-and-what-are-mining-shares-signaling",
-      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/5HOj2GMsSpxwtmJ0jcjEXQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzU-/https://media.zenfs.com/en/barchart_com_477/580dc98f15949db997ba93b6ee6af239",
-      "publishedAt": "2026-02-03T20:00:03Z",
-      "content": "Sir Issac Newtons Third Law of Motion states that for every action, there is an equal and opposite reaction. Gold and silvers parabolic rallies have reached a frenzy, and while prices could continue … [+6184 chars]"
-    },
-    {
-      "source": {
-        "id": "cbs-news",
-        "name": "CBS News"
-      },
-      "author": "Kristine  Lazar",
-      "title": "Los Angeles jeweler struggles to keep up with historic gold prices",
-      "description": "Gold prices have surged to historic highs in recent years and experts say the momentum is unlikely to slow anytime soon.",
-      "url": "https://www.cbsnews.com/news/los-angeles-jeweler-struggles-historic-gold-prices/",
-      "urlToImage": "https://assets2.cbsnewsstatic.com/hub/i/r/2026/02/03/b619de3b-fd1d-416e-9d2e-a6e1dc282ef3/thumbnail/1200x630/f32a0841fa4a695c88e5b77867d3a785/gold.png",
-      "publishedAt": "2026-02-03T19:43:00Z",
-      "content": "Gold prices have surged to historic highs, topping $5,300 an ounce for the first time last week, a dramatic rise that is rippling through the precious metals market and forcing local jewelers to reth… [+3341 chars]"
-    },
-    {
-      "source": {
-        "id": "the-times-of-india",
-        "name": "The Times of India"
-      },
-      "author": "Piyush Shukla",
-      "title": "Gold price again closer to $5,000 – Why gold futures are surging today – How gold has outperformed stocks as gold price forecasts point to $6,000 in 2026",
-      "description": "Gold price again closer to $5,000 per ounce today. Gold futures surged nearly 7% on Feb. 3, jumping over $320 in one session and trading near $5,000 per ounce. Prices opened around $4,948 after closing near $4,653 a day earlier. Heavy central-bank buying, fal…",
-      "url": "https://economictimes.indiatimes.com/news/international/us/gold-price-again-closer-to-5000-why-gold-futures-are-surging-above-5000-today-how-gold-has-outperformed-stocks-as-gold-price-forecasts-point-to-6000-in-2026/articleshow/127892908.cms",
-      "urlToImage": "https://img.etimg.com/thumb/msid-127893493,width-1200,height-630,imgsize-64288,overlay-economictimes/articleshow.jpg",
-      "publishedAt": "2026-02-03T18:57:43Z",
-      "content": "Gold price again closer to $5,000 per ounce today. Gold futures surged nearly 7% on Feb. 3. Gold futures delivered one of the sharpest single-day moves in modern market history on Feb. 3, surging nea… [+6006 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Databricks.com"
-      },
-      "author": null,
-      "title": "Delta Lake Explained: Boost Data Reliability in Cloud Storage",
-      "description": "Discover how Delta Lake enhances data reliability and performance with its robust storage framework for data engineers using Spark and Databricks.",
-      "url": "https://www.databricks.com/blog/delta-lake-explained-boost-data-reliability-cloud-storage",
-      "urlToImage": "https://www.databricks.com/sites/default/files/2026-02/2026-01-ogimages-blogs-4-personas-apps-5-og-1200x628_0.png",
-      "publishedAt": "2026-02-03T18:50:00Z",
-      "content": "What is Delta Lake? \r\nData-reliant organizations today face a critical challenge of how to build data infrastructure that's both flexible enough to handle diverse AI workloads and reliable enough to … [+14609 chars]"
-    },
-    {
-      "source": {
-        "id": "financial-post",
-        "name": "Financial Post"
-      },
-      "author": "Bloomberg News",
-      "title": "US Stocks Tumble as AI Disruption Fears Rock Software Names",
-      "description": "US stocks fell on Tuesday, led by weakness in technology companies seen as vulnerable to disruption from artificial intelligence.",
-      "url": "https://financialpost.com/pmn/business-pmn/us-stocks-tumble-as-ai-disruption-fears-rock-software-names",
-      "urlToImage": "https://smartcdn.gprod.postmedia.digital/financialpost/wp-content/uploads/2026/02/us-stocks-fall-on-ai-worries-the-sp-500-pulled-away-from-ne.jpg",
-      "publishedAt": "2026-02-03T18:41:41Z",
-      "content": "(Bloomberg) US stocks fell on Tuesday, led by weakness in technology companies seen as vulnerable to disruption from artificial intelligence.\r\nTHIS CONTENT IS RESERVED FOR SUBSCRIBERS ONLY\r\nSubscribe… [+5438 chars]"
     }
   ]
 }

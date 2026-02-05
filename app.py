@@ -48,6 +48,37 @@ with st.sidebar:
         help="Sadece bu seviye ve üzerindeki güven skorlu haberleri göster"
     )
     st.caption(f"Gösterilecek: %{int(confidence_threshold * 100)}+ güven")
+    
+    st.divider()
+    
+    # Model Seçici
+    st.subheader("🤖 Model Seçimi")
+    available_models = {
+        "llama-3.3-70b": "Llama 3.3 70B (Önerilen)",
+        "qwen-3-32b": "Qwen 3 32B (Alternatif)",
+        "llama3.1-8b": "Llama 3.1 8B (Hızlı)",
+        "gpt-oss-120b": "GPT-OSS 120B (Büyük)",
+    }
+    
+    # Model seçimi
+    selected_model_display = st.selectbox(
+        "Cerebras Model",
+        options=list(available_models.values()),
+        index=0,
+        help="Rate limit hatası alırsanız başka modele geçin"
+    )
+    
+    # Display -> Key mapping
+    selected_model_key = [k for k, v in available_models.items() if v == selected_model_display][0]
+    
+    # Session state'e kaydet
+    if "sidebar_model" not in st.session_state:
+        st.session_state.sidebar_model = selected_model_key
+    elif st.session_state.sidebar_model != selected_model_key:
+        st.session_state.sidebar_model = selected_model_key
+        st.rerun()  # Model değiştiğinde yenile
+    
+    st.caption(f"Aktif: `{selected_model_key}`")
 
 try:
     settings.validate()
@@ -58,15 +89,24 @@ except ConfigError as exc:
 effective_settings = replace(settings)
 
 # --- GLOBAL DSPY CONFIGURATION (Dependency Injection Root) ---
-try:
+def configure_dspy(model_name: str):
+    """Reconfigure DSPy with a new model."""
     lm = dspy.LM(
-        f"openai/{effective_settings.cerebras_model}",
+        f"openai/{model_name}",
         api_key=effective_settings.cerebras_api_key,
         api_base=effective_settings.cerebras_api_base,
         temperature=effective_settings.analysis_temperature,
-        cache=False,  # Disable cache for fresh results
+        cache=False,
     )
-    dspy.configure(lm=lm, track_usage=True)
+    dspy.configure(lm=lm)
+    return lm
+
+# Kullanılacak model: Sidebar'dan seçilen veya default
+active_model = st.session_state.get("sidebar_model", effective_settings.cerebras_model)
+
+try:
+    current_lm = configure_dspy(active_model)
+    print(f"🤖 AKTIF MODEL: {active_model}")
 except Exception as exc:
     st.error(f"Global LM Configuration Failed: {exc}")
     st.stop()
@@ -74,11 +114,15 @@ except Exception as exc:
 from goldsense import ui
 
 fetcher = NewsFetcher(effective_settings)
-analyst = GoldAnalyst(effective_settings)
 engine = MarketEngine()
 
 price_service = GoldPriceService(effective_settings)
 logger = JsonlLogger(path=Path("logs/analysis.jsonl"))
+
+# NOT: GoldAnalyst artık analiz sırasında oluşturuluyor (model değişikliğini algılaması için)
+def get_analyst():
+    """Create a fresh GoldAnalyst with current DSPy config."""
+    return GoldAnalyst(effective_settings)
 
 if "raw_payload" not in st.session_state:
     st.session_state.raw_payload = None
@@ -304,6 +348,8 @@ with tab_analyze:
                 
                 # Analyze articles (this is the heavy operation)
 
+                # Analyst'ı şimdi oluştur (sidebar'dan seçilen modeli kullanması için)
+                analyst = get_analyst()
                 results = _run_analysis_sync(analyst, articles)
                 # DSPy Prompt ve History Yakalama (Performans Raporu için)
                 try:
@@ -361,7 +407,7 @@ with tab_analyze:
                     st.session_state.token_usage = {
                         'total_calls': len(results),
                         'relevant_count': summary.relevant_articles,
-                        'model': effective_settings.cerebras_model,
+                        'model': active_model,
                         'temperature': effective_settings.analysis_temperature,
                         'few_shot_count': 9,  # From examples.py
                     }
