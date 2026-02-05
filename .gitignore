@@ -50,7 +50,6 @@ htmlcov/
 .hypothesis/
 
 # Logs
-logs/
 *.log
 
 # Streamlit

@@ -26,7 +26,7 @@ from goldsense.fetcher import NewsFetcher
 from goldsense.logger import JsonlLogger
 from goldsense.models import NewsArticle
 from goldsense.price import GoldPriceService
-from goldsense.tonl import decode_news_articles, encode_news_articles
+from goldsense.tonl import decode_news_articles, encode_news_articles, encode_tonl, decode_tonl
 
 
 st.set_page_config(page_title="Gold-Sense AI", layout="wide")
@@ -365,42 +365,89 @@ with tab_fetch:
         st.info("👆 Haberleri çekmek için yukarıdaki butona tıklayın.")
 
 with tab_tonl:
-    if not st.session_state.raw_payload:
-        st.info("Önce 1. adımı tamamla (haberleri çek).")
-    else:
-        if st.button("TONL'e Çevir", type="primary", key="convert_tonl"):
-            raw_articles = st.session_state.raw_payload.get("articles", [])
-            tonl_text = encode_news_articles(raw_articles)
-            st.session_state.tonl_text = tonl_text
-
-            Path("logs").mkdir(parents=True, exist_ok=True)
-            (Path("logs") / "news.tonl").write_text(tonl_text, encoding="utf-8")
-
-        if st.session_state.tonl_text:
-            raw_articles = st.session_state.raw_payload.get("articles", [])
-            json_text = json.dumps(raw_articles, ensure_ascii=False)
-            tonl_text = st.session_state.tonl_text
-
-            json_chars = len(json_text)
-            tonl_chars = len(tonl_text)
-            savings = (1 - (tonl_chars / json_chars)) * 100 if json_chars else 0
-
-            col1, col2, col3 = st.columns(3)
-            col1.metric("JSON Karakter", f"{json_chars}")
-            col2.metric("TONL Karakter", f"{tonl_chars}")
-            col3.metric("Tasarruf", f"%{savings:.1f}")
-
-            col_json, col_tonl = st.columns(2)
-            with col_json:
-                st.caption("JSON (Ham)")
-                with st.expander("Tıkla: JSON Formatını Göster", expanded=False):
-                    st.code(json.dumps(raw_articles, ensure_ascii=False, indent=2), language="json")
-            with col_tonl:
-                st.caption("TONL (Optimize)")
-                with st.expander("Tıkla: TONL Formatını Göster", expanded=False):
-                    st.code(tonl_text, language="text")
+    subtab_news, subtab_playground = st.tabs(["📰 Haber Dönüştürücü", "🎮 Playground"])
+    
+    with subtab_news:
+        if not st.session_state.raw_payload:
+            st.info("Önce 1. adımı tamamla (haberleri çek).")
         else:
-            st.info("TONL dönüşümü için butona bas.")
+            if st.button("TONL'e Çevir (Haberler)", type="primary", key="convert_tonl_news"):
+                raw_articles = st.session_state.raw_payload.get("articles", [])
+                tonl_text = encode_news_articles(raw_articles)
+                st.session_state.tonl_text = tonl_text
+
+                Path("logs").mkdir(parents=True, exist_ok=True)
+                (Path("logs") / "news.tonl").write_text(tonl_text, encoding="utf-8")
+
+            if st.session_state.tonl_text:
+                raw_articles = st.session_state.raw_payload.get("articles", [])
+                json_text = json.dumps(raw_articles, ensure_ascii=False)
+                tonl_text = st.session_state.tonl_text
+
+                json_chars = len(json_text)
+                tonl_chars = len(tonl_text)
+                savings = (1 - (tonl_chars / json_chars)) * 100 if json_chars else 0
+
+                col1, col2, col3 = st.columns(3)
+                col1.metric("JSON Karakter", f"{json_chars}")
+                col2.metric("TONL Karakter", f"{tonl_chars}")
+                col3.metric("Tasarruf", f"%{savings:.1f}")
+
+                col_json, col_tonl = st.columns(2)
+                with col_json:
+                    st.caption("JSON (Ham)")
+                    with st.expander("Tıkla: JSON Formatını Göster", expanded=False):
+                        st.code(json.dumps(raw_articles, ensure_ascii=False, indent=2), language="json")
+                with col_tonl:
+                    st.caption("TONL (Optimize)")
+                    with st.expander("Tıkla: TONL Formatını Göster", expanded=False):
+                        st.code(tonl_text, language="text")
+            else:
+                st.info("TONL dönüşümü için butona bas.")
+
+    with subtab_playground:
+        st.subheader("🛠️ TONL Playground")
+        st.caption("Genel amaçlı JSON <-> TONL dönüştürücü. Haberlerden bağımsız test edebilirsiniz.")
+        
+        col_p1, col_p2 = st.columns(2)
+        
+        with col_p1:
+            st.markdown("### JSON -> TONL")
+            pg_json_input = st.text_area("JSON Verisi Giriniz:", height=300, placeholder='{"key": "value", "list": [1, 2]}')
+            
+            if st.button("Encode to TONL", key="pg_encode"):
+                if not pg_json_input.strip():
+                    st.warning("Lütfen JSON verisi girin.")
+                else:
+                    try:
+                        data = json.loads(pg_json_input)
+                        encoded = encode_tonl(data)
+                        
+                        chars_j = len(pg_json_input)
+                        chars_t = len(encoded)
+                        sav = (1 - (chars_t / chars_j)) * 100 if chars_j else 0
+                        
+                        st.success(f"Dönüştürüldü! Tasarruf: %{sav:.1f}")
+                        st.code(encoded, language="text")
+                    except json.JSONDecodeError as e:
+                        st.error(f"Geçersiz JSON: {e}")
+                    except Exception as e:
+                        st.error(f"Hata: {e}")
+
+        with col_p2:
+            st.markdown("### TONL -> JSON")
+            pg_tonl_input = st.text_area("TONL Verisi Giriniz:", height=300, placeholder='#version 1.0\nroot:\n  key: "value"')
+            
+            if st.button("Decode to JSON", key="pg_decode"):
+                if not pg_tonl_input.strip():
+                    st.warning("Lütfen TONL verisi girin.")
+                else:
+                    try:
+                        decoded = decode_tonl(pg_tonl_input)
+                        st.success("Dönüştürüldü!")
+                        st.json(decoded)
+                    except Exception as e:
+                        st.error(f"Hata: {e}")
 
 with tab_analyze:
     if not st.session_state.tonl_text:

@@ -66,3 +66,24 @@ def test_tonl_handles_empty_fields() -> None:
     assert back[0]["published_at"] == ""
     assert back[0]["source"] == ""
     assert back[0]["url"] == ""
+
+def test_news_url_removal() -> None:
+    articles = [
+        {
+            "title": "A",
+            "urlToImage": "http://img",
+            "source": {"name": "S"}
+        }
+    ]
+    
+    # Default -> Remove
+    tonl_def = encode_news_articles(articles)
+    assert "http://img" not in tonl_def
+    assert "urlToImage" not in tonl_def
+    
+    # Explicit False -> Keep
+    tonl_keep = encode_news_articles(articles, remove_url_to_image=False)
+    assert "http://img" in tonl_keep
+    # check that it is encoded correctly
+    assert 'urlToImage: "http://img"' in tonl_keep or 'urlToImage' in tonl_keep
+
