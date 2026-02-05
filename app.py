@@ -326,15 +326,6 @@ with tab_analyze:
                 except Exception as e:
                     st.session_state.dspy_prompt_report = f"History yakalanamadı: {e}"
                     print(f"⚠️  DEBUG: inspect_history failed: {e}")
-                
-                # Token kullanım istatistikleri
-                st.session_state.token_usage = {
-                    'total_calls': len(results),
-                    'relevant_count': summary.relevant_articles,
-                    'model': effective_settings.cerebras_model,
-                    'temperature': effective_settings.analysis_temperature,
-                    'few_shot_count': len(TRAINING_SET) if 'TRAINING_SET' in dir() else 9,
-                }
 
                 progress_bar.progress(80)
                 
@@ -369,7 +360,10 @@ with tab_analyze:
                     # Store token usage info
                     st.session_state.token_usage = {
                         'total_calls': len(results),
-                        'history_count': len(lm.history) if (lm and hasattr(lm, 'history') and lm.history) else 0
+                        'relevant_count': summary.relevant_articles,
+                        'model': effective_settings.cerebras_model,
+                        'temperature': effective_settings.analysis_temperature,
+                        'few_shot_count': 9,  # From examples.py
                     }
 
                 
