@@ -19,8 +19,7 @@ class Settings:
     analysis_temperature: float
     max_concurrency: int
     truncgil_url: str
-    truncgil_gold_symbol: str
-    use_yfinance_fallback: bool
+    truncgil_gold_symbol: str = "XGLD"  # Depending on API response structure
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -41,8 +40,6 @@ class Settings:
                 "TRUNCGIL_URL", "https://finans.truncgil.com/v4/today.json"
             ),
             truncgil_gold_symbol=os.getenv("TRUNCGIL_GOLD_SYMBOL", "GRA"),
-            use_yfinance_fallback=os.getenv("USE_YFINANCE_FALLBACK", "false").lower()
-            in {"1", "true", "yes"},
         )
 
     def validate(self) -> None:

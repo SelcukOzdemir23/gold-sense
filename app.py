@@ -56,9 +56,27 @@ except ConfigError as exc:
     st.stop()
 
 effective_settings = replace(settings)
+
+# --- GLOBAL DSPY CONFIGURATION (Dependency Injection Root) ---
+try:
+    lm = dspy.LM(
+        f"openai/{effective_settings.cerebras_model}",
+        api_key=effective_settings.cerebras_api_key,
+        api_base=effective_settings.cerebras_api_base,
+        temperature=effective_settings.analysis_temperature,
+        cache=False,  # Disable cache for fresh results
+    )
+    dspy.configure(lm=lm, track_usage=True)
+except Exception as exc:
+    st.error(f"Global LM Configuration Failed: {exc}")
+    st.stop()
+
+from goldsense import ui
+
 fetcher = NewsFetcher(effective_settings)
 analyst = GoldAnalyst(effective_settings)
 engine = MarketEngine()
+
 price_service = GoldPriceService(effective_settings)
 logger = JsonlLogger(path=Path("logs/analysis.jsonl"))
 
@@ -72,25 +90,6 @@ if "lm_history" not in st.session_state:
     st.session_state.lm_history = None
 if "token_usage" not in st.session_state:
     st.session_state.token_usage = None
-
-
-def _trend_tr(value: str) -> str:
-    mapping = {
-        "Strong Bullish": "Güçlü Boğa",
-        "Bearish": "Ayı",
-        "Neutral": "Nötr",
-    }
-    return mapping.get(value, value)
-
-
-def _category_tr(value: str) -> str:
-    mapping = {
-        "Macro": "Makro",
-        "Geopolitical": "Jeopolitik",
-        "Industrial": "Endüstriyel",
-        "Irrelevant": "Alakasız",
-    }
-    return mapping.get(value, value)
 
 
 def _run_fetch_sync(fetcher: NewsFetcher) -> tuple[list[NewsArticle], dict]:
@@ -121,185 +120,8 @@ def _to_article(item: dict) -> NewsArticle:
     )
 
 
-def _render_results(price, summary, results):
-    # Strategic Summary (Phase-3)
-    st.subheader("Stratejik Değerlendirme")
-    
-    confidence_pct = int(summary.confidence_average * 100)
-    
-    strategic_text = (
-        f"**Piyasa Eğilimi:** {summary.trend} "
-        f"(Ağırlıklı Skor: {summary.weighted_score:.1f}/10)\n\n"
-        f"**Model Eminliği:** %{confidence_pct} "
-        f"(Ortalama güven seviyesi)\n\n"
-            f"**Analiz Kapsamı:** {summary.relevant_articles}/{summary.total_articles} haber "
-        f"altın piyasasını etkiliyor. "
-        f"Makro haberler (x1.5 ağırlık) diğer kategorilerden daha etkili sayılmıştır."
-    )
-    st.info(strategic_text)
-    
-    st.divider()
-    
-    col1, col2, col3, col4 = st.columns(4)
-    
-    # Handle None price gracefully
-    if price is None:
-        col1.metric("Altın Fiyatı", "Veri Yok")
-    else:
-        col1.metric("Altın Fiyatı", f"{price:.2f} USD")
-    
-    col2.metric("Eğilim", _trend_tr(summary.trend))
-    col3.metric("Ort. Skor", f"{summary.average_score:.1f}/10")
-    col4.metric("İlgili Haber", f"{summary.relevant_articles}/{summary.total_articles}")
-
-    st.divider()
-
-    relevant_results = [r for r in results if r.is_relevant]
-    if relevant_results:
-        top_results = sorted(relevant_results, key=lambda x: x.sentiment_score, reverse=True)[:5]
-        st.subheader("Top 5 En Etkili Haber")
-        for idx, item in enumerate(top_results, 1):
-            with st.container(border=True):
-                col_rank, col_content = st.columns([0.5, 9.5])
-                col_rank.markdown(f"### #{idx}")
-                col_content.markdown(f"**{item.article.title}**")
-                col_content.write(item.article.description or "-")
-                
-                # Confidence badge
-                conf_pct = int(item.confidence_score * 100)
-                if item.confidence_score >= 0.8:
-                    conf_symbol = "[High]"
-                elif item.confidence_score >= 0.5:
-                    conf_symbol = "[Med]"
-                else:
-                    conf_symbol = "[Low]"
-                
-                col_content.caption(
-                    f"{_category_tr(item.category)} | "
-                    f"Skor: **{item.sentiment_score}/10** | "
-                    f"{conf_symbol} Güven: **%{conf_pct}** | "
-                    f"{item.article.published_at.strftime('%d %b %H:%M')}"
-                )
-                col_content.write(f"*{item.impact_reasoning}*")
-                
-                # Show reasoning if available
-                if item.reasoning:
-                    with st.expander("AI Muhakeme Süreci"):
-                        st.caption("Modelin bu sonuca nasıl vardığını görebilirsiniz:")
-                        st.info(item.reasoning)
-
-    st.divider()
-
-    chart_data = pd.DataFrame(
-        [
-            {
-                "title": r.article.title,
-                "score": r.sentiment_score,
-                "category": _category_tr(r.category),
-                "published_at": r.article.published_at,
-            }
-            for r in results
-            if r.is_relevant
-        ]
-    )
-
-    if not chart_data.empty:
-        fig = px.scatter(
-            chart_data,
-            x="published_at",
-            y="score",
-            color="category",
-            hover_name="title",
-            title="Haber Yoğunluğu vs Etki Puanı",
-            labels={"score": "Etki Puanı (1-10)", "published_at": "Yayın Tarihi"},
-        )
-        fig.add_hline(
-            y=7,
-            line_dash="dash",
-            line_color="green",
-            annotation_text="Boğa Eşiği",
-            annotation_position="right",
-        )
-        fig.add_hline(
-            y=4,
-            line_dash="dash",
-            line_color="red",
-            annotation_text="Ayı Eşiği",
-            annotation_position="right",
-        )
-        st.plotly_chart(fig, use_container_width=True)
-    else:
-        st.info("İlgili haber bulunamadı.")
-
-    st.divider()
-    st.subheader("Tüm İlgili Haberler")
-
-    if relevant_results:
-        sorted_results = sorted(relevant_results, key=lambda x: x.sentiment_score, reverse=True)
-
-        categories = sorted(set(r.category for r in sorted_results))
-        category_display = ["Tümü"] + [_category_tr(c) for c in categories]
-        selected_category_display = st.selectbox(
-            "Kategoriye göre filtrele:",
-            category_display,
-        )
-
-        if selected_category_display == "Tümü":
-            filtered = sorted_results
-        else:
-            rev_map = {
-                "Makro": "Macro",
-                "Jeopolitik": "Geopolitical",
-                "Endüstriyel": "Industrial",
-                "Alakasız": "Irrelevant",
-            }
-            selected_cat_en = rev_map.get(selected_category_display)
-            filtered = [r for r in sorted_results if r.category == selected_cat_en]
-        
-        # Apply confidence filter
-        filtered = [r for r in filtered if r.confidence_score >= confidence_threshold]
-
-        for item in filtered:
-            with st.container(border=True):
-                st.markdown(f"**{item.article.title}**")
-                st.write(item.article.description or "-")
-
-                col_cat, col_score, col_conf, col_date = st.columns(4)
-                col_cat.caption(f"{_category_tr(item.category)}")
-
-                if item.sentiment_score >= 7:
-                    score_color = "[High]"
-                elif item.sentiment_score <= 4:
-                    score_color = "[Low]"
-                else:
-                    score_color = "[Med]"
-                col_score.caption(f"{score_color} Skor: **{item.sentiment_score}/10**")
-                
-                # Confidence badge
-                conf_pct = int(item.confidence_score * 100)
-                if item.confidence_score >= 0.8:
-                    conf_color = "[High]"
-                elif item.confidence_score >= 0.5:
-                    conf_color = "[Med]"
-                else:
-                    conf_color = "[Low]"
-                col_conf.caption(f"{conf_color} Güven: **%{conf_pct}**")
-                
-                col_date.caption(f"{item.article.published_at.strftime('%d %b %H:%M')}")
-
-                st.write(f"*{item.impact_reasoning}*")
-                
-                # Show reasoning if available
-                if item.reasoning:
-                    with st.expander("AI Muhakeme Süreci"):
-                        st.caption("Modelin bu sonuca nasıl vardığını görebilirsiniz:")
-                        st.info(item.reasoning)
-    else:
-        st.info("İlgili haber bulunamadı.")
-
-
-tab_fetch, tab_tonl, tab_analyze, tab_debug = st.tabs(
-    ["Haber Hasadı", "TONL", "Analiz", "Debug"]
+tab_fetch, tab_tonl, tab_analyze, tab_curiosity = st.tabs(
+    ["Haber Hasadı", "TONL", "Analiz", "Performans"]
 )
 
 with tab_fetch:
@@ -479,10 +301,9 @@ with tab_analyze:
             # STEP 3: Run analysis with progress updates
             status_text.text(f"{len(articles)} haber DSPy ile analiz ediliyor...")
             try:
-                # Clear previous LM history to capture only this run
-                analyst._configure_lm()
                 
                 # Analyze articles (this is the heavy operation)
+
                 results = _run_analysis_sync(analyst, articles)
                 progress_bar.progress(80)
                 
@@ -521,7 +342,7 @@ with tab_analyze:
 
         if st.session_state.analysis:
             price, summary, results = st.session_state.analysis
-            _render_results(price, summary, results)
+            ui.render_results(price, summary, results, confidence_threshold)
             
             # Token Usage Summary
             if st.session_state.token_usage:
@@ -543,42 +364,47 @@ with tab_analyze:
                         col_b.metric("Completion Tokens", usage_data.get('completion_tokens', 'N/A'))
                         col_c.metric("Total Tokens", usage_data.get('total_tokens', 'N/A'))
         else:
-            st.info("Analizi başlatmak için butona bas.")
+            # Informative onboarding panel
+            st.markdown("### 🎯 Hoşgeldiniz - Sistem Rehberi")
+            
+            with st.container(border=True):
+                st.markdown("""
+                **Amaç:**  
+                Bu sistem, küresel finans haberlerinin **altın piyasaları** üzerindeki olası etkilerini yapay zeka ile analiz eder.
+                Haberleri okuyup puanlayarak, piyasanın hangi yönde hareket edebileceğini tahmin eder.
+                
+                ---
+                
+                **📊 Eğilim Terimleri:**
+                
+                - 🟢 **Güçlü Boğa (Strong Bullish):** Altın fiyatlarında **güçlü yükseliş** beklentisi.  
+                  *Örnek: "Fed faiz indirdi" haberi → Altın talebi artar → Fiyat yükselir.*
+                
+                - 🔴 **Ayı (Bearish):** Altın fiyatlarında **düşüş** beklentisi.  
+                  *Örnek: "Güçlü istihdam verisi" → Fed faizleri yüksek tutar → Altın çekiciliği azalır.*
+                
+                - ⚪ **Nötr (Neutral):** Piyasada **yatay seyir** veya belirgin bir etki yok.  
+                  *Örnek: Altınla doğrudan ilgisi olmayan teknoloji haberleri.*
+                
+                ---
+                
+                **⚙️ Sistem Nasıl Çalışır?**
+                
+                1. **Haber Analizi:** AI (Llama-3 70B) her haberi okur ve 1-10 arası puan verir.
+                2. **Ağırlıklı Değerlendirme:** Makro haberler (Fed kararları, enflasyon) daha yüksek ağırlık alır.
+                3. **Trend Tahmini:** Tüm skorlar birleştirilerek genel piyasa eğilimi belirlenir.
+                4. **Açıklama:** Model sadece sonuç vermez, *neden* bu karara vardığını da açıklar (Chain-of-Thought).
+                
+                ---
+                
+                ⚠️ **Not:** Bu analiz sadece bilgilendirme amaçlıdır. Yatırım tavsiyesi değildir.
+                """)
+            
+            st.info("👆 Hazır olduğunda yukarıdaki butona basarak analizi başlatabilirsin.")
 
-with tab_debug:
-    if not st.session_state.lm_history:
-        st.info("Henüz analiz yapılmadı. Önce 3. adımı (Analiz ve Rapor) tamamla.")
-    else:
-        st.success(f"{len(st.session_state.lm_history)} LM çağrısı kaydedildi (son 3 adet gösteriliyor)")
-        
-        for idx, call in enumerate(st.session_state.lm_history, 1):
-            with st.expander(f"🔍 LM Çağrısı #{idx} - {call.get('model', 'unknown')}"):
-                st.caption(f"Timestamp: {call.get('timestamp', 'N/A')}")
-                
-                # Show prompt/messages
-                if 'messages' in call and call['messages']:
-                    st.markdown("**Messages (Input):**")
-                    for msg in call['messages']:
-                        role = msg.get('role', 'unknown')
-                        content = msg.get('content', '')
-                        st.markdown(f"**{role.upper()}:**")
-                        st.code(content[:500] + ('...' if len(content) > 500 else ''), language='text')
-                
-                # Show response
-                if 'outputs' in call and call['outputs']:
-                    st.markdown("**Response (Output):**")
-                    for output in call['outputs']:
-                        st.code(str(output)[:500] + ('...' if len(str(output)) > 500 else ''), language='text')
-                
-                # Show usage stats
-                if 'usage' in call and call['usage']:
-                    st.markdown("**Token Usage:**")
-                    usage = call['usage']
-                    col1, col2, col3 = st.columns(3)
-                    col1.metric("Prompt", usage.get('prompt_tokens', 'N/A'))
-                    col2.metric("Completion", usage.get('completion_tokens', 'N/A'))
-                    col3.metric("Total", usage.get('total_tokens', 'N/A'))
-                    
-                    if 'cost' in call and call['cost']:
-                        st.metric("💵 Estimated Cost", f"${call['cost']:.6f}")
+with tab_curiosity:
+    # Use global session state token usage if available
+    usage_data = st.session_state.token_usage if "token_usage" in st.session_state else None
+    lm_history_data = st.session_state.lm_history if "lm_history" in st.session_state else None
+    ui.render_performance_tab(lm_history_data, usage_data)
 

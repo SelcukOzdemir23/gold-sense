@@ -58,23 +58,20 @@ class GoldAnalyst:
     settings: Settings
 
     def __post_init__(self) -> None:
-        self._configure_lm()
-        # Use ChainOfThought instead of Predict for better quality
+        # We assume dspy.configure() is called globally in app.py (Dependency Injection pattern)
+        
+        # 1. Create the basic ChainOfThought module
         self._predict = dspy.ChainOfThought(GoldSignalSignature)
+        
+        # 2. OPTIMIZATION: Compile with Few-Shot Examples using LabeledFewShot
+        # This injects our curated examples into the prompt context.
+        # k=len(TRAINING_SET) means we use all examples we provided.
+        from dspy.teleprompt import LabeledFewShot
+        from .examples import TRAINING_SET
+        
+        teleprompter = LabeledFewShot(k=len(TRAINING_SET))
+        self._predict = teleprompter.compile(student=self._predict, trainset=TRAINING_SET)
 
-    def _configure_lm(self) -> None:
-        try:
-            lm = dspy.LM(
-                f"openai/{self.settings.cerebras_model}",
-                api_key=self.settings.cerebras_api_key,
-                api_base=self.settings.cerebras_api_base,
-                temperature=self.settings.analysis_temperature,
-                cache=False,  # Disable cache to ensure fresh analysis every time
-            )
-            # Enable usage tracking for token cost analysis
-            dspy.configure(lm=lm, track_usage=True)
-        except Exception as exc:  # pragma: no cover - defensive
-            raise ExternalServiceError(f"Failed to configure DSPy LM: {exc}") from exc
 
     async def analyze_articles(self, articles: list[NewsArticle]) -> list[AnalysisResult]:
         semaphore = asyncio.Semaphore(self.settings.max_concurrency)

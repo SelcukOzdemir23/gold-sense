@@ -38,16 +38,16 @@ class GoldPriceService:
             # Log the error but don't crash
             print(f"⚠️  Truncgil fiyat alınamadı: {truncgil_error}")
             
-            # Try Binance as fallback
-            if self.settings.use_yfinance_fallback:  # Config name kept for compatibility
-                try:
-                    price = self._fetch_from_binance()
-                    self._price_cache = (price, current_time)
-                    return price
-                except Exception as binance_error:
-                    print(f"⚠️  Binance fallback da başarısız: {binance_error}")
-                    return None
+            # Try Binance as fallback (Automatic)
+            try:
+                price = self._fetch_from_binance()
+                self._price_cache = (price, current_time)
+                return price
+            except Exception as binance_error:
+                print(f"⚠️  Binance fallback da başarısız: {binance_error}")
+                return None
             return None
+
 
     def _fetch_from_binance(self) -> float:
         """Fetch gold price from Binance API (PAXGUSDT = Paxos Gold in USDT)."""

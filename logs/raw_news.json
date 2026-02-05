@@ -1,7 +1,46 @@
 {
   "status": "ok",
-  "totalResults": 674,
+  "totalResults": 677,
   "articles": [
+    {
+      "source": {
+        "id": null,
+        "name": "TheStreet"
+      },
+      "author": "Pooja Rajkumari",
+      "title": "'Big Short’ Michael Burry sends chilling warning after Bitcoin plunge",
+      "description": "“The Big Short” investor Michael Burry has often been critical of cryptocurrencies. For someone who correctly predicted the 2008 housing crisis and the 2000 ...",
+      "url": "https://www.thestreet.com/crypto/markets/big-short-michael-burry-sends-chilling-warning-after-bitcoin-plunge",
+      "urlToImage": "https://s.yimg.com/os/en/thestreet_881/124366db2fcf256f70c94391b4bc595e",
+      "publishedAt": "2026-02-04T11:25:32Z",
+      "content": "The Big Short investor Michael Burry has often been critical of cryptocurrencies.\r\nFor someone who correctly predicted the 2008 housing crisis and the 2000 dot-com bubble, his words often carry weigh… [+3961 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Foreign Policy"
+      },
+      "author": "Joel Wasserman",
+      "title": "Russia Has Turned Sports Into a Weapon",
+      "description": "The Olympic ban is a necessary counter to Moscow’s abuse.",
+      "url": "http://foreignpolicy.com/2026/02/04/russia-ovechkin-putin-olympics-hocke/",
+      "urlToImage": "https://foreignpolicy.com/wp-content/uploads/2026/02/3a-Russia-Sports-Vladimir-Putin-Ice-Hockey-Alexander-Ovechkin-2015-GettyImages-486157546.jpg?w=1000",
+      "publishedAt": "2026-02-04T11:00:01Z",
+      "content": "When the 2026 Winter Olympic Games kick off in Italy on Feb. 6, there will be no participation from Russian teams and very limited participation from individual Russian athletes competing as neutrals… [+8341 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Scientific American"
+      },
+      "author": "Kendra Pierre-Louis, Sushmita Pathak, Alex Sugiura",
+      "title": "‘Daily misery’—why some people can’t burp, and how Botox comes to the rescue",
+      "description": "For those with retrograde cricopharyngeus dysfunction, daily life can be miserable, with symptoms such as bloating and chest pain. But a simple Botox injection can help",
+      "url": "https://www.scientificamerican.com/podcast/episode/daily-misery-why-some-people-cant-burp-and-how-botox-comes-to-the-rescue/",
+      "urlToImage": "https://static.scientificamerican.com/dam/m/510dc089e457564e/original/2602_SQ_WED_BURPING_thumbnail-1.png?m=1770154290.1&w=1200",
+      "publishedAt": "2026-02-04T11:00:00Z",
+      "content": "Kendra Pierre-Louis: For Scientific American’s Science Quickly, I’m Kendra Pierre-Louis, in for Rachel Feltman.\r\nYou’ve probably been in this situation: you just had a big lunch or a tall carbonated … [+15213 chars]"
+    },
     {
       "source": {
         "id": null,
@@ -599,45 +638,6 @@
       "urlToImage": "https://dam.mediacorp.sg/image/upload/s--p3-kX011--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-02-03T170050Z_1_LYNXMPEM12125_RTROPTP_3_USA-STOCKS.JPG?itok=4I0--ZrK",
       "publishedAt": "2026-02-03T16:58:25Z",
       "content": "NEW YORK/ LONDON, Feb 3 : MSCI's global equities gauge lost ground on Tuesday as technology stocks pushed Wall Street lower in contrast with an oil rally on fears of U.S.-Iran tensions while precious… [+4886 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "CNA"
-      },
-      "author": null,
-      "title": "Global stock index up slightly while gold, silver bounce",
-      "description": "NEW YORK/ LONDON, Feb 3 : MSCI's global equities gauge rose slightly on Tuesday while Wall Street's main indexes lost ground as software stocks were slammed while investors waited for high-profile earnings reports but in contrast, precious metal prices rose s…",
-      "url": "https://www.channelnewsasia.com/business/global-stock-index-up-slightly-while-gold-silver-bounce-5902591",
-      "urlToImage": "https://dam.mediacorp.sg/image/upload/s--p3-kX011--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-02-03T170050Z_1_LYNXMPEM12125_RTROPTP_3_USA-STOCKS.JPG?itok=4I0--ZrK",
-      "publishedAt": "2026-02-03T16:58:25Z",
-      "content": "NEW YORK/ LONDON, Feb 3 : MSCI's global equities gauge rose slightly on Tuesday while Wall Street's main indexes lost ground as software stocks were slammed while investors waited for high-profile ea… [+3970 chars]"
-    },
-    {
-      "source": {
-        "id": "cbs-news",
-        "name": "CBS News"
-      },
-      "author": "Angelica  Leicht",
-      "title": "How to buy silver at a low price this February",
-      "description": "Silver's dip offers a rare buying opportunity in a high-priced market, and there are ways to get it even lower.",
-      "url": "https://www.cbsnews.com/news/how-to-buy-silver-at-a-low-price-february-2026/",
-      "urlToImage": "https://assets2.cbsnewsstatic.com/hub/i/r/2026/02/03/899777e7-90e1-49e4-a315-343db4484e78/thumbnail/1200x630/1e3a582098b1707e3e82dd38a6256736/gettyimages-1390077486.jpg",
-      "publishedAt": "2026-02-03T16:24:28Z",
-      "content": "If you're going to buy silver in this market, it makes sense to get as low a price as possible.\r\nGetty Images/iStockphoto\r\nAfter weeks of what felt like an endless uptick, the price of silver plunged… [+5499 chars]"
-    },
-    {
-      "source": {
-        "id": "business-insider",
-        "name": "Business Insider"
-      },
-      "author": "sobrient@insider.com (Samuel O'Brient)",
-      "title": "'Pouring gasoline on a bonfire': Veteran investor George Noble says metal traders read the Kevin Warsh nomination all wrong",
-      "description": "Longtime fund manager George Noble said the Fed under Kevin Warsh will keep fueling the forces that have boosted gold in the last year.",
-      "url": "https://www.businessinsider.com/silver-price-crash-gold-kevin-warsh-interest-rates-george-noble-2026-2",
-      "urlToImage": "https://i.insider.com/673bb6c0fa0140cdd5642a7f?width=1200&format=jpeg",
-      "publishedAt": "2026-02-03T15:59:56Z",
-      "content": "The metal market's tantrum in the aftermath of Donald Trump's nomination of a new Fed chief was wrongheaded, one longtime investor says. \r\nThat's because, according to veteran fund manager George Nob… [+1729 chars]"
     }
   ]
 }
