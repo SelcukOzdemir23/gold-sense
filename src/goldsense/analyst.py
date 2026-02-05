@@ -30,6 +30,9 @@ class GoldSignalSignature(dspy.Signature):
     sentiment_score: int = dspy.OutputField(
         desc="Gold market sentiment score from 1 (strongly bearish) to 10 (strongly bullish), must be integer between 1-10"
     )
+    rationale: str = dspy.OutputField(
+        desc="Step-by-step reasoning process (Chain of Thought) explaining how you arrived at the sentiment score and category. Think through: (1) What are the key facts in this news? (2) How do these facts mechanistically affect gold markets (USD correlation, interest rates, safe-haven demand)? (3) What is the expected directional impact? This should be your internal thinking process before giving the final answer."
+    )
     impact_reasoning: str = dspy.OutputField(
         desc="A detailed, insightful analysis in TURKISH explaining how this news affects gold markets. Include specific mechanisms (e.g., USD correlation, safe-haven demand, industrial usage, central bank policies). 2-3 sentences maximum, must be in Turkish language with clear financial reasoning."
     )
@@ -114,7 +117,8 @@ class GoldAnalyst:
             )
             
             # Capture ChainOfThought reasoning (the thinking process)
-            model_reasoning = getattr(result, 'reasoning', None)
+            # DSPy ChainOfThought module outputs the reasoning chain as 'rationale'
+            model_reasoning = getattr(result, 'rationale', None)
             
         except Exception as exc:
             raise ExternalServiceError(f"Cerebras analysis failed: {exc}") from exc
@@ -131,7 +135,7 @@ class GoldAnalyst:
             category=category,
             sentiment_score=sentiment_score,
             impact_reasoning=reasoning_text,
-            reasoning=model_reasoning,  # ChainOfThought's internal reasoning
+            rationale=model_reasoning,  # ChainOfThought's internal reasoning
             confidence_score=confidence_score,  # Model's confidence in this analysis
         )
 

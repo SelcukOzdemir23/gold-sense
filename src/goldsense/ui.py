@@ -135,10 +135,14 @@ def _render_article_card(item: AnalysisResult, rank: int | None = None):
 
         container.write(f"*{item.impact_reasoning}*")
         
-        if item.reasoning:
-            with container.expander("AI Muhakeme Süreci"):
-                st.caption("Modelin bu sonuca nasıl vardığını görebilirsiniz:")
-                st.info(item.reasoning)
+        # Always show reasoning section (Chain of Thought)
+        with container.expander("AI Muhakeme Süreci"):
+            st.caption("Modelin bu sonuca nasıl vardığını görebilirsiniz:")
+            if item.rationale and str(item.rationale).strip():
+                st.info(item.rationale)
+            else:
+                st.warning("Not supplied for this particular example.")
+                st.caption("Model bu haber için ayrıntılı muhakeme adımlarını üretmedi veya Few-Shot örneklerde bu alan boştu.")
 
 def _render_chart(results: list[AnalysisResult]):
     chart_data = pd.DataFrame(
@@ -189,8 +193,19 @@ def render_performance_tab(lm_history: list | None, token_usage: dict | None):
     """
     st.subheader("🚀 Sistem Performansı & DSPy Optimizasyonu")
     
-    if not lm_history:
+    if lm_history is None:
         st.info("Henüz analiz yapılmadı. Lütfen 'Analiz' sekmesinden bir işlem başlatın.")
+        return
+    
+    if not lm_history:  # Empty list
+        st.warning("⚠️ Analiz tamamlandı ancak LM geçmişi kaydedilemedi.")
+        st.caption("Bu durum DSPy'ın `track_usage` ayarı veya history kaydı ile ilgili olabilir.")
+        st.caption("Token kullanım bilgileri aşağıda mevcut olabilir:")
+        
+        if token_usage:
+            col1, col2 = st.columns(2)
+            col1.metric("Toplam Analiz", token_usage.get('total_calls', 'N/A'))
+            col2.metric("History Kayıt", token_usage.get('history_count', 'N/A'))
         return
 
     # 1. Token Metrics

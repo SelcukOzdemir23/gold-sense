@@ -317,17 +317,30 @@ with tab_analyze:
                 status_text.text("Özet rapor oluşturuluyor...")
                 summary = engine.summarize(results)
                 
-                # Capture LM history and usage for debug console
+                # Capture LM history and usage for performance tab
                 lm = dspy.settings.lm
-                st.session_state.lm_history = lm.history[-min(3, len(lm.history)):] if lm.history else []
+                
+                # Defensive history capture
+                if lm and hasattr(lm, 'history') and lm.history:
+                    # Store last few calls (or all if less than 5)
+                    history_slice = lm.history[-min(5, len(lm.history)):]
+                    st.session_state.lm_history = history_slice
+                    print(f"✅ DEBUG: Captured {len(history_slice)} LM history entries")
+                else:
+                    st.session_state.lm_history = None
+                    print(f"⚠️  DEBUG: LM history is empty or unavailable")
+                    print(f"    lm exists: {lm is not None}")
+                    print(f"    has history attr: {hasattr(lm, 'history') if lm else False}")
+                    print(f"    history content: {getattr(lm, 'history', 'N/A') if lm else 'N/A'}")
                 
                 # Get token usage from last result if available
                 if results:
                     # Store token usage info
                     st.session_state.token_usage = {
                         'total_calls': len(results),
-                        'history_count': len(lm.history) if lm.history else 0
+                        'history_count': len(lm.history) if (lm and hasattr(lm, 'history') and lm.history) else 0
                     }
+
                 
                 progress_bar.progress(100)
                 status_text.text("✅ Tamamlandı!")

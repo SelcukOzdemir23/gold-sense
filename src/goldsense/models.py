@@ -23,7 +23,7 @@ class AnalysisResult:
     category: Category
     sentiment_score: int
     impact_reasoning: str
-    reasoning: str | None = None  # DSPy ChainOfThought reasoning - how the model arrived at its conclusion
+    rationale: str | None = None  # DSPy ChainOfThought reasoning - how the model arrived at its conclusion
     confidence_score: float = 0.5  # Model's confidence (0.0-1.0) in this analysis
 
 

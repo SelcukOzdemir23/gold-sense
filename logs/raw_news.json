@@ -1,7 +1,20 @@
 {
   "status": "ok",
-  "totalResults": 677,
+  "totalResults": 678,
   "articles": [
+    {
+      "source": {
+        "id": "al-jazeera-english",
+        "name": "Al Jazeera English"
+      },
+      "author": "Prosper Heri Ngorora",
+      "title": "‘We are exploited’: Congolese fear losing out as US makes minerals deals",
+      "description": "As officials meet in Washington to discuss critical minerals, many in DRC fear their country will gain little.",
+      "url": "https://www.aljazeera.com/features/2026/2/4/we-are-exploited-congolese-fear-losing-out-as-us-makes-minerals-deals",
+      "urlToImage": "https://www.aljazeera.com/wp-content/uploads/2026/02/2025-09-04T083726Z_632187048_RC2DIGA83SVA_RTRMADP_3_CONGO-SECURITY-ADF-MINING-1770183808.jpg?resize=1920%2C1440",
+      "publishedAt": "2026-02-04T11:45:37Z",
+      "content": "Goma, Democratic Republic of the Congo In cities in the mineral-rich eastern Democratic Republic of the Congo (DRC), home to some of the worlds largest cobalt and copper reserves, eyes are on the out… [+10061 chars]"
+    },
     {
       "source": {
         "id": null,
@@ -625,19 +638,6 @@
       "urlToImage": "https://c.ndtvimg.com/2026-02/ltcrncbc_gold_625x300_03_February_26.jpg?im=FeatureCrop,algorithm=dnn,width=1080,height=607",
       "publishedAt": "2026-02-03T17:04:55Z",
       "content": "Gold and silver rebounded after a historic collapse from all-time highs lured dip-buyers back to precious metals.\r\nSpot gold climbed as much as 6.2% to more than $4,950 an ounce, recovering somewhat … [+2841 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "CNA"
-      },
-      "author": null,
-      "title": "Global stock index dips with oil rallying on Iran worries as gold, silver rise",
-      "description": "NEW YORK/ LONDON, Feb 3 : MSCI's global equities gauge lost ground on Tuesday as technology stocks pushed Wall Street lower in contrast with an oil rally on fears of U.S.-Iran tensions while precious metal prices rose sharply, regaining some lost ground follo…",
-      "url": "https://www.channelnewsasia.com/business/global-stock-index-dips-oil-rallying-iran-worries-gold-silver-rise-5902591",
-      "urlToImage": "https://dam.mediacorp.sg/image/upload/s--p3-kX011--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-02-03T170050Z_1_LYNXMPEM12125_RTROPTP_3_USA-STOCKS.JPG?itok=4I0--ZrK",
-      "publishedAt": "2026-02-03T16:58:25Z",
-      "content": "NEW YORK/ LONDON, Feb 3 : MSCI's global equities gauge lost ground on Tuesday as technology stocks pushed Wall Street lower in contrast with an oil rally on fears of U.S.-Iran tensions while precious… [+4886 chars]"
     }
   ]
 }
