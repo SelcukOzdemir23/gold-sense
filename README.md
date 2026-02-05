@@ -7,7 +7,7 @@
 ---
 
 ## 🎓 Proje Hakkında
-Bu proje, **Yapay Zeka Destekli Finansal Analiz** üzerine yapılan bir **Yüksek Lisans Tezi/Projesi** kapsamında geliştirilmiştir.
+Bu proje, **Yapay Zeka Destekli Finansal Analiz** üzerine yapılan bir **Yüksek Lisans Projesi** kapsamında geliştirilmiştir.
 
 Amacı, doğal dil işleme (NLP) ve modern **Prompt Engineering** tekniklerini kullanarak, küresel finans haberlerinin altın piyasaları üzerindeki olası etkilerini (Bullish/Bearish/Neutral) otomatik olarak analiz etmek ve stratejik içgörüler sunmaktır.
 
