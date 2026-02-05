@@ -32,17 +32,17 @@ class NewsFetcher:
             "apiKey": self.settings.newsapi_key,
         }
 
-        async with httpx.AsyncClient(timeout=20) as client:
+        async with httpx.AsyncClient(timeout=30) as client:  # Increased timeout
             response = await client.get(self.settings.newsapi_base, params=params)
 
         if response.status_code != 200:
             raise ExternalServiceError(
-                f"NewsAPI error: {response.status_code} - {response.text}"
+                f"NewsAPI error: {response.status_code} - {response.text[:200]}"  # Limit error text
             )
 
         payload = response.json()
         articles = payload.get("articles", [])
-        parsed = [self._parse_article(item) for item in articles]
+        parsed = [self._parse_article(item) for item in articles if item.get("title")]  # Filter empty titles
         return parsed, payload
 
     @staticmethod

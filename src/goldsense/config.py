@@ -29,9 +29,9 @@ class Settings:
             newsapi_base=os.getenv("NEWSAPI_BASE", "https://newsapi.org/v2/everything"),
             query=os.getenv(
                 "NEWS_QUERY",
-                "(gold price OR XAU OR central banks OR inflation) AND (Fed OR Geopolitical)",
+                'gold OR XAU OR "gold price" OR "precious metals" OR ("central bank" AND gold)',
             ),
-            lookback_days=int(os.getenv("LOOKBACK_DAYS", "2")),
+            lookback_days=int(os.getenv("LOOKBACK_DAYS", "3")),
             cerebras_api_key=os.getenv("CEREBRAS_API_KEY"),
             cerebras_api_base=os.getenv("CEREBRAS_API_BASE"),
             cerebras_model=os.getenv("CEREBRAS_MODEL"),

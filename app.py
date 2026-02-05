@@ -94,6 +94,7 @@ def _category_tr(value: str) -> str:
 
 
 def _run_fetch_sync(fetcher: NewsFetcher) -> tuple[list[NewsArticle], dict]:
+    """Sync wrapper for async news fetching"""
     return asyncio.run(fetcher.fetch_latest_with_payload())
 
 
@@ -302,28 +303,66 @@ tab_fetch, tab_tonl, tab_analyze, tab_debug = st.tabs(
 )
 
 with tab_fetch:
+    st.subheader("📰 Haber Hasadı")
+    st.caption("NewsAPI'den altın ile ilgili son haberleri çeker")
+    
+    col1, col2 = st.columns([3, 1])
+    
+    with col1:
+        if st.button("📥 Haberleri Getir", type="primary", key="fetch_news", use_container_width=True):
+            with st.spinner("🔄 Haberler çekiliyor..."):
+                try:
+                    articles, payload = _run_fetch_sync(fetcher)
+                except GoldSenseError as exc:
+                    st.error(f"❌ Haber çekme hatası: {exc}")
+                    st.stop()
 
-    if st.button("Haberleri Getir", type="primary", key="fetch_news"):
-        with st.spinner("Haberler çekiliyor..."):
-            try:
-                articles, payload = _run_fetch_sync(fetcher)
-            except GoldSenseError as exc:
-                st.error(f"Haber çekme hatası: {exc}")
-                st.stop()
-
-        st.session_state.raw_payload = payload
-        Path("logs").mkdir(parents=True, exist_ok=True)
-        (Path("logs") / "raw_news.json").write_text(
-            json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
-        )
-        st.success(f"{len(articles)} haber çekildi ve raw_news.json kaydedildi.")
+            st.session_state.raw_payload = payload
+            Path("logs").mkdir(parents=True, exist_ok=True)
+            (Path("logs") / "raw_news.json").write_text(
+                json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
+            )
+            
+            # Success metrics
+            col_a, col_b, col_c = st.columns(3)
+            col_a.metric("📊 Çekilen Haber", len(articles))
+            col_b.metric("📅 Tarih Aralığı", f"{settings.lookback_days} gün")
+            col_c.metric("💾 Dosya", "raw_news.json")
+            
+            st.success(f"✅ {len(articles)} haber başarıyla çekildi!")
+    
+    with col2:
+        if st.session_state.raw_payload:
+            total_articles = len(st.session_state.raw_payload.get("articles", []))
+            st.metric("📈 Toplam", total_articles)
+            st.caption("Çekilen haber sayısı")
 
     if st.session_state.raw_payload:
-        st.caption("Ham JSON verisi (NewsAPI payload)")
-        with st.expander("Ham JSON'u Gör"):
+        st.divider()
+        
+        # Quick preview of articles
+        articles = st.session_state.raw_payload.get("articles", [])
+        if articles:
+            st.subheader("🔍 Haber Önizleme")
+            
+            # Show first 3 articles as preview
+            for i, article in enumerate(articles[:3]):
+                with st.container(border=True):
+                    st.markdown(f"**{article.get('title', 'Başlık yok')}**")
+                    st.caption(f"📰 {article.get('source', {}).get('name', 'Bilinmeyen kaynak')} | "
+                             f"📅 {article.get('publishedAt', 'Tarih yok')[:10]}")
+                    if article.get('description'):
+                        st.write(article['description'][:150] + "..." if len(article.get('description', '')) > 150 else article['description'])
+            
+            if len(articles) > 3:
+                st.caption(f"... ve {len(articles) - 3} haber daha")
+        
+        st.divider()
+        st.caption("🔧 Ham JSON verisi (NewsAPI payload)")
+        with st.expander("📋 Ham JSON'u Gör", expanded=False):
             st.json(st.session_state.raw_payload)
     else:
-        st.info("Haberleri çekmek için butona bas.")
+        st.info("👆 Haberleri çekmek için yukarıdaki butona tıklayın.")
 
 with tab_tonl:
     if not st.session_state.raw_payload:

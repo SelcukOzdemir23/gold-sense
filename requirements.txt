@@ -17,3 +17,6 @@ magicattr==0.1.6
 # Visualization
 plotly==5.24.1
 streamlit==1.38.0
+
+# Testing
+pytest==8.0.0
