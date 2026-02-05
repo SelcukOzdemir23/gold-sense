@@ -4,7 +4,6 @@ Finansal haberleri analiz ederek altın piyasası trendlerini tahmin eden sistem
 
 **Uyarı:** Yüksek Lisans "İleri Yapay Zeka" dersi kapsamında akademik bir çalışmadır. Herhangi bir yatırım tavsiyesi içermez.
 
-
 ---
 
 ## Sistem Özeti
@@ -18,7 +17,7 @@ Finansal haberleri analiz ederek altın piyasası trendlerini tahmin eden sistem
 
 2. **TONL (Text-Optimized Notation Language)**
    - JSON'u kompakt formata dönüştürür (~%40 token tasarrufu)
-   - Tokens tutumlu veri temsili
+   - Token tutumlu veri temsili
 
 3. **Ağırlıklı Kategori Toplama**
    - Makro: 1.5x, Jeopolitik: 1.2x, Endüstriyel: 1.0x
@@ -35,36 +34,28 @@ Ağırlıklı Toplama → Sonuç Kayıt (JSONL)
 
 ---
 
-## Modüller
+## Dosya Açıklamaları
 
-**analyst.py**
-- DSPy ChainOfThought ile haber analizi
-- GoldSignalSignature: Giriş (title, desc), Çıkış (relevance, category, score, confidence, reasoning)
-- Assertions: Skor 1-10, güven 0-1 validasyonu
+### Ana Dosyalar
+- **app.py** - Streamlit web arayüzü (4 sekme: Haber, TONL, Analiz, Debug)
+- **main.py** - Komut satırı arayüzü
+- **requirements.txt** - Python bağımlılıkları (DSPy, Streamlit, Plotly)
 
-**engine.py**
-- Ağırlıklı piyasa özeti hesapla
-- CATEGORY_WEIGHTS: Kategori ağırlıkları
-- Formül: ∑(Skor × Ağırlık × Güven) / ∑(Ağırlık × Güven)
+### Core Modüller (src/goldsense/)
+- **analyst.py** - DSPy ChainOfThought ile haber analizi, Cerebras LLM entegrasyonu
+- **engine.py** - Ağırlıklı piyasa özeti hesaplama motoru
+- **fetcher.py** - NewsAPI'den haber çekme servisi
+- **tonl.py** - JSON→TONL dönüştürücü (~%40 token tasarrufu)
+- **price.py** - Altın fiyat servisi (Truncgil + Binance fallback)
+- **logger.py** - JSONL formatında sonuç kaydetme
+- **models.py** - Veri modelleri (NewsArticle, AnalysisResult, MarketSummary)
+- **config.py** - Ayarlar ve ortam değişkenleri
+- **exceptions.py** - Özel hata tipleri
 
-**fetcher.py**
-- NewsAPI'den 50 haber çek
-- Retry logic: 3 deneme, exponential backoff
-
-**logger.py**
-- Sonuçları JSONL dosyasına kaydet
-- URL deduplication: Mükerrer makaleleri önler
-
-**price.py**
-- Altın fiyatı al: Truncgil (birincil), Binance (yedek)
-- PAXGUSDT: Paxos Gold in USDT
-
-**tonl.py**
-- JSON → TONL dönüşümü
-- ~%40 token tasarrufu
-
-**models.py**
-- NewsArticle, AnalysisResult, MarketSummary veri modelleri
+### Yardımcı Scriptler (scripts/)
+- **quick_check.py** - Tüm servislerin sağlık kontrolü
+- **test_binance.py** - Binance API test scripti
+- **tonl_demo.py** - TONL format gösterim scripti
 
 ---
 
@@ -89,71 +80,15 @@ cp .env.example .env
 streamlit run app.py
 ```
 
-**Sekme 1 - Haber Hasadı:** NewsAPI'den 50 haber çeker, JSON gösterir
-
-**Sekme 2 - TONL:** JSON'u TONL'a çevirir, token tasarrufu gösterir
-
-**Sekme 3 - Analiz:** DSPy ile haberleri analiz eder, stratejik özet sunar
-
-**Sekme 4 - Debug:** dspy.inspect_history() ile LLM çağrılarını gösterir
+- **Sekme 1 - Haber Hasadı:** NewsAPI'den 50 haber çeker, JSON gösterir
+- **Sekme 2 - TONL:** JSON'u TONL'a çevirir, token tasarrufu gösterir
+- **Sekme 3 - Analiz:** DSPy ile haberleri analiz eder, stratejik özet sunar
+- **Sekme 4 - Debug:** LLM çağrılarını ve token kullanımını gösterir
 
 **Komut Satırı**
 ```bash
 python main.py              # CLI çalıştır
 python scripts/quick_check.py  # Servisleri kontrol et
-python scripts/test_binance.py # Binance fallback test et
-```
-
----
-
-## Hocanız İçin Önemli Noktalar
-
-**1. Neden DSPy?**
-- Prompt engineering yerine tip-güvenli contracts
-- Assertions ile otomatik output validation
-- Kullanım tracking ile token/maliyet izleme
-
-**2. Neden TONL?**
-- Standart JSON %40+ fazla token kullanır
-- Token tasarrufu finansal uygulamalar için kritik
-
-**3. Neden Chain of Thought?**
-- Model muhakemesini kaydeder (reasoning field)
-- Debug console'da kararların gerekçesini görür
-- Şeffaflık ve interpretability sağlar
-
-**4. Neden Güven Skorlaması?**
-- Model ne kadar emin olduğunu bilmek önemli
-- Düşük güvenli analizler ağırlıklı ortalamayı etkilemesin diye
-- Formüldeki (Weight × Confidence) terimi bunu sağlar
-
-**5. Neden Fallback Mekanizması?**
-- Truncgil API sık bağlantı koparır
-- Binance PAXGUSDT alternatif olarak kullanılır
-- Sistem robustluğu için iki kaynak
-
----
-
-## Proje Yapısı
-
-```
-src/goldsense/
-├── analyst.py        # DSPy analiz motoru
-├── engine.py         # Ağırlıklı toplama
-├── fetcher.py        # NewsAPI client
-├── logger.py         # JSONL kayıt
-├── models.py         # Veri modelleri
-├── price.py          # Altın fiyatı
-├── tonl.py           # TONL dönüşümü
-├── config.py         # Ayarlar
-└── exceptions.py     # Hata tipleri
-
-app.py               # Streamlit UI
-
-logs/
-├── raw_news.json    # Çekilen haberler
-├── news.tonl        # TONL formatı
-└── analysis.jsonl   # Analiz sonuçları
 ```
 
 ---
@@ -163,18 +98,32 @@ logs/
 | Teknoloji | Neden | Alternatif |
 |-----------|-------|-----------|
 | DSPy | Tip-güvenli LLM programlama | LangChain (daha ağır) |
-| Cerebras | %1800 tokens/sec, $0.30/1M tokens | OpenAI (10x pahalı) |
+| Cerebras | 1800 tokens/sec, $0.30/1M tokens | OpenAI (10x pahalı) |
 | Streamlit | Basit web UI | Dash, FastAPI |
 | TONL | JSON'dan %40 daha compact | YAML, Protobuf |
 
 ---
 
-## Kaynaklar
+## Proje Yapısı
 
-- DSPy: https://dspy-docs.vercel.app/
-- Cerebras: https://inference-docs.cerebras.ai/
-- NewsAPI: https://newsapi.org/docs
-- Streamlit: https://docs.streamlit.io/
+```
+├── app.py                    # Streamlit web arayüzü
+├── main.py                   # CLI arayüzü
+├── requirements.txt          # Python bağımlılıkları
+├── src/goldsense/           # Ana uygulama modülleri
+│   ├── analyst.py           # DSPy haber analizi
+│   ├── engine.py            # Ağırlıklı toplama motoru
+│   ├── fetcher.py           # NewsAPI client
+│   ├── tonl.py              # Token optimize format
+│   ├── price.py             # Altın fiyat servisi
+│   ├── logger.py            # JSONL kayıt
+│   ├── models.py            # Veri modelleri
+│   ├── config.py            # Ayarlar
+│   └── exceptions.py        # Hata tipleri
+├── scripts/                 # Yardımcı scriptler
+├── logs/                    # Çıktı dosyaları
+└── docs/                    # Dokümantasyon
+```
 
 ---
 
