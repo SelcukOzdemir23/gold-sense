@@ -120,8 +120,8 @@ def _to_article(item: dict) -> NewsArticle:
     )
 
 
-tab_fetch, tab_tonl, tab_analyze, tab_curiosity = st.tabs(
-    ["Haber Hasadı", "TONL", "Analiz", "Performans"]
+tab_fetch, tab_tonl, tab_analyze = st.tabs(
+    ["Haber Hasadı", "TONL", "Analiz"]
 )
 
 with tab_fetch:
@@ -357,25 +357,14 @@ with tab_analyze:
             price, summary, results = st.session_state.analysis
             ui.render_results(price, summary, results, confidence_threshold)
             
-            # Token Usage Summary
-            if st.session_state.token_usage:
-                st.divider()
-                st.subheader("Token Kullanım İstatistikleri")
-                col1, col2 = st.columns(2)
-                col1.metric("Toplam LM Çağrısı", st.session_state.token_usage.get('total_calls', 0))
-                col2.metric("History Kayıt Sayısı", st.session_state.token_usage.get('history_count', 0))
-                
-                # Show usage details if available
-                lm = dspy.settings.lm
-                if hasattr(lm, 'history') and lm.history:
-                    st.caption("Son LM çağrısı detayları:")
-                    last_call = lm.history[-1]
-                    if 'usage' in last_call and last_call['usage']:
-                        usage_data = last_call['usage']
-                        col_a, col_b, col_c = st.columns(3)
-                        col_a.metric("Prompt Tokens", usage_data.get('prompt_tokens', 'N/A'))
-                        col_b.metric("Completion Tokens", usage_data.get('completion_tokens', 'N/A'))
-                        col_c.metric("Total Tokens", usage_data.get('total_tokens', 'N/A'))
+            # Basit İstatistik Özeti
+            st.divider()
+            st.subheader("📊 Analiz İstatistikleri")
+            col1, col2, col3, col4 = st.columns(4)
+            col1.metric("Analiz Edilen", len(results))
+            col2.metric("İlgili Haber", summary.relevant_articles)
+            col3.metric("Ort. Güven", f"%{int(summary.confidence_average * 100)}")
+            col4.metric("Model", effective_settings.cerebras_model.split('/')[-1] if effective_settings.cerebras_model else "N/A")
         else:
             # Informative onboarding panel
             st.markdown("### 🎯 Hoşgeldiniz - Sistem Rehberi")
@@ -415,9 +404,5 @@ with tab_analyze:
             
             st.info("👆 Hazır olduğunda yukarıdaki butona basarak analizi başlatabilirsin.")
 
-with tab_curiosity:
-    # Use global session state token usage if available
-    usage_data = st.session_state.token_usage if "token_usage" in st.session_state else None
-    lm_history_data = st.session_state.lm_history if "lm_history" in st.session_state else None
-    ui.render_performance_tab(lm_history_data, usage_data)
+# Performans sekmesi kaldırıldı - istatistikler artık Analiz sekmesinde
 
