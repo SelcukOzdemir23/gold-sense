@@ -6,6 +6,18 @@
 
 ---
 
+## 📸 Ekran Görüntüleri
+
+![Arayüz Görüntüsü 1](img/image.png)
+
+![Arayüz Görüntüsü 2](img/image%20copy.png)
+
+![Arayüz Görüntüsü 3](img/image%20copy%202.png)
+
+![Arayüz Görüntüsü 4](img/image%20copy%203.png)
+
+---
+
 ## 🎓 Proje Hakkında
 Bu proje, **Yapay Zeka Destekli Finansal Analiz** üzerine yapılan bir **Yüksek Lisans Projesi** kapsamında geliştirilmiştir.
 

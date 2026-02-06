@@ -1,409 +1,149 @@
 {
   "status": "ok",
-  "totalResults": 692,
+  "totalResults": 623,
   "articles": [
     {
       "source": {
         "id": null,
-        "name": "CoinDesk"
+        "name": "Nakedcapitalism.com"
       },
-      "author": "Will Canny, AI Boost",
-      "title": "This bullish analyst on Michael Saylor's Strategy just threw in the towel on lofty price target",
-      "description": "Canaccord's Joseph Vafi slashed his price target on the plunging bitcoin treasury company's stock by more than 60%.",
-      "url": "https://www.coindesk.com/markets/2026/02/04/this-bullish-analyst-on-michael-saylor-s-strategy-just-threw-in-the-towel",
-      "urlToImage": "https://cdn.sanity.io/images/s3y3vcno/production/28ee13d93bd9b44fa7fd6e10b0452bde47d4ddcd-1920x1080.jpg?auto=format&w=960&h=540&crop=focalpoint&fit=clip&q=75&fm=jpg",
-      "publishedAt": "2026-02-04T14:26:36Z",
-      "content": "With crypto winter clearly having set in, bulls are now left looking for signs that the bearishness has become so embedded that a bottom might form.\r\nOne case in point might be a note from Canaccord'… [+1839 chars]"
+      "author": "Yves Smith",
+      "title": "Historia Arcana of the NATO Pact",
+      "description": "Did the success of former Nazi officers in landing key positions in NATO help explain NATO's Russia hostility even after the USSR fell?",
+      "url": "https://www.nakedcapitalism.com/2026/02/historia-arcana-of-the-nato-pact.html",
+      "urlToImage": null,
+      "publishedAt": "2026-02-05T09:00:52Z",
+      "content": "Yves here. Dr. Sotirovic covers a widely-ignored part of NATO’s past, as in the way former Nazi military officers not just found a home there but even held prominent positions. He makes the not-unrea… [+14416 chars]"
     },
     {
       "source": {
-        "id": "fox-news",
-        "name": "Fox News"
+        "id": null,
+        "name": "Livemint"
       },
-      "author": null,
-      "title": "Kevin Warsh must move fast to undo the worst Fed mistakes in decades",
-      "description": "President Trump was smart to select Kevin Warsh as next Fed chairman. He should reverse Jerome Powell’s policies and work quickly to restore stability at the Federal Reserve.",
-      "url": "https://www.foxnews.com/opinion/kevin-warsh-must-move-fast-undo-worst-fed-mistakes-decades",
-      "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2026/02/kevin-warsh-april-2025-trump-federal-reserve-getty.jpg",
-      "publishedAt": "2026-02-04T14:00:19Z",
-      "content": "President Trump hit the bullseye in selecting Kevin Warsh as the next Federal Reserve Board chairman.\r\nIn contrast to the failed tenure of Jerome Powell, Warsh is not political, and he is not an infl… [+4425 chars]"
+      "author": "Nouriel Roubini",
+      "title": "The great crypto reckoning: Wake up and get real about this class of pseudo assets",
+      "description": "Once hailed as digital gold, Bitcoin has lost its dazzle as a hedge against turmoil. Yet, crypto clearly has Trump’s favour and US lobbies are pushing to let stablecoins pay interest—although it could doom the banking sector and destabilize finance as we know…",
+      "url": "https://www.livemint.com/opinion/online-views/crypto-reckoning-class-of-pseudo-assets-stabelcoins-finance-donald-trump-11770196058674.html",
+      "urlToImage": "https://www.livemint.com/lm-img/img/2026/02/04/1600x900/logo/im-92494486_1756991198688_1770225295666.jpg",
+      "publishedAt": "2026-02-05T08:30:11Z",
+      "content": "A year ago, the most pro-crypto president in US history had just returned to power after pandering to clueless retail crypto investors and receiving massive financial backing from semi-corrupt crypto… [+5594 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "GlobeNewswire"
+      },
+      "author": "B2PRIME",
+      "title": "B2PRIME Group Releases New “Liquidity Pulse” Report on Global Liquidity Trends and Market Structure",
+      "description": "LIMASSOL, Cyprus, Feb. 05, 2026 (GLOBE NEWSWIRE) -- B2PRIME Group\r\n, a global financial services provider for institutional and professional clients, has released a comprehensive analytical report on liquidity conditions across global financial markets. “Liqu…",
+      "url": "https://www.globenewswire.com/news-release/2026/02/05/3232693/0/en/B2PRIME-Group-Releases-New-Liquidity-Pulse-Report-on-Global-Liquidity-Trends-and-Market-Structure.html",
+      "urlToImage": "https://ml.globenewswire.com/Resource/Download/2f27f0c2-7c2d-4bd6-a1ff-e419e2a4d74b",
+      "publishedAt": "2026-02-05T08:00:00Z",
+      "content": "LIMASSOL, Cyprus, Feb. 05, 2026 (GLOBE NEWSWIRE) -- B2PRIME Group\r\n, a global financial services provider for institutional and professional clients, has released a comprehensive analytical report on… [+2831 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BusinessLine"
+      },
+      "author": "Subramani Ra Mancombu",
+      "title": "Gold, silver snap 2-day uptrend as investors book profits on rising $, US Fed hawkish signal investors",
+      "description": "Silver hit the most as its prices fall 10%, gold sashays by $200 an ounce with markets turning volatile",
+      "url": "https://www.thehindubusinessline.com/markets/gold/gold-silver-snap-2-day-uptrend-as-investors-book-profits-on-rising-us-fed-hawkish-signal-investors/article70594807.ece",
+      "urlToImage": "https://bl-i.thgim.com/public/incoming/mn9wsf/article70560106.ece/alternates/LANDSCAPE_1200/IMG_PO25_gold_bar_2_1_VNFG0GPO.jpg",
+      "publishedAt": "2026-02-05T07:36:25Z",
+      "content": "Gold and silver snapped a two-day streak of an uptrend in prices to resume their fall witnessed during the last weekend. Silver fell more than gold, showing the same momentum that lifted it to a reco… [+2882 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Tistory.com"
+      },
+      "author": "T.B",
+      "title": "비트코인 → 금 → 은 → 주식 → 환율 연타 맞고 뻗어",
+      "description": "In a tense exchange during testimony before the House Financial Services Committee, US Representative Maxine Waters, a California Democrat, questions Treasury Secretary Scott Bessent about the inflationary impact of tariffs https://t.co/J0PTHjgwKu pic.twitter…",
+      "url": "https://ryueyes11.tistory.com/512081",
+      "urlToImage": "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FvQ3hp%2FdJMcacve6Ue%2FAAAAAAAAAAAAAAAAAAAAAOuBrBu_7biOG_UZznX9iUBjy94j_cZD1r7B7sR4Ct89%2Fimg.jpg%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1772290799%26allow_ip%3D%26allow_referer%3D%26signature%3Dk1AvEy8au7rQR%252F5JHDF%252Fk%252BBaghs%253D",
+      "publishedAt": "2026-02-05T06:40:14Z",
+      "content": "In a tense exchange during testimony before the House Financial Services Committee, US Representative Maxine Waters, a California Democrat, questions Treasury Secretary Scott Bessent about the inflat… [+2078 chars]"
     },
     {
       "source": {
         "id": null,
         "name": "Ndtvprofit.com"
       },
-      "author": "Press Trust of India",
-      "title": "Silver Hits Near Rs 3 Lakh/Kg, Gold Climbs To Rs 1.65 Lakh/10g Amid Global Rally",
-      "description": "Firm global trends, a weak US dollar, which revived investor interest in precious metals after last week&#039;s steep sell-off, contributed to the surge, traders said.",
-      "url": "https://www.ndtvprofit.com/markets/silver-rockets-near-rs-3-lakh-kg-gold-climbs-to-rs-1-65-lakh-10g-amid-global-rally-10946423",
-      "urlToImage": "https://c.ndtvimg.com/2026-01/6cd0c63e_Gold-Market-Gold-Jewelry-bangles-shots-Zaveri-Bazaar.-Photo-Mariyam-NDTV-Profit.jpg.jpg?im=FeatureCrop,algorithm=dnn,width=1080,height=607",
-      "publishedAt": "2026-02-04T13:59:34Z",
-      "content": "Precious metals extended their sharp rally for the second straight day in the national capital on Wednesday, with silver prices surging to Rs 2.98 lakh per kg and gold climbing to Rs 1.65 lakh per 10… [+1891 chars]"
-    },
-    {
-      "source": {
-        "id": "financial-post",
-        "name": "Financial Post"
-      },
       "author": "Bloomberg News",
-      "title": "Gold rebounds above US$5,000 as historic retreat tempts dip buyers",
-      "description": "Gold rose for a second day, rebounding above US$5,000 an ounce as dip buyers snapped up precious metals. Read more.",
-      "url": "https://financialpost.com/investing/gold-rebounds-historic-retreat-tempts-dip-buyers",
-      "urlToImage": "https://smartcdn.gprod.postmedia.digital/financialpost/wp-content/uploads/2026/02/0205-bc-gold.jpg",
-      "publishedAt": "2026-02-04T13:55:13Z",
-      "content": "Gold rose for a second day, rebounding above US$5,000 an ounce as dip buyers snapped up precious metals following a historic collapse from record highs.\r\nTHIS CONTENT IS RESERVED FOR SUBSCRIBERS ONLY… [+4874 chars]"
+      "title": "China Trader Who Made $3 Billion On Gold Bets Big Against Silver",
+      "description": "Bians big short comes with significant risk, and he has been forced to liquidate some positions at a loss in a volatile silver market.",
+      "url": "https://www.ndtvprofit.com/markets/chinese-billionaire-trader-who-made-3-billion-on-gold-bets-big-against-silver-10950046",
+      "urlToImage": "https://c.ndtvimg.com/2026-02/05fejddg_silver-bbg_625x300_05_February_26.jpg?im=FeatureCrop,algorithm=dnn,width=1080,height=607",
+      "publishedAt": "2026-02-05T06:20:50Z",
+      "content": "A billionaire Chinese trader who made his name riding gold's record-breaking rally has turned his sights to silver's breakneck surge, with a bet on the metal's collapse now worth almost $300 million.… [+4588 chars]"
     },
     {
       "source": {
         "id": null,
-        "name": "Fair Observer"
+        "name": "Naturalnews.com"
       },
-      "author": "Alex Gloy",
-      "title": "Dollar Milkshake Theory Is Still Useful",
-      "description": "In 2018, investment manager Brent Johnson introduced the Dollar Milkshake Theory to answer a big puzzle in modern economics: Why does the dollar grow stronger during crises, even when the US is printing money? Johnson argues that a strong US dollar (the straw…",
-      "url": "https://www.fairobserver.com/economics/dollar-milkshake-theory-is-still-useful/",
-      "urlToImage": "https://www.fairobserver.com/wp-content/uploads/2026/02/graphs-.jpg",
-      "publishedAt": "2026-02-04T13:38:56Z",
-      "content": "In 2018, investment manager Brent Johnson introduced the Dollar Milkshake Theory to answer a big puzzle in modern economics: Why does the dollar grow stronger during crises, even when the US is print… [+15153 chars]"
-    },
-    {
-      "source": {
-        "id": "the-irish-times",
-        "name": "The Irish Times"
-      },
-      "author": "Emma Dunkley and Alan Livsey",
-      "title": "Amundi says it will cut exposure to US over coming year",
-      "description": "€2.4tn asset manager is latest to voice concern over US policymaking and its impact on dollar assets",
-      "url": "https://www.irishtimes.com/business/2026/02/04/amundi-says-it-will-cut-exposure-to-us-over-coming-year/",
-      "urlToImage": "https://www.irishtimes.com/resizer/v2/QWG6XCUEANO2GLWNEA3EGAV2UY.jpg?smart=true&auth=1c832e60062f20e2b6ef9fe93e14ff22ed8a57ab9d992dd11dc4f30f3fe0dd42&width=1200&height=630",
-      "publishedAt": "2026-02-04T13:24:35Z",
-      "content": "Europes largest asset manager Amundi is reducing its exposure to US dollar assets and turning to European and emerging markets, its chief executive has said.\r\nValerie Baudson, whose firm has 2.4 tril… [+3257 chars]"
+      "author": "Mike Adams",
+      "title": "IT’S OVER: How China’s Anti-Stealth Radar and Missiles Have Ended U.S. Military Dominance",
+      "description": "Introduction For decades, the cornerstone of American global power projection has been a simple, terrifying formula: stealth aircraft that enemies cannot see, and invincible aircraft carriers that enemies cannot touch. This technological monopoly underwrote t…",
+      "url": "https://www.naturalnews.com/2026-02-05-chinas-antistealth-radar-missiles-end-us-military-dominance.html",
+      "urlToImage": "https://www.naturalnews.com/wp-content/uploads/sites/91/2026/02/anti-stealth-radar-uhf-radar-vhf-radar-186-original.jpg",
+      "publishedAt": "2026-02-05T06:00:00Z",
+      "content": "Introduction\r\nFor decades, the cornerstone of American global power projection has been a simple, terrifying formula: stealth aircraft that enemies cannot see, and invincible aircraft carriers that e… [+13237 chars]"
     },
     {
       "source": {
         "id": null,
-        "name": "CoinDesk"
+        "name": "Naturalnews.com"
       },
-      "author": "Will Canny, AI Boost",
-      "title": "Bitcoin nears pre-election floor as ETF flows stall, Citi says",
-      "description": "The cryptocurrency is trading below key ETF cost levels and nearing its pre-election price floor as inflows to these vehicles fade and headwinds build, the bank said.",
-      "url": "https://www.coindesk.com/markets/2026/02/04/bitcoin-nears-pre-election-floor-as-etf-flows-stall-citi-says",
-      "urlToImage": "https://cdn.sanity.io/images/s3y3vcno/production/ce6e5878a3bba05bcb92f58c5d32dad187180ea3-1920x1080.jpg?auto=format&w=960&h=540&crop=focalpoint&fit=clip&q=75&fm=jpg",
-      "publishedAt": "2026-02-04T12:57:30Z",
-      "content": "Crypto markets are approaching important inflection points after weeks of declines, according to Wall Street bank Citi (C).\r\nBitcoin BTC\r\n$76,073.52 fell to around $73,000 before stabilizing, extendi… [+1725 chars]"
+      "author": "Mike Adams",
+      "title": "Silver Selloff Strengthens the Market: A Cleansing of Weak Hands Fuels the Next Leg Up",
+      "description": "Introduction In early February 2026, the silver market experienced a historic, violent selloff that wiped billions from precious metals portfolios in a matter of days. Spot prices plunged from record highs near $120 an ounce to the $89 level, sparking panic a…",
+      "url": "https://www.naturalnews.com/2026-02-05-silver-selloff-strengthens-the-market.html",
+      "urlToImage": "https://www.naturalnews.com/wp-content/uploads/sites/91/2026/02/silver-market-physical-silver-industrial-demand-184-original.jpg",
+      "publishedAt": "2026-02-05T06:00:00Z",
+      "content": "Introduction\r\nIn early February 2026, the silver market experienced a historic, violent selloff that wiped billions from precious metals portfolios in a matter of days. Spot prices plunged from recor… [+12799 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Naturalnews.com"
+      },
+      "author": "Kevin Hughes",
+      "title": "Gold and silver markets in TURMOIL as Trump’s Fed nominee triggers historic sell-off",
+      "description": "A major sell-off in gold and silver was triggered by President Trump’s nomination of Kevin Warsh as Federal Reserve chair, causing gold to drop 8% and silver 7% on Feb. 2, following a historic 30% crash in silver on Friday. The sell-off was driven by three ke…",
+      "url": "https://www.naturalnews.com/2026-02-05-metals-markets-turmoil-over-trump-fed-nominee.html",
+      "urlToImage": "https://www.naturalnews.com/wp-content/uploads/sites/91/2026/02/Gold-bullion-stack-1.jpg",
+      "publishedAt": "2026-02-05T06:00:00Z",
+      "content": "<ul><li>A major sell-off in gold and silver was triggered by President Trump's nomination of Kevin Warsh as Federal Reserve chair, causing gold to drop 8% and silver 7% on Feb. 2, following a histori… [+5541 chars]"
     },
     {
       "source": {
         "id": "the-times-of-india",
         "name": "The Times of India"
       },
-      "author": "Piyush Shukla",
-      "title": "Gold and silver price today: Gold again crosses $5,000 and silver touches $90 — will gold and silver continue to gain in this cycle to touch $6,300 and $125?",
-      "description": "Gold and silver price today: Gold prices surged 2.7% to $5,071.79 on February 4, 2026. This move reclaimed the vital $5,000 psychological floor. Silver followed with an 8% jump to $89.92. Fresh U.S.-Iran tensions drove this safe-haven rally. J.P. Morgan now f…",
-      "url": "https://economictimes.indiatimes.com/news/international/us/gold-and-silver-price-today-gold-again-crosses-5000-and-silver-touches-90-will-gold-and-silver-continue-to-gain-in-this-cycle-to-touch-6300-and-125/articleshow/127910027.cms",
-      "urlToImage": "https://img.etimg.com/thumb/msid-127910472,width-1200,height-630,imgsize-43008,overlay-economictimes/articleshow.jpg",
-      "publishedAt": "2026-02-04T12:52:57Z",
-      "content": "Gold and silver price today: Gold futures (GC00) surged to $5,071.60 per ounce, up $136.60 or 2.77%, reclaiming the psychologically critical $5,000 level in Asian trading. Silver futures (SI00) follo… [+7489 chars]"
-    },
-    {
-      "source": {
-        "id": "financial-post",
-        "name": "Financial Post"
-      },
-      "author": "Bloomberg News",
-      "title": "Michael Burry warns of cascading effects from Bitcoin plunge",
-      "description": "Michael Burry warned that Bitcoin’s plunge could deepen into a self-reinforcing “death spiral,” inflicting lasting damage. Read more.",
-      "url": "https://financialpost.com/fp-finance/cryptocurrency/michael-burry-cascading-effects-bitcoin-plunge",
-      "urlToImage": "https://smartcdn.gprod.postmedia.digital/financialpost/wp-content/uploads/2026/02/0205-bc-burry.jpg",
-      "publishedAt": "2026-02-04T12:48:50Z",
-      "content": "Michael Burry, the money manager made famous in The Big Short, warned that Bitcoins plunge could deepen into a self-reinforcing death spiral, inflicting lasting damage on companies that have spent th… [+5084 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Awealthofcommonsense.com"
-      },
-      "author": "Ben Carlson",
-      "title": "Animal Spirits: Gold’s 1987 Moment",
-      "description": "On today's show we discuss the never-ending news cycle, the gold/silver crash, how the Internet changed markets forever, the commodities supercycle, emerging markets are on fire, the new Fed chair, the chart of the century, crypto feels dead again, the govern…",
-      "url": "https://awealthofcommonsense.com/2026/02/animal-spirits-golds-1987-moment/",
-      "urlToImage": "https://awealthofcommonsense.com/wp-content/uploads/2026/02/Screenshot-2026-02-03-135231.png",
-      "publishedAt": "2026-02-04T12:15:55Z",
-      "content": "Today’s Animal Spirits is brought to you by Nuveen and ClearBridge Investments:\r\nToday’s show is sponsored by ClearBridge Investments. International and emerging market stocks outperformed the U.S. i… [+7444 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "CoinDesk"
-      },
-      "author": "Omkar Godbole",
-      "title": "How your brain may drive bitcoin higher",
-      "description": "The day ahead in crypto: Feb. 4, 2026",
-      "url": "https://www.coindesk.com/daybook-us/2026/02/04/how-your-brain-may-drive-bitcoin-higher",
-      "urlToImage": "https://cdn.sanity.io/images/s3y3vcno/production/3aa1d6e410431fef9df16c0930523bd40038f914-1500x1007.jpg?auto=format&w=960&h=540&crop=focalpoint&fit=clip&q=75&fm=jpg",
-      "publishedAt": "2026-02-04T12:15:00Z",
-      "content": "By Omkar Godbole (All times ET unless indicated otherwise)\r\nBitcoin's BTC\r\n$76,090.37 bear market feels brutal and could deepen. Analysts are suggesting potential Fed interest-rate cuts and crypto-sp… [+6569 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Robb Report"
-      },
-      "author": "Rachel Cormack",
-      "title": "Dress Watches Are Continuing to Dominate the Market, a New Chrono24 Report Shows",
-      "description": "Chrono24 just released its 2025 Market Recap, with the data illustrating collectors are eschewing sports watches in favor of more elegant timepieces.",
-      "url": "http://robbreport.com/style/watch-collector/chrono24-2025-watch-market-recap-1237554183/",
-      "urlToImage": "https://robbreport.com/wp-content/uploads/2026/02/GettyImages-2254552049.jpg?w=681&h=383&crop=1",
-      "publishedAt": "2026-02-04T12:00:00Z",
-      "content": "It’s no secret that dress watches have made a massive resurgence, but now we have even further proof.\r\nChrono24, the world’s leading marketplace for luxury watches, just released its 2025 Market Reca… [+2584 chars]"
+      "author": "Surbhi Khanna",
+      "title": "Crypto market wipes out $500 bn in a week; Bitcoin down 20%, slips 7% in a day",
+      "description": "The cryptocurrency market experienced a significant downturn, with nearly $500 billion wiped off its total value in a week. Bitcoin and Ethereum saw substantial drops, reflecting a broader risk-off sentiment in global markets. Analysts suggest this volatility…",
+      "url": "https://economictimes.indiatimes.com/markets/cryptocurrency/crypto-market-wipes-out-500-billion-in-a-week-as-bitcoin-drops-7-in-a-day/articleshow/127924957.cms",
+      "urlToImage": "https://img.etimg.com/thumb/msid-127925023,width-1200,height-630,imgsize-299350,overlay-etmarkets/articleshow.jpg",
+      "publishedAt": "2026-02-05T05:59:31Z",
+      "content": "The cryptocurrency market remained under pressure after nearly $500 billion was wiped off its total value over the past week. Bitcoin fell about 20% during the period to around $70,000, including a s… [+3504 chars]"
     },
     {
       "source": {
         "id": "the-times-of-india",
         "name": "The Times of India"
       },
-      "author": "Shaghil Bilali",
-      "title": "Gold prices recover by 6.6% after crash: What should investors do now with their yellow metal holdings?",
-      "description": "Gold prices on MCX experienced a correction, rising 6.59% after a significant 15.61% fall. Analysts attribute the rebound to a weaker dollar, renewed safe-haven demand, and bargain buying amid geopolitical tensions. Long-term investors can consider the constr…",
-      "url": "https://economictimes.indiatimes.com/wealth/save/gold-prices-recover-by-6-6-after-crash-what-should-investors-do-now-with-their-yellow-metal-holdings/articleshow/127909023.cms",
-      "urlToImage": "https://img.etimg.com/thumb/width-1200,height-900,imgsize-95780,resizemode-75,msid-127909023/wealth/save/gold-prices-recover-by-6-6-after-crash-what-should-investors-do-now-with-their-yellow-metal-holdings.jpg",
-      "publishedAt": "2026-02-04T11:56:44Z",
-      "content": "Gold prices went through a correction on the Multi Commodity Exchange of India (MCX) in the last two days, rising by 6.59% from Rs 1,47,878 on Monday to Rs 1,57,620 today (Wednesday, February 4, 2026… [+6191 chars]"
-    },
-    {
-      "source": {
-        "id": "rte",
-        "name": "RTE"
-      },
-      "author": "RTÉ News",
-      "title": "Gold extends gains as US-Iran tensions fuel safe-have bid",
-      "description": "Gold rose further today, after logging its biggest daily gain in 17 years in the previous session, as investors flocked to the safe-haven asset amid fresh geopolitical tensions between the US and Iran.",
-      "url": "https://www.rte.ie/news/business/2026/0204/1556712-gold-extends-gains-as-us-iran-tensions-fuel-safe-have-bid/",
-      "urlToImage": "https://www.rte.ie/images/00066a8b-1600.jpg",
-      "publishedAt": "2026-02-04T11:54:15Z",
-      "content": "Gold rose further today, after logging its biggest daily gain in 17 years in the previous session, as investors flocked to the safe-haven asset amid fresh geopolitical tensions between the US and Ira… [+1829 chars]"
-    },
-    {
-      "source": {
-        "id": "al-jazeera-english",
-        "name": "Al Jazeera English"
-      },
-      "author": "Prosper Heri Ngorora",
-      "title": "‘We are exploited’: Congolese fear losing out as US makes minerals deals",
-      "description": "As officials meet in Washington to discuss critical minerals, many in DRC fear their country will gain little.",
-      "url": "https://www.aljazeera.com/features/2026/2/4/we-are-exploited-congolese-fear-losing-out-as-us-makes-minerals-deals",
-      "urlToImage": "https://www.aljazeera.com/wp-content/uploads/2026/02/2025-09-04T083726Z_632187048_RC2DIGA83SVA_RTRMADP_3_CONGO-SECURITY-ADF-MINING-1770183808.jpg?resize=1920%2C1440",
-      "publishedAt": "2026-02-04T11:45:37Z",
-      "content": "Goma, Democratic Republic of the Congo In cities in the mineral-rich eastern Democratic Republic of the Congo (DRC), home to some of the worlds largest cobalt and copper reserves, eyes are on the out… [+10061 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "TheStreet"
-      },
-      "author": "Pooja Rajkumari",
-      "title": "'Big Short’ Michael Burry sends chilling warning after Bitcoin plunge",
-      "description": "“The Big Short” investor Michael Burry has often been critical of cryptocurrencies. For someone who correctly predicted the 2008 housing crisis and the 2000 ...",
-      "url": "https://www.thestreet.com/crypto/markets/big-short-michael-burry-sends-chilling-warning-after-bitcoin-plunge",
-      "urlToImage": "https://s.yimg.com/os/en/thestreet_881/124366db2fcf256f70c94391b4bc595e",
-      "publishedAt": "2026-02-04T11:25:32Z",
-      "content": "The Big Short investor Michael Burry has often been critical of cryptocurrencies.\r\nFor someone who correctly predicted the 2008 housing crisis and the 2000 dot-com bubble, his words often carry weigh… [+3961 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Foreign Policy"
-      },
-      "author": "Joel Wasserman",
-      "title": "Russia Has Turned Sports Into a Weapon",
-      "description": "The Olympic ban is a necessary counter to Moscow’s abuse.",
-      "url": "http://foreignpolicy.com/2026/02/04/russia-ovechkin-putin-olympics-hocke/",
-      "urlToImage": "https://foreignpolicy.com/wp-content/uploads/2026/02/3a-Russia-Sports-Vladimir-Putin-Ice-Hockey-Alexander-Ovechkin-2015-GettyImages-486157546.jpg?w=1000",
-      "publishedAt": "2026-02-04T11:00:01Z",
-      "content": "When the 2026 Winter Olympic Games kick off in Italy on Feb. 6, there will be no participation from Russian teams and very limited participation from individual Russian athletes competing as neutrals… [+8341 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Scientific American"
-      },
-      "author": "Kendra Pierre-Louis, Sushmita Pathak, Alex Sugiura",
-      "title": "‘Daily misery’—why some people can’t burp, and how Botox comes to the rescue",
-      "description": "For those with retrograde cricopharyngeus dysfunction, daily life can be miserable, with symptoms such as bloating and chest pain. But a simple Botox injection can help",
-      "url": "https://www.scientificamerican.com/podcast/episode/daily-misery-why-some-people-cant-burp-and-how-botox-comes-to-the-rescue/",
-      "urlToImage": "https://static.scientificamerican.com/dam/m/510dc089e457564e/original/2602_SQ_WED_BURPING_thumbnail-1.png?m=1770154290.1&w=1200",
-      "publishedAt": "2026-02-04T11:00:00Z",
-      "content": "Kendra Pierre-Louis: For Scientific American’s Science Quickly, I’m Kendra Pierre-Louis, in for Rachel Feltman.\r\nYou’ve probably been in this situation: you just had a big lunch or a tall carbonated … [+15213 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "CNBC"
-      },
-      "author": "Azhar Sukri",
-      "title": "Gold and silver extend rebound but concerns over volatility linger",
-      "description": "Gold and silver climb with further gains seen determined by rate expectations",
-      "url": "https://www.cnbc.com/2026/02/04/gold-and-silver-extend-rebound-but-concerns-over-volatility-linger.html",
-      "urlToImage": "https://image.cnbcfm.com/api/v1/image/108255162-1769019661988-gettyimages-2151522551-1000013453.jpeg?v=1770184007&w=1920&h=1080",
-      "publishedAt": "2026-02-04T10:42:10Z",
-      "content": "Gold and silver prices extended their rally on Wednesday, with analysts saying further gains will likely be determined by the direction of foreign exchange and interest rate expectations.\r\nSpot gold … [+3231 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Yahoo Entertainment"
-      },
-      "author": "Yihui Xie, Preeti Soni and Jack Ryan",
-      "title": "Gold Rebounds Above $5,000 as Historic Retreat Tempts Dip Buyers",
-      "description": "“Forced sales have likely run their course in precious metals,” Daniel Ghali, a senior commodity strategist at TD Securities, said in a note.  Precious...",
-      "url": "https://finance.yahoo.com/news/gold-holds-gains-historic-retreat-000017246.html",
-      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/t.SfDrO3utuAKYh6gULIbQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://media.zenfs.com/en/bloomberg_holding_pen_162/b27f21b49cf1bdd350c9fe35ece6766f",
-      "publishedAt": "2026-02-04T10:39:03Z",
-      "content": "(Bloomberg) -- Gold rose for a second day, rebounding above $5,000 an ounce as dip buyers snapped up precious metals following a historic collapse from record highs.\r\nBullion climbed as much as 2.9% … [+3236 chars]"
-    },
-    {
-      "source": {
-        "id": "business-insider",
-        "name": "Business Insider"
-      },
-      "author": "jciolli@businessinsider.com (Joe Ciolli)",
-      "title": "Bitcoin is having an existential crisis",
-      "description": "The nomination of Kevin Warsh as Fed chair was the latest in a long line of hits absorbed by bitcoin in recent months.",
-      "url": "https://www.businessinsider.com/bitcoin-price-crash-bear-market-outlook-strategy-trust-crypto-selloff-2026-2",
-      "urlToImage": "https://i.insider.com/69827923a645d1188188a04b?width=1024&format=jpeg",
-      "publishedAt": "2026-02-04T10:35:01Z",
-      "content": "It's entirely possible you missed the recent meltdown in bitcoin. Not to project, but there were other sell-offs in the likes of gold and silver sucking up most of the oxygen and attention. First Tra… [+2502 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "BBC News"
-      },
-      "author": null,
-      "title": "Gold rebounds above $5,000 after US downs Iran drone",
-      "description": "Precious metal price voliatility continues as geopolitical tensions push investors to safe-haven assets.",
-      "url": "https://www.bbc.com/news/articles/c5y2nn582l5o",
-      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/ce31/live/1273a030-fdb9-11f0-8e3f-176b350fc659.jpg",
-      "publishedAt": "2026-02-04T10:12:09Z",
-      "content": "The precious metal, which is seen as a so-called \"safe haven\" for investors in times of uncertainty, shot back above $5,000 (£3,650) an ounce following days of sharp falls."
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "The Punch"
-      },
-      "author": "Punch Newspapers",
-      "title": "Stocks rise as traders ignore AI-fuelled sell-off on Wall St",
-      "description": "Get the latest stock market news as global stocks rise, brushing off an AI-fueled sell-off on Wall Street. Oil prices and precious metals also gain.\n\nRead More: https://punchng.com/stocks-rise-as-traders-ignore-ai-fuelled-sell-off-on-wall-st/",
-      "url": "https://punchng.com/stocks-rise-as-traders-ignore-ai-fuelled-sell-off-on-wall-st/",
-      "urlToImage": "https://cdn.punchng.com/wp-content/uploads/2025/08/26091840/IMG_1950.jpeg",
-      "publishedAt": "2026-02-04T08:06:19Z",
-      "content": "Stocks mostly rose Wednesday as investors brushed off another tech-fuelled sell-off on Wall Street, while precious metals continued their recovery on dip-buying following a two-day collapse.\r\nOil pri… [+4393 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "The Daily Hodl"
-      },
-      "author": "Daily Hodl Staff",
-      "title": "‘Final’ Bitcoin Bull Market Is Coming, Says Analyst Michaël Van De Poppe – Here’s His Timeline",
-      "description": "A widely followed crypto analyst believes the macroeconomic environment is starting to shift in Bitcoin’s (BTC) favor. Crypto trader Michaël Van De Poppe tells his 818,600 followers on X that the business cycle is picking up speed. “It’s important to be reali…",
-      "url": "https://dailyhodl.com/2026/02/04/final-bitcoin-bull-market-is-coming-says-analyst-michael-van-de-poppe-heres-his-timeline/",
-      "urlToImage": "https://dailyhodl.com/wp-content/uploads/2023/08/It-Comes-to-Bitcoin.jpg?resize=1365,800",
-      "publishedAt": "2026-02-04T08:04:23Z",
-      "content": "A widely followed crypto analyst believes the macroeconomic environment is starting to shift in Bitcoin’s (BTC) favor.\r\nCrypto trader Michaël Van De Poppe tells his 818,600 followers on X that the bu… [+2058 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "GlobeNewswire"
-      },
-      "author": "Bitwise Europe",
-      "title": "Bitwise lists Diaman Bitcoin & Gold ETP on Deutsche Börse Xetra",
-      "description": "Bitwise today announces the listing of the Bitwise Diaman Bitcoin & Gold ETP (ticker: BTCG; ISIN: DE000A4AKW34) on Deutsche Börse Xetra. ...",
-      "url": "https://www.globenewswire.com/news-release/2026/02/04/3231793/0/en/Bitwise-lists-Diaman-Bitcoin-Gold-ETP-on-Deutsche-B%C3%B6rse-Xetra.html",
-      "urlToImage": "https://ml-eu.globenewswire.com/Resource/Download/9e100e92-2d09-418f-b958-a702c0c74f73",
-      "publishedAt": "2026-02-04T08:03:00Z",
-      "content": "<ul><li>Exposure to Bitcoin and gold through a rules-based index methodology</li><li>ETP designed to simultaneously provide exposure to both growth-oriented and defensive assets </li><li>Dynamic allo… [+10141 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Inside Higher Ed"
-      },
-      "author": "Elizabeth Redden",
-      "title": "6 Takeaways From the International Branch Campus Boom",
-      "description": "6 Takeaways From the International Branch Campus Boom\n\n \n\n\n \nElizabeth Redden\n\nWed, 02/04/2026 - 03:00 AM\n\nTwenty years after interest in foreign outposts reached its height, here’s what to know about the rise, fall and reinvention of the IBC.\n \n Byline(s)\r\n\n…",
-      "url": "https://www.insidehighered.com/opinion/views/2026/02/04/6-takeaways-international-branch-campus-boom-opinion",
-      "urlToImage": "https://www.insidehighered.com/sites/default/files/styles/large/public/2026-02/GettyImages-2229421590.jpg?itok=uFUUqoNc",
-      "publishedAt": "2026-02-04T08:00:00Z",
-      "content": "As the U.S. tightens visa restrictions for international students and slashes research fundingthreatening its status as a global innovation powerhouse its tempting to think American universities can … [+12547 chars]"
-    },
-    {
-      "source": {
-        "id": "abc-news",
-        "name": "ABC News"
-      },
-      "author": "CHAN HO-HIM AP business writer",
-      "title": "Asian shares gained and gold and silver climb higher after a retreat on Wall St",
-      "description": "Shares have mostly gained in Asia, although markets in Japan were dragged lower by selling of tech-related stocks",
-      "url": "https://abcnews.go.com/Business/wireStory/asian-shares-gained-gold-silver-climb-higher-after-129837968",
-      "urlToImage": "https://i.abcnewsfe.com/a/827a9332-87cd-407f-b11f-458fe8156329/wirestory_696988a330fd224f3364709eaee6cf2a_16x9.jpg?w=1600",
-      "publishedAt": "2026-02-04T07:41:31Z",
-      "content": "HONG KONG -- Asia shares traded mostly higher on Wednesday despite a retreat on Wall Street on selling of technology stocks, while gold and silver continued to regain ground after a recent sell-off.\r… [+2803 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Economictimes.com"
-      },
-      "author": null,
-      "title": "Silver & gold ETFs rally up to 9% as bullion boom continues. Should you invest now?",
-      "description": "Gold and silver futures opened higher for a second consecutive session on Wednesday, pushing commodity-based ETFs up by as much as 9% during the period.",
-      "url": "https://m.economictimes.com/mf/analysis/silver-gold-etfs-rally-up-to-9-as-bullion-boom-continues-should-you-invest-now/articleshow/127901585.cms",
-      "urlToImage": "https://img.etimg.com/thumb/msid-127901573,width-1200,height-630,imgsize-72888,overlay-etwealthmutualfunds/articleshow.jpg",
-      "publishedAt": "2026-02-04T06:19:04Z",
-      "content": "Gold and silver futures opened higher for a second consecutive session on Wednesday, pushing commodity-based ETFs up by as much as 9% during the period. Prices were supported by rising geopolitical t… [+2859 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "newsBTC"
-      },
-      "author": "Jake Simmons",
-      "title": "‘Sell Gold, Buy Bitcoin’: Cathie Wood Makes The Rotation Call",
-      "description": "ARK Invest CEO Cathie Wood said she would “make a shift from gold into Bitcoin” after gold’s run left the metal looking extended on a key liquidity-adjusted measure, arguing that bitcoin’s supply dynamics and long-term adoption case still favor the crypto ass…",
-      "url": "http://www.newsbtc.com/bitcoin-news/sell-gold-buy-bitcoin-cathie-wood/",
-      "urlToImage": "https://www.newsbtc.com/wp-content/uploads/2025/03/Screenshot-2025-03-19-075442.png?fit=1917%2C1000",
-      "publishedAt": "2026-02-04T06:00:10Z",
-      "content": "ARK Invest CEO Cathie Wood said she would make a shift from gold into Bitcoin after golds run left the metal looking extended on a key liquidity-adjusted measure, arguing that bitcoins supply dynamic… [+3533 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "GlobeNewswire"
-      },
-      "author": "CREDIT AGRICOLE SA",
-      "title": "CREDIT AGRICOLE SA: Fourth quarter 2025 and full-year 2025 results - DYNAMIC ACTIVITY AND STRONG RESULTS IN 2025",
-      "description": "This press release comments on the results of Crédit Agricole S.A. and those of Crédit Agricole Group, which comprises the Crédit Agricole S.A. entities and the Crédit Agricole Regional Banks, which own 63.5% of Crédit Agricole S.A.",
-      "url": "https://www.globenewswire.com/news-release/2026/02/04/3231749/0/en/CREDIT-AGRICOLE-SA-Fourth-quarter-2025-and-full-year-2025-results-DYNAMIC-ACTIVITY-AND-STRONG-RESULTS-IN-2025.html",
-      "urlToImage": "https://ml-eu.globenewswire.com/Resource/Download/e3774544-3555-4fd2-a441-7324d52be277",
-      "publishedAt": "2026-02-04T06:00:00Z",
-      "content": "<table><tr><td>DYNAMIC ACTIVITY AND STRONG RESULTS IN 2025</td><td> </td></tr><tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr><tr><td> </td><td>CRÉDIT AGRICOLE S.A.</td><td>CRÉDI… [+158799 chars]"
-    },
-    {
-      "source": {
-        "id": "the-times-of-india",
-        "name": "The Times of India"
-      },
-      "author": "ETMarkets.com",
-      "title": "Wall Street investor Jim Rogers’ India lesson: Always own some gold and silver",
-      "description": "Veteran investor Jim Rogers said precious metals remain a core part of a long-term portfolio despite recent rallies and volatility, noting he is neither buying nor selling gold and silver at current levels as he focuses on long-term investing over short-term …",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/wall-street-investor-jim-rogers-india-lesson-always-own-some-gold-and-silver/articleshow/127900860.cms",
-      "urlToImage": "https://img.etimg.com/thumb/msid-127900854,width-1200,height-630,imgsize-12974,overlay-etmarkets/articleshow.jpg",
-      "publishedAt": "2026-02-04T05:42:16Z",
-      "content": "Veteran investor and author Jim Rogers, known for his long-term contrarian bets and the book Street Smarts: Adventures On The Road And In The Markets, believes precious metals remain an essential par… [+3128 chars]"
+      "author": "Nikhil Agarwal",
+      "title": "Bullion bloodbath again: 3 reasons why gold, silver prices are crashing and should you buy the fear?",
+      "description": "Precious metals suffered a brutal selloff on Thursday, with silver plunging nearly 17% in Asian trade and Indian ETFs collapsing up to 21% as a stronger dollar and easing geopolitical tensions shattered the months-long rally. Gold prices also tumbled, leaving…",
+      "url": "https://economictimes.indiatimes.com/markets/commodities/news/bullion-bloodbath-again-3-reasons-why-gold-silver-prices-are-crashing-and-should-you-buy-the-fear/articleshow/127924265.cms",
+      "urlToImage": "https://img.etimg.com/thumb/msid-127924413,width-1200,height-630,imgsize-96444,overlay-etmarkets/articleshow.jpg",
+      "publishedAt": "2026-02-05T05:23:23Z",
+      "content": "Precious metals plunged in a brutal Thursday selloff, with silver collapsing nearly 17% in Asian markets and Indian gold and silver ETFs haemorrhaging up to 21%, as a resurgent dollar and easing geop… [+6428 chars]"
     },
     {
       "source": {
@@ -411,51 +151,77 @@
         "name": "CoinDesk"
       },
       "author": "Shaurya Malwa",
-      "title": "Ether and majors rise as bitcoin rebounds to $76,000 but the bounce may not last",
-      "description": "Flows and on-chain data signaled defensive positioning, as crypto investment products logged $1.7 billion in weekly outflows.",
-      "url": "https://www.coindesk.com/markets/2026/02/04/ether-and-majors-rise-as-bitcoin-rebounds-to-usd76-000-but-the-bounce-may-not-last",
-      "urlToImage": "https://cdn.sanity.io/images/s3y3vcno/production/da6533df1fe8949af6c38de0ecc6d2cfd76d8409-1920x1080.jpg?auto=format",
-      "publishedAt": "2026-02-04T05:40:42Z",
-      "content": "Crypto prices steadied on Wednesday after a volatile start to the week, tracking a tentative improvement in broader risk sentiment even as traders remained cautious about near-term direction.\r\nTotal … [+2774 chars]"
+      "title": "Silver’s 17% plunge reignites market behaviour that once topped bitcoin liquidations",
+      "description": "It is the same setup Michael Burry warned about this week, when he said falling crypto collateral can force metal selling in a feedback loop.",
+      "url": "https://www.coindesk.com/markets/2026/02/05/silver-s-17-plunge-reignites-market-behaviour-that-once-topped-bitcoin",
+      "urlToImage": "https://cdn.sanity.io/images/s3y3vcno/production/9cecc14792524c45f125ddb27142c83749fc9cf6-1920x1080.jpg?auto=format&w=960&h=540&crop=focalpoint&fit=clip&q=75&fm=jpg",
+      "publishedAt": "2026-02-05T04:45:06Z",
+      "content": "Silver sank as much as 17% in the past 24 hours, wiping out a two-day rebound as the metal struggled to find a floor after last weeks historic rout. \r\nThe move dragged gold and copper lower as well, … [+1462 chars]"
     },
     {
       "source": {
-        "id": "business-insider",
-        "name": "Business Insider"
+        "id": null,
+        "name": "Crypto Briefing"
       },
-      "author": "htan@insider.com (Huileng Tan)",
-      "title": "Gold surges back above $5,000 as dip buyers charge back in after historic bloodbath",
-      "description": "Gold's recent selloff reflected positioning rather than a deterioration in fundamentals, analysts say.",
-      "url": "https://www.businessinsider.com/gold-price-today-rebound-5000-dip-buying-forecast-outlook-silver-2026-2",
-      "urlToImage": "https://i.insider.com/6982aed3e1ba468a96ab59fa?width=1200&format=jpeg",
-      "publishedAt": "2026-02-04T05:16:10Z",
-      "content": "Gold bounced above $5,000 an ounce on Tuesday as investors rushed back into the metal following one of the sharpest selloffs in decades.\r\nSpot gold was trading around $5,072 per troy ounce at 11:10 p… [+2837 chars]"
+      "author": "Vivian Nguyen",
+      "title": "Silver, gold tumble as stronger dollar hits precious metals",
+      "description": "The stronger dollar and Fed uncertainty may lead to reduced investment in precious metals, impacting global markets and investor strategies.\nThe post Silver, gold tumble as stronger dollar hits precious metals appeared first on Crypto Briefing.",
+      "url": "https://cryptobriefing.com/silver-market-volatility/",
+      "urlToImage": "https://static.cryptobriefing.com/wp-content/uploads/2026/02/04231303/60020192-1b1a-4d38-8906-06621ae53f1a-800x420.jpg",
+      "publishedAt": "2026-02-05T04:19:12Z",
+      "content": "A stronger dollar makes dollar-denominated commodities like gold and silver more expensive for foreign investors. Spot silver plunged below $75 per ounce, down 15% in Asian trading on Thursday, while… [+1039 chars]"
+    },
+    {
+      "source": {
+        "id": "cbc-news",
+        "name": "CBC News"
+      },
+      "author": null,
+      "title": "Stephen Harper says Canada must urgently reduce its dependence on the U.S.",
+      "description": "Speaking at an Ottawa gala late Wednesday, former prime minister Stephen Harper said that Canada must urgently pivot in the face of an erratic U.S. president and reduce its dependence on the American market to protect its sovereignty and the continued functio…",
+      "url": "https://www.cbc.ca/news/politics/stephen-harper-reduce-dependence-americans-9.7074933",
+      "urlToImage": "https://i.cbc.ca/ais/de3fb3eb-7e9d-4181-b80d-267790937c80,1770262569639/full/max/0/default.jpg?im=Crop%2Crect%3D%28130%2C0%2C3055%2C1718%29%3BResize%3D620",
+      "publishedAt": "2026-02-05T04:05:15Z",
+      "content": "Former prime minister Stephen Harper said late Wednesday that Canada must urgently pivot in the face of an erratic U.S. president and reduce its dependence on the American market to protect its sover… [+4963 chars]"
+    },
+    {
+      "source": {
+        "id": "cbc-news",
+        "name": "CBC News"
+      },
+      "author": null,
+      "title": "Stephen Harper says Canada must urgently reduce its dependence on the U.S.",
+      "description": "Speaking at an Ottawa gala late Wednesday, former prime minister Stephen Harper said that Canada must urgently pivot in the face of an erratic U.S. president and reduce its dependence on the American market to protect its sovereignty and the continued functio…",
+      "url": "https://www.cbc.ca/news/canada/stephen-harper-reduce-dependence-americans-9.7074933",
+      "urlToImage": "https://i.cbc.ca/ais/de3fb3eb-7e9d-4181-b80d-267790937c80,1770262569639/full/max/0/default.jpg?im=Crop%2Crect%3D%28130%2C0%2C3055%2C1718%29%3BResize%3D620",
+      "publishedAt": "2026-02-05T04:05:15Z",
+      "content": "Former prime minister Stephen Harper said late Wednesday that Canada must urgently pivot in the face of an erratic U.S. president and reduce its dependence on the American market to protect its sover… [+4963 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BusinessLine"
+      },
+      "author": "KS Badri Narayanan, Team BL",
+      "title": "Stock Market Live Updates 5 February 2026: Sensex slips 145 points to 83,671 at open, Nifty down 45 points at 25,730",
+      "description": "Sensex, Nifty, Stock Price LIVE: Sensex falls 145.71 pts or 0.17 % to 83,671.98 at 9.17 am after opening at 83,757.54, against previous close of 83,817.69. Nifty 50 down by 45.95 pts or 0.18% to 25,730.05",
+      "url": "https://www.thehindubusinessline.com/markets/stock-market-nifty-sensex-live-updates-5-february-2026/article70592728.ece",
+      "urlToImage": "https://bl-i.thgim.com/public/incoming/c0k3er/article70592758.ece/alternates/LANDSCAPE_1200/PO20_Stockmarket_eyeglasses.jpg",
+      "publishedAt": "2026-02-05T04:02:18Z",
+      "content": "<li></li>\r\nFebruary 5, 2026 09:37Gold &amp; Silver updates: MCX levies additional margin on gold, silver futures\r\nMulti Commodity Exchange Clearing Corporation, part of the countrys largest commodity… [+70309 chars]"
     },
     {
       "source": {
         "id": "the-times-of-india",
         "name": "The Times of India"
       },
-      "author": "Reuters",
-      "title": "Asia shares wobble, oil prices climb and gold makes a comeback",
-      "description": "Kotak Mutual Fund has launched the Kotak Services Fund, an open-ended equity scheme. This fund provides investors an opportunity to invest in India's services sector, which is a major driver of the nation's economy. The sector contributes significantly to Gro…",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/asia-shares-wobble-oil-prices-climb-and-gold-makes-a-comeback/articleshow/127900229.cms",
-      "urlToImage": "https://img.etimg.com/thumb/msid-127900391,width-1200,height-630,imgsize-335804,overlay-etmarkets/articleshow.jpg",
-      "publishedAt": "2026-02-04T05:03:23Z",
-      "content": "Asian stocks were on shaky ground on Wednesday, following steep losses in U.S. and European equities on fears that advancements in artificial intelligence could supplant traditional software.The Nasd… [+4506 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Ndtvprofit.com"
-      },
-      "author": "Anas Ali",
-      "title": "Gold And SIlver Prices Bounce Back Once Again: Here's Why",
-      "description": "Gold April futures on MCX are trading near the Rs 1.6 lakh/per 10 gram levels, while silver March futures have gained over Rs 13,000 to trade near Rs 2.81 lakh.",
-      "url": "https://www.ndtvprofit.com/markets/gold-silver-bounce-back-key-factors-behind-the-rally-and-what-experts-predict-10942752",
-      "urlToImage": "https://c.ndtvimg.com/2026-02/u542bv6o_gold-silver-unsplash_625x300_04_February_26.jpg?im=FitAndFill,algorithm=dnn,width=1080,height=607",
-      "publishedAt": "2026-02-04T04:37:17Z",
-      "content": "Gold and silver prices have extended gains on MCX on Wednesday, continuing the strong momentum from Tuesday. Gold April futures on MCX are up 3.8%, whereas silver March futures have gained over 5% in… [+2351 chars]"
+      "author": "Bloomberg",
+      "title": "Silver plummets more than 16%, erasing a two-day recovery",
+      "description": "Silver and gold prices have seen a significant drop, erasing recent gains. This decline follows a historic market rout and is fueled by investor concerns about US monetary policy. Analysts suggest volatility will continue until there is more clarity on intere…",
+      "url": "https://economictimes.indiatimes.com/markets/commodities/news/silver-plummets-more-than-16-erasing-a-two-day-recovery/articleshow/127923170.cms",
+      "urlToImage": "https://img.etimg.com/thumb/msid-127923157,width-1200,height-630,imgsize-51644,overlay-etmarkets/articleshow.jpg",
+      "publishedAt": "2026-02-05T03:53:54Z",
+      "content": "Silver fell sharply, erasing a two-day recovery, as the white metal struggled to find a price floor following a historic market rout. Gold also declined.Spot silver tumbled as much as 16.6% on Thursd… [+1724 chars]"
     },
     {
       "source": {
@@ -463,90 +229,64 @@
         "name": "The Times of India"
       },
       "author": "Veer Sharma",
-      "title": "Silver jumps nearly Rs 11,000, nears Rs 3 lakh; gold up 3%. Is it too late to buy?",
-      "description": "Gold and silver futures extended gains for a second session, driven by geopolitical tensions after the US shot down an Iranian drone, along with bargain buying and a softer dollar. MCX silver jumped 4% and gold rose 3%, while global prices surged to multi-yea…",
-      "url": "https://economictimes.indiatimes.com/markets/commodities/news/silver-jumps-nearly-rs-11000-nears-rs-3-lakh-gold-up-3-is-it-too-late-to-buy/articleshow/127899830.cms",
-      "urlToImage": "https://img.etimg.com/thumb/msid-127899823,width-1200,height-630,imgsize-27186,overlay-etmarkets/articleshow.jpg",
-      "publishedAt": "2026-02-04T04:33:35Z",
-      "content": "Gold and silver futures opened higher for a second straight session on Wednesday, supported by heightened geopolitical tensions after the US military said it shot down an Iranian drone that approache… [+3131 chars]"
-    },
-    {
-      "source": {
-        "id": "the-times-of-india",
-        "name": "The Times of India"
-      },
-      "author": "ETMarkets.com",
-      "title": "Sensex falls over 450 pts, Nifty below 25,700 global tech sell-off spills into D-Street",
-      "description": "Indian equity benchmarks Nifty and Sensex opened lower on Wednesday, dragged down by a significant sell-off in IT stocks following a major tech rout in the US. Investors also booked profits after a strong rally, while escalating geopolitical tensions added to…",
-      "url": "https://economictimes.indiatimes.com/markets/stocks/news/sensex-falls-over-450-pts-nifty-below-25700-global-tech-sell-off-spills-into-d-street/articleshow/127899311.cms",
-      "urlToImage": "https://img.etimg.com/thumb/msid-127899304,width-1200,height-630,imgsize-83354,overlay-etmarkets/articleshow.jpg",
-      "publishedAt": "2026-02-04T03:59:27Z",
-      "content": "Benchmark indices Nifty and Sensex opened lower on Wednesday as a sharp sell-off in IT stocks weighed on sentiment, with the sectoral index sliding nearly 6% after a major tech rout in the US. Invest… [+4406 chars]"
-    },
-    {
-      "source": {
-        "id": "bloomberg",
-        "name": "Bloomberg"
-      },
-      "author": "Bloomberg",
-      "title": "Bitcoin-led Crypto rout erases nearly half a trillion in a week",
-      "description": "Bitcoin on Tuesday tumbled to its lowest level since US President Donald Trump won re-election in early November 2024 and ushered in a more crypto-friendly administration",
-      "url": "https://www.bloomberg.com/news/articles/2026-02-04/bitcoin-led-crypto-rout-erases-nearly-half-a-trillion-in-a-week",
-      "urlToImage": "https://bl-i.thgim.com/public/incoming/em539x/article70581823.ece/alternates/LANDSCAPE_1200/2025-12-09T050155Z_697355253_RC2KCBAJ2O7Y_RTRMADP_3_FINTECH-CRYPTO-YEAREND.JPG",
-      "publishedAt": "2026-02-04T03:39:34Z",
-      "content": "Almost half a trillion dollars has been wiped off cryptocurrencies in less than a week as a selloff led by Bitcoin accelerated.\r\nTotal crypto market value has slumped by $467.6 billion since Jan. 29,… [+1777 chars]"
+      "title": "Silver crashes 6%, sheds Rs 16,000/kg; Gold slips 3% below Rs 1.5 lakh. Where are prices headed from here?",
+      "description": "Gold and silver futures saw a sharp decline on MCX Thursday. This followed news of upcoming U.S.-Iran talks in Oman, reducing demand for safe-haven assets. Experts suggest continued volatility for gold and silver. Trading recommendations are provided for both…",
+      "url": "https://economictimes.indiatimes.com/markets/commodities/news/silver-crashes-6-sheds-rs-16000/kg-gold-slips-3-below-rs-1-5-lakh-where-are-prices-headed-from-here/articleshow/127923087.cms",
+      "urlToImage": "https://img.etimg.com/thumb/msid-127923095,width-1200,height-630,imgsize-2845890,overlay-etmarkets/articleshow.jpg",
+      "publishedAt": "2026-02-05T03:48:34Z",
+      "content": "Gold and silver futures opened sharply lower on MCX on Thursday, snapping a two-day winning streak as news of upcoming U.S.-Iran talks in Oman on Friday dampened safe-haven demand. Officials from bot… [+2492 chars]"
     },
     {
       "source": {
         "id": null,
-        "name": "Enterprisedb.com"
+        "name": "Decrypt"
       },
-      "author": null,
-      "title": "On Developing OAuth",
-      "description": "Learn why and how to build your AI on your terms with a data platform you control. PostgreSQL 18 ships with a new framework for supporting OAuth 2.0, which is an open authorization system that has seen wide use on the Internet for years. I posted my first pro…",
-      "url": "https://www.enterprisedb.com/blog/developing-oauth",
-      "urlToImage": "https://enterprisedb.com/themes/custom/edb_theme/logo-dark.png",
-      "publishedAt": "2026-02-04T03:34:07Z",
-      "content": "PostgreSQL 18 ships with a new framework for supporting OAuth 2.0, which is an open authorization system that has seen wide use on the Internet for years. I posted my first proof-of-concept for this … [+9999 chars]"
-    },
-    {
-      "source": {
-        "id": "the-times-of-india",
-        "name": "The Times of India"
-      },
-      "author": "Bloomberg",
-      "title": "Bitcoin-led crypto rout erases nearly $500 billion in a week",
-      "description": "Bitcoin and US equities declined amid rising US-Iran tensions, failing to act as safe havens unlike gold and silver. This selloff, wiping out nearly half a trillion dollars from crypto markets, has fueled doubts about Bitcoin's 'digital gold' status. Investor…",
-      "url": "https://economictimes.indiatimes.com/markets/cryptocurrency/bitcoin-led-crypto-rout-erases-nearly-500-billion-in-a-week/articleshow/127898591.cms",
-      "urlToImage": "https://img.etimg.com/thumb/msid-127898601,width-1200,height-630,imgsize-291902,overlay-etmarkets/articleshow.jpg",
-      "publishedAt": "2026-02-04T03:01:02Z",
-      "content": "The declines follow a volatile week across global markets that also saw sharp swings in gold and silver. While precious metals found buyers on Tuesday after recent losses, cryptocurrencies failed to … [+2614 chars]"
+      "author": "Vince Dioquino",
+      "title": "Bitcoin Extends Selloff as Macro Pressures and Leverage Unwind",
+      "description": "The latest decline reflects a broader unwind in leverage, with investors reassessing Bitcoin’s short-term role as an inflation hedge.",
+      "url": "https://decrypt.co/357025/bitcoin-extends-selloff-macro-pressures-leverage-unwind",
+      "urlToImage": "https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2025/05/bitcoin-down-decrypt-style-gID_7.png",
+      "publishedAt": "2026-02-05T03:07:33Z",
+      "content": "In brief\r\n<ul><li>Bitcoin accounted for more than 40% of roughly $650 million in crypto liquidations over the past 24 hours, highlighting stress across derivatives markets.</li><li>Some analysts say … [+3653 chars]"
     },
     {
       "source": {
         "id": null,
-        "name": "Motley Fool Australia"
+        "name": "Freerepublic.com"
       },
-      "author": "Aaron Teboneras",
-      "title": "This ASX gold stock is rocketing 6% today. Here's why",
-      "description": "Northern Star shares jump as gold prices rebound sharply and lift sentiment across the sector.\nThe post This ASX gold stock is rocketing 6% today. Here's why appeared first on The Motley Fool Australia.",
-      "url": "https://www.fool.com.au/2026/02/04/this-asx-gold-stock-is-rocketing-6-today-heres-why/",
-      "urlToImage": "https://www.fool.com.au/wp-content/uploads/2024/07/gold-chill-1200x675.jpg",
-      "publishedAt": "2026-02-04T02:30:54Z",
-      "content": "Northern Star Resources Ltd (ASX: NST) shares are surging on Wednesday, climbing 6.14% to $28.54. \r\nThe gains follow a sharp rebound in the gold price, which has lifted sentiment across the gold sect… [+2639 chars]"
+      "author": "Doug Casey's International Man",
+      "title": "Run It Hot: Trump, the Fed, and the Coming Currency Debasement",
+      "description": "The Trump administration has made no secret of its desire to push the monetary easing pedal to the metal, even as the engine is already near the red line. They intend to push the system as hard as possible today and worry about the consequences later. One rea…",
+      "url": "https://freerepublic.com/focus/f-news/4365483/posts",
+      "urlToImage": null,
+      "publishedAt": "2026-02-05T02:53:30Z",
+      "content": "Skip to comments.\r\nRun It Hot: Trump, the Fed, and the Coming Currency DebasementDoug Casey's International Man ^\r\n | Nick Giambruno\r\nPosted on 02/04/2026 6:53:30 PM PST by Angelino97\r\nThe Trump admi… [+7194 chars]"
     },
     {
       "source": {
-        "id": "the-times-of-india",
-        "name": "The Times of India"
+        "id": null,
+        "name": "CoinDesk"
       },
-      "author": "Reuters",
-      "title": "Gold extends rally, jumps over 2% after best day since 2008",
-      "description": "GLOBAL-Gold extends rally, jumps over 2% after best day since 2008",
-      "url": "https://economictimes.indiatimes.com/markets/commodities/news/gold-extends-rally-jumps-over-2-after-best-day-since-2008/articleshow/127897843.cms",
-      "urlToImage": "https://img.etimg.com/thumb/msid-127897843,width-1200,height-630,imgsize-21438,overlay-etmarkets/articleshow.jpg",
-      "publishedAt": "2026-02-04T02:01:24Z",
-      "content": "- Gold prices climbed more than 2% on Wednesday, building on their best day since 2008 in the previous session, as bargain-hunting and a softer dollar supported bullion.FUNDAMENTALS\r\n* Spot gold was … [+2277 chars]"
+      "author": "Sam Reynolds, AI Boost",
+      "title": "Bitcoin slides toward $70,000 as on-chain data flags bear market and traders bet Fed holds in April: Asia Morning Briefing",
+      "description": "On-chain data points to fading demand and tighter liquidity, while prediction markets show little expectation of near-term rate cuts.",
+      "url": "https://www.coindesk.com/markets/2026/02/05/bitcoin-slides-toward-usd70-000-as-on-chain-data-flags-bear-market-and-traders-bet-fed-holds-in-april-asia-morning-briefing",
+      "urlToImage": "https://cdn.sanity.io/images/s3y3vcno/production/ce6e5878a3bba05bcb92f58c5d32dad187180ea3-1920x1080.jpg?auto=format&w=960&h=540&crop=focalpoint&fit=clip&q=75&fm=jpg",
+      "publishedAt": "2026-02-05T02:33:52Z",
+      "content": "Welcome to Asia Morning Briefing, a daily summary of top stories during U.S. hours and an overview of market moves and analysis. For a detailed overview of U.S. markets, see CoinDesk's Crypto Daybook… [+3642 chars]"
+    },
+    {
+      "source": {
+        "id": "abc-news-au",
+        "name": "ABC News (AU)"
+      },
+      "author": "Dominic Cansdale and Charmayne Allison",
+      "title": "Strict caps on bottled water extraction urged for precious rainforest area",
+      "description": "A long-awaited study warns that the extraction of bottled water from the World Heritage-listed Springbrook area poses a potential risk to the ancient Gondwana rainforests and should be strictly limited.",
+      "url": "https://www.abc.net.au/news/2026-02-05/water-extraction-caps-at-world-heritage-springbrook/106304388",
+      "urlToImage": "https://live-production.wcms.abc-cdn.net.au/013458e9c067f89483a22901dede5768?impolicy=wcms_watermark_news&cropH=2268&cropW=4032&xPos=0&yPos=429&width=862&height=485&imformat=generic",
+      "publishedAt": "2026-02-05T02:18:39Z",
+      "content": "Strict limits should be imposed on the volume of groundwater bottled water companies can take from the World Heritage-listed Gold Coast hinterland, a study has found.\r\nThe Queensland University of Te… [+5035 chars]"
     },
     {
       "source": {
@@ -554,12 +294,12 @@
         "name": "Ndtvprofit.com"
       },
       "author": "Yukta Baid",
-      "title": "Gold, Silver Price Today, Feb 4 - Check Prices In Mumbai, Delhi, Chennai",
-      "description": "Prices of silver increased further to Rs 2.67 lakh per kg on Wednesday, while gold rose to Rs 1.53 lakh per 10 grams, according to India Bullions.",
-      "url": "https://www.ndtvprofit.com/markets/gold-silver-price-today-feb-4-check-prices-in-mumbai-delhi-chennai-and-other-cities-10942213",
-      "urlToImage": "https://c.ndtvimg.com/2026-02/u542bv6o_gold-silver-unsplash_625x300_04_February_26.jpg?im=FeatureCrop,algorithm=dnn,width=1080,height=607",
-      "publishedAt": "2026-02-04T01:43:10Z",
-      "content": "Broadly recovering from the plunge from the past couple of days, the prices of silver increased further to Rs 2.67 lakh per kg on Wednesday, while gold rose to Rs 1.53 lakh per 10 grams, according to… [+2976 chars]"
+      "title": "Gold, Silver Price Today, Feb 5 - Check Prices In Mumbai, Delhi, Chennai",
+      "description": "The prices of silver rose to Rs 2.71 lakh per kg, while gold rose marginally to Rs 1.53 lakh per 10 grams, according to the India Bullions website.",
+      "url": "https://www.ndtvprofit.com/markets/gold-silver-price-today-feb-5-check-prices-in-mumbai-delhi-chennai-and-other-cities-10949027",
+      "urlToImage": "https://c.ndtvimg.com/2026-02/ltcrncbc_gold_625x300_03_February_26.jpg?im=FeatureCrop,algorithm=dnn,width=1080,height=607",
+      "publishedAt": "2026-02-05T02:06:28Z",
+      "content": "The prices of gold and silver continuining the recovery from the historic selloff from the past couple of days on Thursday. The prices of silver rose to Rs 2.71 lakh per kg, while gold rose marginall… [+3230 chars]"
     },
     {
       "source": {
@@ -567,77 +307,337 @@
         "name": "Financial Post"
       },
       "author": "Bloomberg News",
-      "title": "Oil Rises on Flare-Up in US-Iran Tensions and Inventory Decline",
-      "description": "Oil rose for a second day as geopolitical tensions resurfaced following the US downing of an Iranian drone near an American aircraft carrier in the Arabian Sea.",
-      "url": "https://financialpost.com/pmn/business-pmn/oil-rises-on-flare-up-in-us-iran-tensions-and-inventory-decline",
-      "urlToImage": "https://smartcdn.gprod.postmedia.digital/financialpost/wp-content/uploads/2026/02/776433180.jpg",
-      "publishedAt": "2026-02-04T01:33:07Z",
-      "content": "(Bloomberg) Oil rose for a second day as geopolitical tensions resurfaced following the US downing of an Iranian drone near an American aircraft carrier in the Arabian Sea.\r\nTHIS CONTENT IS RESERVED … [+4018 chars]"
+      "title": "Hedge Funds, Banks Rush to Hire Traders as Markets Turn Volatile",
+      "description": "Extreme market swings from metals to currencies are fueling a hiring push at hedge funds and banks as they seek traders who can capitalize on surging volatility.",
+      "url": "https://financialpost.com/pmn/business-pmn/hedge-funds-banks-rush-to-hire-traders-as-markets-turn-volatile",
+      "urlToImage": "https://smartcdn.gprod.postmedia.digital/financialpost/wp-content/uploads/2026/02/golds-wild-moves-this-year-added-to-broad-turmoil.jpg",
+      "publishedAt": "2026-02-05T02:00:31Z",
+      "content": "AMP is also paying more attention to geopolitics. Around 18 months ago, it hired two geopolitical consultants to give it insight into potential flashpoints around the world. That has already proved u… [+2287 chars]"
+    },
+    {
+      "source": {
+        "id": "the-times-of-india",
+        "name": "The Times of India"
+      },
+      "author": "Reuters",
+      "title": "Gold rises over 1% as geopolitical, economic tensions lift precious metals",
+      "description": "On Thursday, gold prices experienced a remarkable rise, approaching their recent peak levels due to escalating global tensions. Meanwhile, silver and palladium also enjoyed some upward momentum. Investors are keenly awaiting potential interest rate cuts from …",
+      "url": "https://economictimes.indiatimes.com/markets/commodities/news/gold-rises-over-1-as-geopolitical-economic-tensions-lift-precious-metals/articleshow/127921708.cms",
+      "urlToImage": "https://img.etimg.com/thumb/msid-127921708,width-1200,height-630,imgsize-1622891,overlay-etmarkets/articleshow.jpg",
+      "publishedAt": "2026-02-05T01:58:25Z",
+      "content": "Gold climbed more than 1% on Thursday, hovering near one-week highs, as geopolitical and economic tensions continued to bolster prices, while silver and palladium also posted gains.FUNDAMENTALS\r\nSpot… [+2161 chars]"
+    },
+    {
+      "source": {
+        "id": "the-times-of-india",
+        "name": "The Times of India"
+      },
+      "author": "Bloomberg",
+      "title": "Asian stocks fall after tech selloff, gold gains",
+      "description": "Asian stocks mirrored Wall Street's tech sell-off, with South Korea's Kospi leading losses amid concerns over high valuations and spending. While tech giants like Alphabet and Arm Holdings saw declines, futures for US gauges rose, suggesting easing selling pr…",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/asian-stocks-fall-after-tech-selloff-gold-gains/articleshow/127921310.cms",
+      "urlToImage": "https://img.etimg.com/thumb/msid-127921329,width-1200,height-630,imgsize-211653,overlay-etmarkets/articleshow.jpg",
+      "publishedAt": "2026-02-05T00:44:11Z",
+      "content": "Asian stocks dropped for a second day after Wall Street investors moved out of technology firms and rotated into a broader range of companies amid concerns about high valuations and spending.The MSCI… [+4056 chars]"
     },
     {
       "source": {
         "id": null,
-        "name": "CNBC"
+        "name": "The Atlantic"
       },
-      "author": "Yeo Boon Ping",
-      "title": "CNBC Daily Open: Nvidia denies rift with OpenAI, while software and asset management stocks plunge",
-      "description": "Nvidia CEO Jensen Huang told CNBC's Jim Cramer on Tuesday that there's \"no drama involved\" between the company and OpenAI. \"Everything's on track,\" he added.",
-      "url": "https://www.cnbc.com/2026/02/04/cnbc-daily-open-nvidia-denies-rift-with-openai-while-software-and-asset-management-stocks-plunge.html",
-      "urlToImage": "https://image.cnbcfm.com/api/v1/image/108248936-1767726495532-gettyimages-2254355544-CES_2026.jpeg?v=1767726543&w=1920&h=1080",
-      "publishedAt": "2026-02-04T01:21:46Z",
-      "content": "Advanced Micro Devices reported fourth-quarter earnings on Tuesday after the bell. The chipmaker beat Wall Street's revenue and profit estimates, but shares plunged more than 8% in extended trading b… [+3225 chars]"
+      "author": "Will Gottsegen",
+      "title": "Why Trump Wants a Weaker Dollar",
+      "description": "The approach could boost the economy—unless the president’s policies get in his own way.",
+      "url": "https://www.theatlantic.com/newsletters/2026/02/trump-weak-dollar-economy/685887/",
+      "urlToImage": "https://cdn.theatlantic.com/thumbor/DG8U_1juLmzztzIVQ5WIbIVOcl8=/0x42:2000x1084/1200x625/media/newsletters/2026/02/TrumpDollarRedo/original.png",
+      "publishedAt": "2026-02-04T23:23:00Z",
+      "content": "This is an edition of The Atlantic Daily, a newsletter that guides you through the biggest stories of the day, helps you discover new ideas, and recommends the best in culture. Sign up for it here.Th… [+8814 chars]"
+    },
+    {
+      "source": {
+        "id": "time",
+        "name": "Time"
+      },
+      "author": "Alice Park",
+      "title": "How Figure Skater Amber Glenn Took Control of Her Life",
+      "description": "After leaving competitive skating for a few months as a teen, the three-time national champion is making her Olympic debut",
+      "url": "https://time.com/7362281/amber-glenn-olympics-figure-skating-interview-2026-milan-cortina/",
+      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/egvDRw6VsnGHVt95TDrRuQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA7Y2Y9d2VicA--/https://media.zenfs.com/en/time_72/a8ef2e4ebaca6f5814e2d40a7beb6bc2",
+      "publishedAt": "2026-02-04T23:05:32Z",
+      "content": "Amber Glenn skates in \"Making Team USA,\" an exhibition after the 2026 United States Figure Skating Championships in St Louis, Mo., on Jan. 11, 2026. Credit - Matthew StockmanGetty Images\r\nAmber Glenn… [+15240 chars]"
     },
     {
       "source": {
         "id": null,
-        "name": "Ndtvprofit.com"
+        "name": "Motley Fool Australia"
       },
-      "author": "Bloomberg News",
-      "title": "Michael Burry Warns of Cascading Effects From Bitcoin Plunge",
-      "description": "Further losses, he said, could rapidly strain the balance sheets of major holders, force selling across the crypto ecosystem and trigger widespread value destruction.",
-      "url": "https://www.ndtvprofit.com/world/michael-burry-warns-of-cascading-effects-from-bitcoin-plunge-10942146",
-      "urlToImage": "https://c.ndtvimg.com/2026-02/2sc4962k_xxx_625x300_04_February_26.jpg?im=FitAndFill,algorithm=dnn,width=1080,height=607",
-      "publishedAt": "2026-02-04T01:10:49Z",
-      "content": "Michael Burry, the money manager made famous in The Big Short, warned that Bitcoin's plunge could deepen into a self-reinforcing death spiral, inflicting lasting damage on companies that have spent t… [+4040 chars]"
+      "author": "Aaron Bell",
+      "title": "Why 2026 will be the year of ASX resources and commodities – Expert",
+      "description": "Do you have exposure to these sectors?\nThe post Why 2026 will be the year of ASX resources and commodities – Expert appeared first on The Motley Fool Australia.",
+      "url": "https://www.fool.com.au/2026/02/05/why-2026-will-be-the-year-of-asx-resources-and-commodities-expert/",
+      "urlToImage": "https://www.fool.com.au/wp-content/uploads/2024/08/golden-sunset-1200x675.jpg",
+      "publishedAt": "2026-02-04T22:13:06Z",
+      "content": "A new report from Betashares has painted an optimistic picture for ASX resources and commodities. \r\nIt's been well documented the run being enjoyed by BHP Group Ltd (ASX: BHP) and Rio Tinto Ltd (ASX:… [+3434 chars]"
     },
     {
       "source": {
         "id": null,
-        "name": "Ndtvprofit.com"
+        "name": "Freerepublic.com"
       },
-      "author": "Bloomberg News",
-      "title": "Gold Holds Gains After Historic Retreat Lures Back Dip Buyers",
-      "description": "Bullion was near $4,950 an ounce in early trading, after climbing more than 6% in the previous session as a risk-on tone returned to markets.",
-      "url": "https://www.ndtvprofit.com/markets/gold-holds-gains-after-historic-retreat-lures-back-dip-buyers-10942137",
-      "urlToImage": "https://c.ndtvimg.com/2026-02/4v8uj0hk_gold-bloomberg_625x300_04_February_26.jpg?im=FeatureCrop,algorithm=dnn,width=1080,height=607",
-      "publishedAt": "2026-02-04T01:08:17Z",
-      "content": "Gold steadied, after recovering some losses when dip buyers stepped in following an abrupt retreat from record highs.\r\nBullion was near $4,950 an ounce in early trading, after climbing more than 6% i… [+2276 chars]"
+      "author": "Udiscovermusic",
+      "title": "‘The Payback’: How James Brown Perfected His Funky Stuff",
+      "description": "Rejected for the ‘Hell Up In Harlem’ soundtrack, ‘The Payback’ found James Brown exacting revenge and laying the blueprint for gangsta rap.For many fans, “The Payback” is James Brown’s greatest song. For others, it’s his funkiest. Let’s think about that some:…",
+      "url": "https://freerepublic.com/focus/f-chat/4365458/posts",
+      "urlToImage": null,
+      "publishedAt": "2026-02-04T21:26:31Z",
+      "content": "Skip to comments.\r\nThe Payback: How James Brown Perfected His Funky StuffUdiscovermusic ^\r\n | February 4, 2026\r\n | Ian McCann\r\nPosted on 02/04/2026 1:26:31 PM PST by nickcarraway\r\nRejected for the He… [+7875 chars]"
+    },
+    {
+      "source": {
+        "id": "financial-post",
+        "name": "Financial Post"
+      },
+      "author": "Gigi Suhanic",
+      "title": "CIBC among analysts hiking their gold target to US$6,000 despite recent price plunge",
+      "description": "CIBC's stock market suggestions for how to play the price of gold include large caps and others. Find out more",
+      "url": "https://financialpost.com/investing/cibc-among-analysts-hiking-gold-target",
+      "urlToImage": "https://smartcdn.gprod.postmedia.digital/financialpost/wp-content/uploads/2026/01/0130-mg-gold-silver.jpg",
+      "publishedAt": "2026-02-04T20:05:16Z",
+      "content": "CIBC Capital Markets hiked its 2026 price target for gold to US$6,000 an ounce from US$4,500 predicting that the factors that drove bullion 65 per cent higher in 2025 will continue this year.\r\nTHIS C… [+5455 chars]"
+    },
+    {
+      "source": {
+        "id": "fortune",
+        "name": "Fortune"
+      },
+      "author": "Sasha Rogelberg",
+      "title": "Ray Dalio warns the world is ‘on the brink’ of a capital war of weaponizing money—and gold is the best way for people to protect themselves",
+      "description": "“It would be very easy to go over the brink into a capital war, because there are mutual fears” between the U.S. and Europe, the Bridgewater Associates founder warned.",
+      "url": "https://fortune.com/2026/02/04/ray-dalio-warns-capital-war-geopolitical-tensions-debt-gold-asset/",
+      "urlToImage": "https://fortune.com/img-assets/wp-content/uploads/2026/02/GettyImages-2243629590-e1770233569426.jpg?resize=1200,600",
+      "publishedAt": "2026-02-04T19:43:56Z",
+      "content": "The world is facing threats not of a cold war or just a trade war, but a capital war where money is being weaponized, according to billionaire hedge fund manager Ray Dalio. He suggested one asset wou… [+4492 chars]"
     },
     {
       "source": {
         "id": null,
-        "name": "GlobeNewswire"
+        "name": "TheStreet"
       },
-      "author": "Alamos Gold Inc.",
-      "title": "Alamos Gold Announces Island Gold District Expansion to 20,000 TPD, Creating One of Canada’s Largest and Lowest Cost Gold Mines with Attractive Economics, including 69% After-Tax IRR and $12.2 Billion NPV at $4,500/oz Gold",
-      "description": "All amounts are in United States dollars, unless otherwise stated  TORONTO, Feb.  03, 2026  (GLOBE NEWSWIRE) --  Alamos Gold Inc. (TSX:AGI; NYSE:AGI)...",
-      "url": "https://www.globenewswire.com/news-release/2026/02/04/3231688/0/en/Alamos-Gold-Announces-Island-Gold-District-Expansion-to-20-000-TPD-Creating-One-of-Canada-s-Largest-and-Lowest-Cost-Gold-Mines-with-Attractive-Economics-including-69-After-Tax-IRR-.html",
-      "urlToImage": "https://ml.globenewswire.com/Resource/Download/b6c84d4b-0c81-42e6-9d33-e92b12eacb59",
-      "publishedAt": "2026-02-04T00:38:00Z",
-      "content": "All amounts are in United States dollars, unless otherwise stated\r\nTORONTO, Feb. 03, 2026 (GLOBE NEWSWIRE) -- Alamos Gold Inc. (TSX:AGI; NYSE:AGI) (Alamos or the Company) today reported results of th… [+80070 chars]"
+      "author": "Chuck Jaffe",
+      "title": "Veteran investors signal quiet stock market warning",
+      "description": "If you want to know what “climbing the wall of worry” looks like, just look at the stock market. The Standard & Poor’s 500 has been in two-steps-forward, one...",
+      "url": "https://www.thestreet.com/investing/veteran-investors-signal-quiet-stock-market-warning",
+      "urlToImage": "https://s.yimg.com/os/en/thestreet_881/8bceb46301b75a7282cd17e93489c2c8",
+      "publishedAt": "2026-02-04T19:26:17Z",
+      "content": "If you want to know what climbing the wall of worry looks like, just look at the stock market.\r\nThe Standard &amp; Poors 500 has been in two-steps-forward, one-step-back mode since last fall, grindin… [+5417 chars]"
     },
     {
       "source": {
         "id": null,
-        "name": "Ndtvprofit.com"
+        "name": "Crypto Briefing"
       },
-      "author": "NDTV Profit Research",
-      "title": "All You Need To Know Going Into Trade On Wednesday",
-      "description": "Stocks in news, earnings post market hours, bulk and block deals, F&amp;O cues and much more!",
-      "url": "https://www.ndtvprofit.com/markets/stock-market-today-all-you-need-to-know-going-into-trade-on-feb-4-10941062",
-      "urlToImage": "https://c.ndtvimg.com/2026-02/mrrl8q28_trade-setup_625x300_02_February_26.jpg?im=FeatureCrop,algorithm=dnn,width=1080,height=607",
-      "publishedAt": "2026-02-04T00:30:01Z",
-      "content": "Good Morning!\r\nThe GIFT Nifty is trading with losses of around 0.3% at 25,779, indicating a negative open for the benchmark index. US and European index futures, meanwhile, are trading marginally low… [+19325 chars]"
+      "author": "Editorial Team",
+      "title": "Cosmo Jiang: Long-term crypto investment requires patience, gold’s pullback signals new dynamics, and Hyperliquid transforms trading with 24/7 access | Unchained",
+      "description": "Shifts in market dynamics suggest gold's resurgence may impact Bitcoin's long-term viability as an asset.\nThe post Cosmo Jiang: Long-term crypto investment requires patience, gold’s pullback signals new dynamics, and Hyperliquid transforms trading with 24/7 a…",
+      "url": "https://cryptobriefing.com/cosmo-jiang-long-term-crypto-investment-requires-patience-golds-pullback-signals-new-dynamics-and-hyperliquid-transforms-trading-with-24-7-access-unchained/",
+      "urlToImage": "https://static.cryptobriefing.com/wp-content/uploads/2025/12/24141205/unchained-podcast-featured-800x420.png",
+      "publishedAt": "2026-02-04T19:19:00Z",
+      "content": "Shifts in market dynamics suggest gold's resurgence may impact Bitcoin's long-term viability as an asset. Key takeaways\r\n<ul><li>Long-term investment strategies in crypto require patience due to mark… [+11139 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Yale.edu"
+      },
+      "author": null,
+      "title": "U.S. Push for Greenland’s Minerals Faces Harsh Arctic Realities",
+      "description": "President Trump has made access to Greenland’s vast reserves of critical minerals a focus of ongoing negotiations. But experts say the U.S. is underestimating the difficulties of mining in a rapidly changing Arctic region that is warming faster than anywhere …",
+      "url": "https://e360.yale.edu/features/greenland-critical-minerals",
+      "urlToImage": "https://yale-threesixty.transforms.svdcdn.com/production/Russell-Glacier_Alamy-HEADER.jpg?w=1200&q=60&auto=format&fit=max&dm=1770228014&s=d361f6af02325d8203af8a65a853fab8",
+      "publishedAt": "2026-02-04T18:37:00Z",
+      "content": "President Donald Trump has been voicing interest in exploiting Greenlands mineral wealth since his first term in office, when he started talking about possibly seizing the autonomous territory. His t… [+12656 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Investopedia"
+      },
+      "author": "Crystal Kim",
+      "title": "Do Stock Sell-Offs Pay Off? These Experts Warn Not to ‘Bottom Feed’ on New Lows",
+      "description": "Beaten-down shares—like the software and related stocks lately trading around fresh 52-week lows—aren't as desirable as they may seem, some market experts...",
+      "url": "https://www.investopedia.com/do-stock-sell-offs-pay-off-these-experts-warn-not-to-bottom-feed-on-new-lows-11899298",
+      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/0qakrfdCMhJjw8nePBaC7g--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://media.zenfs.com/en/investopedia_245/a148f35fe21fdfb669f5ef9b94bc3aae",
+      "publishedAt": "2026-02-04T18:26:32Z",
+      "content": "<ul><li>Beaten-down shareslike the software and related stocks lately trading around fresh 52-week lowsaren't as desirable as they may seem, some market experts say.\r\n</li><li>Losers tend to keep los… [+3034 chars]"
+    },
+    {
+      "source": {
+        "id": "business-insider",
+        "name": "Business Insider"
+      },
+      "author": "jsor@businessinsider.com (Jennifer Sor)",
+      "title": "Investing icon Ray Dalio defends gold as the 'safest money' even after its big plunge",
+      "description": "Billionaire investor Ray Dalio said he believes gold is still a safe-haven asset, given its large presence in central bank reserves.",
+      "url": "https://www.businessinsider.com/ray-dalio-gold-price-crash-safe-haven-investing-advice-2026-2",
+      "urlToImage": "https://i.insider.com/69837364e1ba468a96ab6162?width=1200&format=jpeg",
+      "publishedAt": "2026-02-04T18:20:46Z",
+      "content": "For Ray Dalio, gold hasn't lost its shine.\r\nWhile many metal investors are likely still shaken by gold's 12% plunge last Friday, the famed hedge fund founder said he wasn't fazed by gold's big drop. … [+2187 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Occupywallst.com"
+      },
+      "author": null,
+      "title": "The Great Unwind",
+      "description": "The economy is crashing because Wall Street spent trillions shorting Japan's currency and now they're being squeezed.",
+      "url": "https://occupywallst.com/yen",
+      "urlToImage": "https://occupywallst.com/unwind.jpg",
+      "publishedAt": "2026-02-04T17:49:26Z",
+      "content": "Published February 4th, 2026\r\nby @OccupyWallSt\r\nHave you wondered why the stock market has been so choppy since\r\nOctober and why crypto and gold keep flash crashing? The western media\r\nwould have you… [+28997 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "CNA"
+      },
+      "author": null,
+      "title": "Global stock index dips with tech under pressure, dollar higher",
+      "description": "NEW YORK/LONDON, Feb 4 : MSCI's global equities gauge lost ground on Wednesday with technology stocks leading losses on Wall Street, while the dollar broadly rose after the latest U.S. economic data and silver outperformed gold following their recent plunge.O…",
+      "url": "https://www.channelnewsasia.com/business/global-stock-index-dips-tech-under-pressure-dollar-higher-5905636",
+      "urlToImage": "https://dam.mediacorp.sg/image/upload/s--JnqRSt_V--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-02-04T115639Z_1_LYNXMPEM130PY_RTROPTP_3_BRITAIN-STOCKS.JPG?itok=xHQKvMPV",
+      "publishedAt": "2026-02-04T17:34:04Z",
+      "content": "NEW YORK/LONDON, Feb 4 : MSCI's global equities gauge lost ground on Wednesday with technology stocks leading losses on Wall Street, while the dollar broadly rose after the latest U.S. economic data … [+5602 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "CNA"
+      },
+      "author": null,
+      "title": "Global stock index dips with tech slump while dollar rises, oil rallies",
+      "description": "NEW YORK/LONDON, Feb 4 : MSCI's global equities gauge lost ground on Wednesday with technology stocks leading losses on Wall Street, while the dollar rose against Japan's yen and silver outperformed gold following their recent plunge.Oil prices rose sharply f…",
+      "url": "https://www.channelnewsasia.com/business/global-stock-index-dips-tech-slump-while-dollar-rises-oil-rallies-5905636",
+      "urlToImage": "https://dam.mediacorp.sg/image/upload/s--JnqRSt_V--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-02-04T115639Z_1_LYNXMPEM130PY_RTROPTP_3_BRITAIN-STOCKS.JPG?itok=xHQKvMPV",
+      "publishedAt": "2026-02-04T17:34:04Z",
+      "content": "NEW YORK/LONDON, Feb 4 : MSCI's global equities gauge lost ground on Wednesday with technology stocks leading losses on Wall Street, while the dollar rose against Japan's yen and silver outperformed … [+5639 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "CNA"
+      },
+      "author": null,
+      "title": "Global stock index dips with dollar higher, precious metals mixed",
+      "description": "NEW YORK/ LONDON, Feb 4 : MSCI's global equities gauge fell on Wednesday with technology stocks leading losses on Wall Street, while the dollar broadly rose after the latest U.S. economic data and in precious metals silver outperformed gold following a recent…",
+      "url": "https://www.channelnewsasia.com/business/global-stock-index-dips-dollar-higher-precious-metals-mixed-5905636",
+      "urlToImage": "https://dam.mediacorp.sg/image/upload/s--JnqRSt_V--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-02-04T115639Z_1_LYNXMPEM130PY_RTROPTP_3_BRITAIN-STOCKS.JPG?itok=xHQKvMPV",
+      "publishedAt": "2026-02-04T17:34:04Z",
+      "content": "NEW YORK/ LONDON, Feb 4 : MSCI's global equities gauge fell on Wednesday with technology stocks leading losses on Wall Street, while the dollar broadly rose after the latest U.S. economic data and in… [+4505 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Yahoo Entertainment"
+      },
+      "author": "Ines Ferré",
+      "title": "Gold, silver attempt rebound for second day in a row",
+      "description": "Gold and silver futures rebounded before paring gains for the second day in a row on Wednesday following the recent crash in precious metals.",
+      "url": "https://finance.yahoo.com/news/gold-silver-attempt-rebound-for-second-day-in-a-row-as-investors-buy-the-dip-170020717.html",
+      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/RPWsx8_QWvWuXuqF1P.u4A--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/os/creatr-uploaded-images/2026-02/5e9add80-01d7-11f1-beef-026c6861a76b",
+      "publishedAt": "2026-02-04T17:00:20Z",
+      "content": "Gold (GC=F) futures pared gains on Wednesday to hover near $4,900 per ounce, while silver (SI=F) rallied for a second day in a row as investors bought the dip following last weeks crash that rattled … [+2383 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Electrek"
+      },
+      "author": "Scooter Doll",
+      "title": "We put Lucid’s Air Pure, Air Sapphire, and Gravity SUV through brutal winter testing in Northern Minnesota [Video]",
+      "description": "I recently put my cold-weather threshold to the test in Baudette, Minnesota, about as close to the US/Canada border as you can get with Lucid Motors, where we performed some awesome winter testing in a slew of EVs, including the Air Pure, Sapphire, and Gravit…",
+      "url": "http://electrek.co/2026/02/04/lucid-air-pure-sapphire-gravity-winter-testing-minnesota-video/",
+      "urlToImage": "https://i0.wp.com/electrek.co/wp-content/uploads/sites/3/2026/02/Lucid-winter-testing-hero.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+      "publishedAt": "2026-02-04T16:49:37Z",
+      "content": "I recently put my cold-weather threshold to the test in Baudette, Minnesota, about as close to the US/Canada border as you can get with Lucid Motors, where we performed some awesome winter testing in… [+9120 chars]"
+    },
+    {
+      "source": {
+        "id": "financial-post",
+        "name": "Financial Post"
+      },
+      "author": "Gabriel Friedman",
+      "title": "Gold bugs were right about the price hitting US$5,000, but is their big bank conspiracy theory also right?",
+      "description": "As gold bugs' predictions of higher gold prices come true, some people are asking what else they may have been right about. Find out more.",
+      "url": "https://financialpost.com/commodities/mining/gold-bugs-right-price-5000-big-bank-theory",
+      "urlToImage": "https://smartcdn.gprod.postmedia.digital/financialpost/wp-content/uploads/2026/02/no0204gold.jpg",
+      "publishedAt": "2026-02-04T16:41:32Z",
+      "content": "There were yet more cases against big banks, too, but many gold bugs believe those prosecutions hardly stopped the conspiracy.\r\nChris Powell, a former newspaper editor in Connecticut, said the conspi… [+3364 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "OCRegister"
+      },
+      "author": "Bloomberg",
+      "title": "Michael Burry warns of cascading effects from Bitcoin plunge",
+      "description": "His comments come as Bitcoin tumbled below $73,000 Tuesday to its lowest since President Donald Trump retook the White House.",
+      "url": "https://www.ocregister.com/2026/02/04/michael-burry-warns-of-cascading-effects-from-bitcoin-plunge/",
+      "urlToImage": "https://www.ocregister.com/wp-content/uploads/2024/03/Bitcoin-Record-High_56518.jpg?w=1024&h=682",
+      "publishedAt": "2026-02-04T16:30:09Z",
+      "content": "By Emily Mason | Bloomberg\r\nAlmost half a trillion dollars has been wiped off cryptocurrencies in less than a week as a selloff led by Bitcoin accelerated.\r\nTotal crypto market value has slumped by $… [+5166 chars]"
+    },
+    {
+      "source": {
+        "id": "cbs-news",
+        "name": "CBS News"
+      },
+      "author": "Angelica  Leicht",
+      "title": "How much should I pay for a 10-ounce bar of silver right now?",
+      "description": "In today's market, the price of your silver bars depends on the spot price, premiums and even where you buy them.",
+      "url": "https://www.cbsnews.com/news/how-much-should-i-pay-for-10-ounce-silver-bar-february-2026/",
+      "urlToImage": "https://assets2.cbsnewsstatic.com/hub/i/r/2026/02/04/fea7f983-fb56-43ca-a402-6353f57cd87e/thumbnail/1200x630/9c40d0ec816b47a66628247b4720ccc4/gettyimages-1071136142.jpg",
+      "publishedAt": "2026-02-04T16:12:11Z",
+      "content": "The spot price is just one of several factors that impact the price of 10-ounce silver bars in today's market.\r\nGetty Images/iStockphoto\r\nPrecious metals investors just experienced one of the most im… [+5897 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Kunstler.com"
+      },
+      "author": "James Howard Kunstler",
+      "title": "February 2026 | Eyesore",
+      "description": "DEI for buildings. . . . Hey, Chicago, try getting real.",
+      "url": "https://www.kunstler.com/p/february-2026-eyesore",
+      "urlToImage": "https://substackcdn.com/image/fetch/$s_!LMbb!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F16c7072b-a4fe-4958-aea5-cab5d554984e_550x550.heic",
+      "publishedAt": "2026-02-04T16:09:46Z",
+      "content": "Behold: This exercise in ultra-woke-techno-narcissism for the Chicago lake-front is called (variously) Eden Rise or Sky Droplet by Yanko Design. It is supposed to be a vertical farm skyscraper. The p… [+2087 chars]"
+    },
+    {
+      "source": {
+        "id": "espn",
+        "name": "ESPN"
+      },
+      "author": "Alyssa Roenigk",
+      "title": "Who you calling old? At the 2026 Olympics, age is just a number",
+      "description": "Lindsey Vonn, Nick Goepper, Gus Kenworthy and Maddy Schaffrick are in their golden years at the 2026 Olympics. Just don't call them old.",
+      "url": "https://www.espn.com/olympics/story/_/id/47809045/2026-winter-olympics-vonn-kenworthy-goepper-schaffrick-comebacks",
+      "urlToImage": "https://a.espncdn.com/photo/2026/0202/comeback_kids_new_16x9.gif",
+      "publishedAt": "2026-02-04T15:52:12Z",
+      "content": "GUS KENWORTHY DIDN'T know if he would ever say it out loud. Three years after retiring from professional skiing and less than a year ahead of the 2026 Olympics, a radical thought tugged at his mind: … [+20267 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "CoinDesk"
+      },
+      "author": "Krisztian Sandor, James Van Straten",
+      "title": "Bitcoin falls back to $74,000, remaining on defense as AI jitters shake tech sector",
+      "description": "AI infrastructure stocks like HUT 8, IREN, and Cipher Mining are plunging as AMD sinks 14% following fourth quarter results.",
+      "url": "https://www.coindesk.com/markets/2026/02/04/bitcoin-falls-back-to-usd74-000-remaining-on-defense-as-ai-jitters-shake-tech-sector",
+      "urlToImage": "https://cdn.sanity.io/images/s3y3vcno/production/e6449b6f95ba1202ec50b49d1e47b8107c88460b-1904x1164.png?auto=format&w=960&h=540&crop=focalpoint&fit=clip&q=75&fm=jpg",
+      "publishedAt": "2026-02-04T15:48:06Z",
+      "content": "Bitcoin BTC\r\n$76,073.52 fell back below $74,000 in the early innings of the U.S. session, with the bounce from Tuesday's lows quickly fading away as weakness in tech stocks weighed on crypto.\r\nThe Na… [+1508 chars]"
     }
   ]
 }
